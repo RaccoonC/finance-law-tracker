@@ -1,131 +1,694 @@
-<!doctype html>
-<html lang="zh-Hant">
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>財務法規追蹤系統</title>
 <style>
-  :root{--blue:#143b72;--light:#f5f8fc;--line:#d8e1ee;--text:#1f2937;--muted:#667085;--accent:#b91c1c;--ok:#0f7a4d;}
-  *{box-sizing:border-box} body{margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.75}
-  header{background:linear-gradient(135deg,#0f2f5f,#1b4f92);color:#fff;padding:40px 20px;text-align:center}
-  header h1{margin:0;font-size:1.9rem} header p{margin:10px auto 0;max-width:820px;color:#e6eef8}
-  nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:2;padding:10px 16px;overflow:auto;white-space:nowrap}
-  nav a{display:inline-block;margin:0 8px;padding:6px 10px;border-radius:999px;color:var(--blue);text-decoration:none;font-weight:600;font-size:.95rem}
-  nav a:hover{background:var(--light)}
-  main{max-width:1100px;margin:0 auto;padding:28px 18px 60px}
-  .meta{color:var(--muted);font-size:.9rem;margin:0 0 20px}
-  .search-panel{position:sticky;top:47px;z-index:1;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 24px;box-shadow:0 6px 24px rgba(16,24,40,.08)}
-  .search-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  #searchInput{flex:1;min-width:220px;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-size:1rem;font-family:inherit;outline:none}
-  #searchInput:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(20,59,114,.12)}
-  #clearSearch{border:0;background:var(--blue);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;font-family:inherit}
-  h2{color:var(--blue);border-bottom:3px solid var(--line);padding-bottom:8px;margin-top:38px}
-  table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:.95rem}
-  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
-  th{background:var(--light);color:var(--blue)}
-  tr.hidden-by-search{display:none}
-  .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.8rem;font-weight:700}
-  .tag-ok{background:#e7f6ee;color:var(--ok)}
-  .tag-warn{background:#fef2f2;color:var(--accent)}
-  .tag-na{background:#f2f4f7;color:var(--muted)}
-  a.law-link{color:var(--blue);font-weight:600;text-decoration:none}
-  a.law-link:hover{text-decoration:underline}
-  .note{color:var(--muted);font-size:.85rem}
-  .state-msg{padding:16px;border-radius:10px;background:var(--light);color:var(--muted);margin:20px 0}
-  footer{background:#f2f4f7;color:#667085;text-align:center;padding:24px 16px;font-size:.9rem}
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+  :root {
+    --navy: #1a2a4a;
+    --navy-light: #243a63;
+    --navy-dim: #2e4a7a;
+    --accent: #e07b2e;
+    --accent-light: #f4a05a;
+    --green: #2a8a5a;
+    --green-bg: #eaf5ef;
+    --yellow: #b07a10;
+    --yellow-bg: #fef8e7;
+    --red: #c0392b;
+    --red-bg: #fdecea;
+    --gray: #6b7280;
+    --gray-bg: #f3f4f6;
+    --border: #dde2ea;
+    --text: #1a2035;
+    --text-sub: #4b5563;
+    --bg: #f7f8fc;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+
+  .header-left { display: flex; align-items: center; gap: 14px; }
+
+  .logo-mark {
+    width: 32px; height: 32px; background: var(--accent); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+
+  .site-title { font-size: 16px; font-weight: 700; letter-spacing: 0.04em; }
+  .site-subtitle { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.02em; }
+
+  .header-right { display: flex; align-items: center; gap: 16px; font-size: 12px; color: rgba(255,255,255,0.65); }
+
+  .live-badge {
+    display: flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px; padding: 3px 10px; font-size: 11px;
+  }
+
+  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .layout { display: flex; min-height: calc(100vh - 60px); }
+
+  aside {
+    width: 220px; background: var(--white); border-right: 1px solid var(--border);
+    padding: 20px 0; flex-shrink: 0; position: sticky; top: 60px;
+    height: calc(100vh - 60px); overflow-y: auto;
+  }
+
+  .sidebar-section { margin-bottom: 8px; }
+
+  .sidebar-label {
+    font-size: 10px; font-weight: 700; color: var(--gray); letter-spacing: 0.1em;
+    padding: 0 18px; margin-bottom: 4px; text-transform: uppercase;
+  }
+
+  .sidebar-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 18px; cursor: pointer; font-size: 13px; color: var(--text-sub);
+    border-left: 3px solid transparent; transition: all 0.15s; gap: 8px;
+  }
+
+  .sidebar-item:hover { background: var(--bg); color: var(--navy); }
+
+  .sidebar-item.active {
+    background: #eef2ff; color: var(--navy); font-weight: 500; border-left-color: var(--navy);
+  }
+
+  .sidebar-count {
+    font-size: 11px; background: var(--gray-bg); color: var(--gray); border-radius: 10px;
+    padding: 1px 7px; min-width: 22px; text-align: center;
+  }
+
+  .sidebar-count.alert { background: var(--red-bg); color: var(--red); }
+
+  main { flex: 1; padding: 24px 28px; max-width: 1000px; }
+
+  .summary-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+
+  .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; }
+  .stat-label { font-size: 11px; color: var(--gray); margin-bottom: 6px; font-weight: 500; }
+  .stat-value { font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1; }
+  .stat-value.alert { color: var(--red); }
+  .stat-value.warn  { color: var(--yellow); }
+  .stat-value.ok    { color: var(--green); }
+  .stat-change { font-size: 11px; color: var(--gray); margin-top: 4px; }
+
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .section-title { font-size: 15px; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 8px; }
+  .section-title::before { content: ''; display: block; width: 4px; height: 16px; background: var(--accent); border-radius: 2px; }
+
+  .btn { font-family: inherit; font-size: 12px; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-weight: 500; transition: all 0.15s; }
+  .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-sub); }
+  .btn-outline:hover { border-color: var(--navy); color: var(--navy); }
+  .btn-primary { background: var(--navy); border: 1px solid var(--navy); color: #fff; }
+  .btn-primary:hover { background: var(--navy-light); }
+
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filter-chip {
+    font-size: 12px; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border);
+    background: var(--white); color: var(--text-sub); cursor: pointer; transition: all 0.15s; font-family: inherit;
+  }
+  .filter-chip:hover, .filter-chip.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  .search-box {
+    display: flex; align-items: center; gap: 8px; background: var(--white);
+    border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; margin-left: auto;
+  }
+  .search-box input { border: none; outline: none; font-family: inherit; font-size: 13px; color: var(--text); background: transparent; width: 180px; }
+  .search-box input::placeholder { color: var(--gray); }
+
+  .law-table { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 24px; }
+
+  .law-table-header {
+    display: grid; grid-template-columns: 40px 1.2fr 130px 140px 140px 100px; padding: 10px 16px;
+    background: #f8f9fc; border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700;
+    color: var(--gray); letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  .law-row {
+    display: grid; grid-template-columns: 40px 1.2fr 130px 140px 140px 100px; padding: 13px 16px;
+    border-bottom: 1px solid #f0f2f6; align-items: center; cursor: pointer; transition: background 0.1s;
+  }
+  .law-row:last-child { border-bottom: none; }
+  .law-row:hover { background: #f7f9ff; }
+  .law-row.highlight-new { border-left: 3px solid var(--red); padding-left: 13px; }
+
+  .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .dot-active   { background: var(--green); }
+  .dot-modified { background: var(--red); box-shadow: 0 0 0 3px rgba(192,57,43,0.15); animation: pulse 2s infinite; }
+  .dot-pending  { background: #9ca3af; }
+
+  .law-name-cell { display: flex; flex-direction: column; gap: 2px; }
+  .law-name { font-size: 13px; font-weight: 500; color: var(--navy); }
+  .law-meta { font-size: 11px; color: var(--gray); }
+
+  .cat-tag { font-size: 11px; background: #eef2ff; color: var(--navy-dim); border-radius: 4px; padding: 2px 7px; display: inline-block; }
+
+  .date-cell { font-size: 12px; color: var(--text-sub); }
+  .date-new   { color: var(--red); font-weight: 500; }
+
+  .row-action {
+    font-size: 11px; color: var(--navy-dim); background: transparent; border: 1px solid var(--border);
+    border-radius: 4px; padding: 3px 10px; cursor: pointer; font-family: inherit; transition: all 0.15s;
+  }
+  .row-action:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  .alert-banner {
+    background: var(--red-bg); border: 1px solid rgba(192,57,43,0.2); border-radius: 8px; padding: 12px 16px;
+    margin-bottom: 20px; display: flex; align-items: flex-start; gap: 12px;
+  }
+  .alert-icon {
+    width: 24px; height: 24px; background: var(--red); border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; color: #fff; font-size: 13px; font-weight: 700; flex-shrink: 0;
+  }
+  .alert-content { flex: 1; }
+  .alert-title { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 2px; }
+  .alert-text { font-size: 12px; color: var(--text-sub); }
+
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 200;
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--white); border-radius: 12px; width: 600px; max-width: 95vw; max-height: 85vh;
+    overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+  .modal-header {
+    padding: 20px 24px 16px; border-bottom: 1px solid var(--border); display: flex;
+    align-items: flex-start; justify-content: space-between; gap: 12px; position: sticky; top: 0;
+    background: var(--white); z-index: 10;
+  }
+  .modal-title { font-size: 16px; font-weight: 700; color: var(--navy); }
+  .modal-subtitle { font-size: 12px; color: var(--gray); margin-top: 3px; }
+  .modal-close {
+    width: 28px; height: 28px; border: none; background: var(--gray-bg); border-radius: 50%;
+    cursor: pointer; font-size: 16px; color: var(--gray); display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0; line-height: 1;
+  }
+  .modal-close:hover { background: var(--border); }
+  .modal-body { padding: 20px 24px; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .info-item label { display: block; font-size: 11px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .info-item .val { font-size: 13px; color: var(--text); font-weight: 500; }
+
+  .notes-section { margin-top: 20px; }
+  .notes-label { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .notes-area {
+    width: 100%; min-height: 80px; border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px;
+    font-family: inherit; font-size: 13px; color: var(--text); resize: vertical; outline: none;
+  }
+  .notes-area:focus { border-color: var(--navy); }
+
+  .modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 8px; }
+
+  .toast {
+    position: fixed; bottom: 24px; right: 24px; background: var(--navy); color: #fff; padding: 10px 18px;
+    border-radius: 8px; font-size: 13px; z-index: 999; opacity: 0; transform: translateY(8px);
+    transition: all 0.2s; pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .manual-group {
+    background: var(--white); border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px 18px; margin-bottom: 12px;
+  }
+  .manual-group h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .manual-group ul { margin: 0 0 10px; padding-left: 20px; font-size: 13px; color: var(--text-sub); }
+  .manual-group li { margin-bottom: 3px; }
+
+  .empty-state {
+    padding: 32px; text-align: center; color: var(--gray); background: var(--white);
+    border: 1px dashed var(--border); border-radius: 8px; font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    aside { display: none; }
+    .summary-bar { grid-template-columns: repeat(2, 1fr); }
+    .law-table-header { display: none; }
+    .law-row { grid-template-columns: 1fr; gap: 4px; }
+    main { padding: 16px; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <h1>財務法規追蹤系統</h1>
-  <p>自動比對「全國法規資料庫」開放資料，列出財務／會計／稅務相關法規的最後修正（發布）日期，供日常核銷與法規更新提醒使用。</p>
-</header>
-<nav>
-  <a href="expense-review.html">← 回支出報核憑證審核要點</a>
-</nav>
-<main>
-  <p class="meta" id="metaLine">資料載入中…</p>
 
-  <div class="search-panel">
-    <div class="search-row">
-      <label for="searchInput"><strong style="color:var(--blue)">快速查詢</strong></label>
-      <input id="searchInput" type="search" placeholder="輸入法規名稱關鍵字，例如：所得稅、營業稅、公司法" autocomplete="off" />
-      <button id="clearSearch" type="button">清除</button>
+<header>
+  <div class="header-left">
+    <div class="logo-mark">財</div>
+    <div>
+      <div class="site-title">財務法規追蹤系統</div>
+      <div class="site-subtitle">Finance Compliance Tracker · 財務會計部門專用</div>
     </div>
   </div>
+  <div class="header-right">
+    <div class="live-badge">
+      <span class="live-dot"></span>
+      <span id="today-date"></span>
+    </div>
+    <span style="color:rgba(255,255,255,0.4)">|</span>
+    <span>法規資料更新於：<span id="last-update-laws">讀取中…</span></span>
+    <span style="color:rgba(255,255,255,0.4)">|</span>
+    <a href="expense-review.html" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px">← 支出報核憑證審核要點</a>
+  </div>
+</header>
 
-  <div id="content"><p class="state-msg">正在讀取 data/laws-data.json …</p></div>
-</main>
-<footer>財務法規追蹤系統・資料來源：全國法規資料庫（law.moj.gov.tw）開放資料，每日自動更新一次<br>屬函釋、準則彙整或非國內單一法規者無法自動追蹤，請點選項目旁說明另行查證。</footer>
+<div class="layout">
+  <aside>
+    <div class="sidebar-section">
+      <div class="sidebar-label">功能導覽</div>
+      <div class="sidebar-item active" id="sb-laws" onclick="switchTab('laws')">📋 法規總覽</div>
+      <div class="sidebar-item" id="sb-manual" onclick="switchTab('manual')">⚠️ 需自行查看</div>
+    </div>
+    <div class="sidebar-section" style="margin-top:12px">
+      <div class="sidebar-label">法規類別</div>
+      <div id="category-list">
+        <div class="sidebar-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
+          <span class="sidebar-count" id="cnt-all">0</span>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-section" style="margin-top:12px">
+      <div class="sidebar-label">快速篩選</div>
+      <div class="sidebar-item" onclick="filterStatus('modified')">🔴 近期有異動
+        <span class="sidebar-count alert" id="cnt-modified">0</span>
+      </div>
+      <div class="sidebar-item" onclick="filterStatus('pending')">⚪ 尚未比對到／抓取失敗
+        <span class="sidebar-count" id="cnt-pending">0</span>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div id="tab-laws" class="tab-panel active">
+
+      <div class="alert-banner" id="alert-banner">
+        <div class="alert-icon">i</div>
+        <div class="alert-content">
+          <div class="alert-title">系統說明</div>
+          <div class="alert-text">法規清單與修正/公布日期每日自動抓取「全國法規資料庫」更新，並非人工輸入。「🔴 近期異動」代表最新修正日期或公布日期落在最近 3 個月內。部分項目因名稱在官方資料庫比對不到，會標示「模糊比對」或「尚未比對到」，建議人工核對。</div>
+        </div>
+        <button class="btn btn-outline" onclick="document.getElementById('alert-banner').style.display='none'" style="flex-shrink:0;font-size:11px">已知悉</button>
+      </div>
+
+      <div class="summary-bar">
+        <div class="stat-card">
+          <div class="stat-label">追蹤法規總數</div>
+          <div class="stat-value" id="stat-total">0</div>
+          <div class="stat-change" id="stat-total-sub">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">近期異動</div>
+          <div class="stat-value alert" id="stat-modified">0</div>
+          <div class="stat-change">需確認影響範圍</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">尚未比對到／抓取失敗</div>
+          <div class="stat-value warn" id="stat-pending">0</div>
+          <div class="stat-change">需人工核對名稱</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">目前無異動</div>
+          <div class="stat-value ok" id="stat-active">0</div>
+          <div class="stat-change">最近一次檢查結果正常</div>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-title">法規清單</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <div class="search-box">
+            <svg width="14" height="14" fill="none" stroke="#9ca3af" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="search-input" placeholder="搜尋法規名稱..." oninput="filterSearch(this.value)">
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-chip active" id="f-all" onclick="filterStatus('all',this)">全部</button>
+        <button class="filter-chip" onclick="filterStatus('modified',this)">🔴 近期異動</button>
+        <button class="filter-chip" onclick="filterStatus('pending',this)">⚪ 尚未比對到／失敗</button>
+        <button class="filter-chip" onclick="filterStatus('active',this)">🟢 正常施行</button>
+      </div>
+
+      <div class="law-table">
+        <div class="law-table-header">
+          <div>狀態</div>
+          <div>法規名稱</div>
+          <div>類別</div>
+          <div>最新修正日期</div>
+          <div>公布日期</div>
+          <div>操作</div>
+        </div>
+        <div id="law-list"></div>
+      </div>
+    </div>
+
+    <div id="tab-manual" class="tab-panel">
+      <div class="section-header">
+        <div class="section-title">無法自動追蹤的項目</div>
+      </div>
+      <p style="font-size:13px;color:var(--text-sub);margin-bottom:16px">這些是函釋、跨機關彙整資料，或非我國單一命名法規（如 IFRS），全國法規資料庫沒有獨立收錄，無法自動比對異動，建議定期直接查看官方來源。</p>
+      <div id="manual-list"></div>
+    </div>
+
+  </main>
+</div>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="modal-title"></div>
+        <div class="modal-subtitle" id="modal-subtitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="info-grid" id="modal-info"></div>
+      <div class="notes-section">
+        <div class="notes-label">內部備忘 / 因應措施</div>
+        <textarea class="notes-area" id="modal-notes" placeholder="記錄公司因應這條法規修訂所需採取的措施..."></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a id="modal-link" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="text-decoration:none">查看原文 ↗</a>
+      <button class="btn btn-primary" onclick="saveNote()">儲存備忘</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
 
 <script>
-async function init(){
-  const contentEl = document.getElementById('content');
-  const metaEl = document.getElementById('metaLine');
-  let data;
-  try{
+// 讀取 data/laws-data.json（由 GitHub Actions 每日自動產生）
+
+let LAWS = [];
+let MANUAL = [];
+
+let currentFilter = 'all';
+let currentCat = 'all';
+let currentSearch = '';
+let notes = JSON.parse(localStorage.getItem('finance-law-notes') || '{}');
+let currentLawId = null;
+
+function parseROCDate(str) {
+  if (!str) return null;
+  const m = str.match(/民國\s*(\d{1,3})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日/);
+  if (!m) return null;
+  const adYear = parseInt(m[1], 10) + 1911;
+  const month = parseInt(m[2], 10);
+  const day = parseInt(m[3], 10);
+  const d = new Date(adYear, month - 1, day);
+  return isNaN(d) ? null : d;
+}
+
+function mostRecentLawDate(law) {
+  const amend = parseROCDate(law.last_amend_date);
+  const publish = parseROCDate(law.publish_date);
+  if (amend && publish) return amend > publish ? amend : publish;
+  return amend || publish || null;
+}
+
+const RECENT_MONTHS = 3;
+
+function deriveStatus(law) {
+  if (law.matchType === 'not_found' || law.matchType === 'not_trackable') return 'pending';
+  const recent = mostRecentLawDate(law);
+  if (recent) {
+    const cutoff = new Date();
+    cutoff.setMonth(cutoff.getMonth() - RECENT_MONTHS);
+    if (recent >= cutoff) return 'modified';
+  }
+  return 'active';
+}
+
+function formatDateTime(iso) {
+  if (!iso) return '尚未執行過';
+  const d = new Date(iso);
+  if (isNaN(d)) return iso;
+  return d.toLocaleString('zh-TW', { year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' });
+}
+
+async function loadData() {
+  try {
     const res = await fetch('data/laws-data.json', { cache: 'no-store' });
-    if(!res.ok) throw new Error('HTTP ' + res.status);
-    data = await res.json();
-  }catch(err){
-    contentEl.innerHTML = '<p class="state-msg">目前讀不到 data/laws-data.json（'+ err.message +'）。'
-      + '請確認 GitHub Actions 是否已成功執行過一次，或本機是否透過 http server 開啟本頁（file:// 開啟會被瀏覽器擋下 fetch）。</p>';
-    metaEl.textContent = '';
+    const raw = await res.json();
+    document.getElementById('last-update-laws').textContent = formatDateTime(raw.generated_at);
+
+    const all = (raw.laws || []).map((law, idx) => ({
+      id: idx + 1,
+      name: law.name,
+      cat: law.category || '未分類',
+      last_amend_date: law.last_amend_date,
+      publish_date: law.publish_date,
+      note: law.fetch_error || '',
+      url: law.url,
+      checked_at: law.checked_at,
+      matchType: law.matchType,
+      trackable: law.trackable,
+    }));
+
+    LAWS = all.filter(l => l.trackable !== false).map(l => ({ ...l, status: deriveStatus(l) }));
+
+    const manualGroups = new Map();
+    all.filter(l => l.trackable === false).forEach(l => {
+      if (!manualGroups.has(l.cat)) manualGroups.set(l.cat, []);
+      manualGroups.get(l.cat).push(l.name + (l.note ? `（${l.note}）` : ''));
+    });
+    MANUAL = [...manualGroups.entries()].map(([category, items]) => ({ category, items }));
+  } catch (e) {
+    console.error('讀取 laws-data.json 失敗', e);
+    LAWS = [];
+    MANUAL = [];
+  }
+
+  buildCategorySidebar();
+  updateCounters();
+  renderLaws();
+  renderManual();
+}
+
+function buildCategorySidebar() {
+  const cats = [...new Set(LAWS.map(l => l.cat))].sort();
+  const container = document.getElementById('category-list');
+  container.innerHTML = `
+    <div class="sidebar-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
+      <span class="sidebar-count" id="cnt-all">0</span>
+    </div>
+  ` + cats.map(cat => `
+    <div class="sidebar-item" onclick="filterCat('${cat.replace(/'/g, "\\'")}', this)">${cat}
+      <span class="sidebar-count" data-cat="${cat}">0</span>
+    </div>
+  `).join('');
+}
+
+function init() {
+  const now = new Date();
+  document.getElementById('today-date').textContent = now.toLocaleDateString('zh-TW', {year:'numeric',month:'2-digit',day:'2-digit'});
+  loadData();
+}
+
+function updateCounters() {
+  const total = LAWS.length;
+  const modified = LAWS.filter(l => l.status === 'modified').length;
+  const pending = LAWS.filter(l => l.status === 'pending').length;
+  const active = LAWS.filter(l => l.status === 'active').length;
+
+  document.getElementById('cnt-all').textContent = total;
+  document.getElementById('cnt-modified').textContent = modified;
+  document.getElementById('cnt-pending').textContent = pending;
+
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-total-sub').textContent = [...new Set(LAWS.map(l=>l.cat))].length + ' 個分類';
+  document.getElementById('stat-modified').textContent = modified;
+  document.getElementById('stat-pending').textContent = pending;
+  document.getElementById('stat-active').textContent = active;
+
+  document.querySelectorAll('#category-list [data-cat]').forEach(el => {
+    const cat = el.dataset.cat;
+    el.textContent = LAWS.filter(l => l.cat === cat).length;
+  });
+
+  const modBadge = document.getElementById('cnt-modified');
+  modified === 0 ? modBadge.classList.remove('alert') : modBadge.classList.add('alert');
+}
+
+function formatAmendCell(l) {
+  if (l.last_amend_date) return l.last_amend_date;
+  if (l.publish_date) return '公布後尚未修訂過';
+  return '—';
+}
+function formatPublishCell(l) {
+  if (l.publish_date) return l.publish_date;
+  if (l.last_amend_date) return '請依最新修正日期為準';
+  return '—';
+}
+
+function renderLaws() {
+  const kw = currentSearch;
+  let list = LAWS.filter(l => {
+    const nameMatch = !kw || l.name.toLowerCase().includes(kw.toLowerCase());
+    const matchStatus = currentFilter === 'all' || l.status === currentFilter;
+    const matchCat = currentCat === 'all' || l.cat === currentCat;
+    return matchStatus && matchCat && nameMatch;
+  });
+
+  const container = document.getElementById('law-list');
+  if (list.length === 0) {
+    container.innerHTML = `<div class="empty-state">查無符合條件的法規</div>`;
     return;
   }
 
-  metaEl.textContent = '資料更新時間：' + new Date(data.generatedAt).toLocaleString('zh-TW')
-    + (data.fetchError ? '（上次抓取有錯誤：' + data.fetchError + '）' : '');
+  const statusMap = {
+    modified: { dot:'dot-modified', label:'近期異動' },
+    active:   { dot:'dot-active',   label:'施行中' },
+    pending:  { dot:'dot-pending',  label:'尚未比對到／失敗' },
+  };
 
-  const byCategory = new Map();
-  for(const law of data.laws){
-    if(!byCategory.has(law.category)) byCategory.set(law.category, []);
-    byCategory.get(law.category).push(law);
-  }
-
-  const parts = [];
-  for(const [category, laws] of byCategory){
-    parts.push('<section data-category="'+ category +'">');
-    parts.push('<h2>'+ category +'</h2>');
-    parts.push('<table><thead><tr><th style="width:26%">法規名稱</th><th style="width:14%">狀態</th><th style="width:16%">最後修正/發布日期</th><th>備註</th></tr></thead><tbody>');
-    for(const law of laws){
-      const tag = law.status === 'ok'
-        ? '<span class="tag tag-ok">已比對</span>'
-        : law.status === 'not_trackable'
-          ? '<span class="tag tag-na">無法自動追蹤</span>'
-          : '<span class="tag tag-warn">尚未比對到</span>';
-      const nameCell = law.url
-        ? '<a class="law-link" href="'+ law.url +'" target="_blank" rel="noopener">'+ law.name +'</a>'
-        : law.name;
-      const dateCell = law.modifiedDate || '—';
-      const noteCell = law.note ? '<span class="note">'+ law.note +'</span>' : '';
-      parts.push('<tr data-search="'+ (law.name + ' ' + (law.note||'')).toLowerCase() +'">'
-        + '<td>'+ nameCell +'</td>'
-        + '<td>'+ tag +'</td>'
-        + '<td>'+ dateCell +'</td>'
-        + '<td>'+ noteCell +'</td>'
-        + '</tr>');
-    }
-    parts.push('</tbody></table></section>');
-  }
-  contentEl.innerHTML = parts.join('');
-
-  const input = document.getElementById('searchInput');
-  const clearBtn = document.getElementById('clearSearch');
-  function applySearch(){
-    const kw = input.value.trim().toLowerCase();
-    document.querySelectorAll('tbody tr').forEach(row => {
-      const match = !kw || row.dataset.search.includes(kw);
-      row.classList.toggle('hidden-by-search', !match);
-    });
-    document.querySelectorAll('main section[data-category]').forEach(section => {
-      const anyVisible = Array.from(section.querySelectorAll('tbody tr')).some(r => !r.classList.contains('hidden-by-search'));
-      section.style.display = (kw && !anyVisible) ? 'none' : '';
-    });
-  }
-  input.addEventListener('input', applySearch);
-  clearBtn.addEventListener('click', () => { input.value=''; applySearch(); input.focus(); });
+  container.innerHTML = list.map(l => {
+    const s = statusMap[l.status] || statusMap.active;
+    const rowClass = l.status === 'modified' ? 'highlight-new' : '';
+    const nameHtml = l.url
+      ? `<a href="${l.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:inherit;text-decoration:none">${l.name}</a>`
+      : l.name;
+    const metaHtml = l.matchType === 'fuzzy' ? `<div class="law-meta">⚠ 模糊比對，建議核對</div>` : '';
+    return `
+      <div class="law-row ${rowClass}" onclick="openModal(${l.id})">
+        <div style="display:flex;align-items:center"><span class="status-dot ${s.dot}"></span></div>
+        <div class="law-name-cell">
+          <span class="law-name">${nameHtml}</span>
+          ${metaHtml}
+        </div>
+        <div><span class="cat-tag">${l.cat}</span></div>
+        <div class="date-cell ${l.status==='modified'?'date-new':''}">${formatAmendCell(l)}</div>
+        <div class="date-cell">${formatPublishCell(l)}</div>
+        <div><button class="row-action" onclick="event.stopPropagation();openModal(${l.id})">查看詳情</button></div>
+      </div>`;
+  }).join('');
 }
+
+function renderManual() {
+  const container = document.getElementById('manual-list');
+  if (!MANUAL.length) {
+    container.innerHTML = '<div class="empty-state">尚無資料。</div>';
+    return;
+  }
+  container.innerHTML = MANUAL.map(group => `
+    <div class="manual-group">
+      <h3>${group.category}</h3>
+      <ul>${group.items.map(i => `<li>${i}</li>`).join('')}</ul>
+    </div>`).join('');
+}
+
+function filterStatus(s, el) {
+  currentFilter = s;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  if (el) el.classList.add('active');
+  renderLaws();
+}
+
+function filterCat(cat, el) {
+  currentCat = cat;
+  document.querySelectorAll('#category-list .sidebar-item').forEach(i => i.classList.remove('active'));
+  if (el) el.classList.add('active');
+  renderLaws();
+}
+
+function filterSearch(val) {
+  currentSearch = val.trim();
+  renderLaws();
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.querySelectorAll('#sb-laws, #sb-manual').forEach(i => i.classList.remove('active'));
+  document.getElementById('sb-' + tab).classList.add('active');
+}
+
+function openModal(id) {
+  const law = LAWS.find(l => l.id === id);
+  if (!law) return;
+  currentLawId = id;
+
+  document.getElementById('modal-title').textContent = law.name;
+  document.getElementById('modal-subtitle').textContent = law.cat;
+
+  const linkEl = document.getElementById('modal-link');
+  if (law.url) {
+    linkEl.href = law.url;
+    linkEl.style.display = 'inline-block';
+  } else {
+    linkEl.style.display = 'none';
+  }
+
+  const statusLabel = { modified:'近期有異動 🔴', pending:'尚未比對到／抓取失敗 ⚪', active:'正常施行 🟢' };
+  document.getElementById('modal-info').innerHTML = `
+    <div class="info-item"><label>目前狀態</label><div class="val">${statusLabel[law.status]||law.status}</div></div>
+    <div class="info-item"><label>類別</label><div class="val">${law.cat}</div></div>
+    <div class="info-item"><label>最新修正日期</label><div class="val">${formatAmendCell(law)}</div></div>
+    <div class="info-item"><label>公布日期</label><div class="val">${formatPublishCell(law)}</div></div>
+    <div class="info-item" style="grid-column:1 / -1"><label>上次檢查時間</label><div class="val">${formatDateTime(law.checked_at)}</div></div>
+    ${law.note ? `<div class="info-item" style="grid-column:1 / -1"><label>備註</label><div class="val">${law.note}</div></div>` : ''}
+  `;
+
+  document.getElementById('modal-notes').value = notes[id] || '';
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
+}
+
+function closeModalDirect() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+function saveNote() {
+  if (currentLawId === null) return;
+  notes[currentLawId] = document.getElementById('modal-notes').value;
+  localStorage.setItem('finance-law-notes', JSON.stringify(notes));
+  showToast('備忘已儲存 ✓（僅存在此瀏覽器）');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
 init();
 </script>
 </body>
