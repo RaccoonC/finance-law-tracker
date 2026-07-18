@@ -254,6 +254,19 @@
     border: 1px dashed var(--border); border-radius: 8px; font-size: 13px;
   }
 
+  .news-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .news-item {
+    background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 13px 16px;
+    display: flex; gap: 14px; align-items: flex-start; cursor: pointer; transition: box-shadow 0.15s;
+    text-decoration: none;
+  }
+  .news-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  .news-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
+  .news-content { flex: 1; }
+  .news-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 3px; }
+  .news-desc { font-size: 12px; color: var(--text-sub); }
+  .news-date { font-size: 11px; color: var(--gray); margin-top: 4px; }
+
   @media (max-width: 768px) {
     aside { display: none; }
     .summary-bar { grid-template-columns: repeat(2, 1fr); }
@@ -290,6 +303,7 @@
     <div class="sidebar-section">
       <div class="sidebar-label">功能導覽</div>
       <div class="sidebar-item active" id="sb-laws" onclick="switchTab('laws')">📋 法規總覽</div>
+      <div class="sidebar-item" id="sb-news" onclick="switchTab('news')">📰 最新動態</div>
       <div class="sidebar-item" id="sb-manual" onclick="switchTab('manual')">⚠️ 需自行查看</div>
     </div>
     <div class="sidebar-section" style="margin-top:12px">
@@ -377,6 +391,15 @@
       </div>
     </div>
 
+    <div id="tab-news" class="tab-panel">
+      <div class="section-header">
+        <div class="section-title">新聞與草案動態</div>
+        <span id="news-generated" style="font-size:11px;color:var(--gray)">讀取中…</span>
+      </div>
+      <p style="font-size:13px;color:var(--text-sub);margin-bottom:16px">依追蹤清單裡每筆法規的名稱，自動搜尋「修正／修法／草案／新制」相關新聞，僅供留意風向使用，正式依據請以法規本身及官方公告為準。</p>
+      <div class="news-list" id="news-list"></div>
+    </div>
+
     <div id="tab-manual" class="tab-panel">
       <div class="section-header">
         <div class="section-title">無法自動追蹤的項目</div>
@@ -424,6 +447,7 @@
 
 let LAWS = [];
 let MANUAL = [];
+let NEWS = [];
 let LAWS_FULLTEXT_MAP = {}; // 法規名稱 -> 條文全文
 let fulltextLoaded = false;
 let fulltextLoading = false;
@@ -511,6 +535,7 @@ async function loadData() {
   updateCounters();
   renderLaws();
   renderManual();
+  loadNews();
 
   // 全文索引檔案通常有一定大小，不擋住主要畫面顯示，
   // 載入完成後才「補畫」一次，讓正在輸入的關鍵字也能吃到全文比對結果。
@@ -711,6 +736,45 @@ function renderManual() {
     </div>`).join('');
 }
 
+async function loadNews() {
+  try {
+    const res = await fetch('data/news-feed.json', { cache: 'no-store' });
+    const raw = await res.json();
+    document.getElementById('news-generated').textContent = '更新於：' + formatDateTime(raw.generated_at);
+    NEWS = (raw.items || []).map(item => ({
+      title: item.title,
+      link: item.link,
+      source: item.source,
+      pub_date: item.pub_date,
+      keyword: item.keyword,
+      isNew: item.is_new,
+    }));
+  } catch (e) {
+    console.error('讀取 news-feed.json 失敗', e);
+    NEWS = [];
+    const el = document.getElementById('news-generated');
+    if (el) el.textContent = '目前讀不到新聞資料';
+  }
+  renderNews();
+}
+
+function renderNews() {
+  const list = document.getElementById('news-list');
+  if (!NEWS.length) {
+    list.innerHTML = '<div class="empty-state">目前沒有偵測到相關新聞，等待下一次排程執行。</div>';
+    return;
+  }
+  list.innerHTML = NEWS.slice(0, 40).map(n => `
+    <a class="news-item" href="${n.link}" target="_blank" rel="noopener">
+      <span class="news-badge" style="${n.isNew ? 'background:var(--red-bg);color:var(--red)' : 'background:var(--gray-bg);color:var(--gray)'}">${n.isNew ? '新出現' : '追蹤中'}</span>
+      <div class="news-content">
+        <div class="news-title">${n.title}</div>
+        <div class="news-desc">關鍵字：${n.keyword}${n.source ? '｜來源：' + n.source : ''}</div>
+        <div class="news-date">${n.pub_date || ''}</div>
+      </div>
+    </a>`).join('');
+}
+
 function filterStatus(s, el) {
   currentFilter = s;
   document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
@@ -736,7 +800,7 @@ function filterSearch(val) {
 function switchTab(tab) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
-  document.querySelectorAll('#sb-laws, #sb-manual').forEach(i => i.classList.remove('active'));
+  document.querySelectorAll('#sb-laws, #sb-news, #sb-manual').forEach(i => i.classList.remove('active'));
   document.getElementById('sb-' + tab).classList.add('active');
 }
 
