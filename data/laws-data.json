@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-07-18T06:15:32.369Z",
+  "generatedAt": "2026-07-18T08:03:18.923Z",
   "source": "https://law.moj.gov.tw/api/Ch/Law/JSON",
-  "fetchError": "尚未執行過 GitHub Actions，這是初始佔位資料，實際日期需等第一次 Action 執行後才會出現",
+  "fetchError": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
   "laws": [
     {
       "id": 1,
       "name": "商業會計法",
       "category": "一、基本法規",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -18,7 +18,7 @@
       "name": "商業會計處理準則",
       "category": "一、基本法規",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -28,7 +28,7 @@
       "name": "商業使用電子方式處理會計資料辦法",
       "category": "一、基本法規",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -39,7 +39,7 @@
       "category": "一、基本法規",
       "trackable": true,
       "note": "EAS",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -61,7 +61,7 @@
       "category": "一、基本法規",
       "trackable": true,
       "note": "部分企業適用",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -72,7 +72,7 @@
       "category": "二、會計憑證",
       "trackable": true,
       "note": "即通稱之帳簿憑證保存辦法",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -83,7 +83,7 @@
       "category": "二、會計憑證",
       "trackable": true,
       "note": "電子憑證保存相關規定，實務多依此要點及財政部函釋辦理",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -104,7 +104,7 @@
       "name": "所得稅法",
       "category": "三、所得稅法",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -114,7 +114,7 @@
       "name": "所得稅法施行細則",
       "category": "三、所得稅法",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -125,7 +125,7 @@
       "category": "三、所得稅法",
       "trackable": true,
       "note": "即通稱之營利事業所得稅查核準則",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -135,7 +135,7 @@
       "name": "所得基本稅額條例",
       "category": "三、所得稅法",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -145,7 +145,7 @@
       "name": "加值型及非加值型營業稅法",
       "category": "四、營業稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -155,7 +155,7 @@
       "name": "加值型及非加值型營業稅法施行細則",
       "category": "四、營業稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -165,7 +165,7 @@
       "name": "統一發票使用辦法",
       "category": "四、營業稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -176,7 +176,7 @@
       "category": "四、營業稅",
       "trackable": true,
       "note": "與第 8 項相同法規，兩分類共用",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -186,7 +186,7 @@
       "name": "營業人開立銷售憑證時限表",
       "category": "四、營業稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -208,7 +208,7 @@
       "category": "五、扣繳及所得申報",
       "trackable": true,
       "note": "即通稱之各類所得扣繳申報辦法／扣繳率標準",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -219,7 +219,7 @@
       "category": "五、扣繳及所得申報",
       "trackable": true,
       "note": "扣繳憑單相關規定",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -241,7 +241,7 @@
       "category": "五、扣繳及所得申報",
       "trackable": true,
       "note": "非居住者扣繳規定",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -262,7 +262,7 @@
       "name": "公司法",
       "category": "六、公司治理",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -272,7 +272,7 @@
       "name": "公司登記辦法",
       "category": "六、公司治理",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -282,7 +282,7 @@
       "name": "商業登記法",
       "category": "六、公司治理",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -292,7 +292,7 @@
       "name": "商業登記申請辦法",
       "category": "六、公司治理",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -302,7 +302,7 @@
       "name": "勞動基準法",
       "category": "七、薪資",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -312,7 +312,7 @@
       "name": "勞工退休金條例",
       "category": "七、薪資",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -322,7 +322,7 @@
       "name": "勞工保險條例",
       "category": "七、薪資",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -332,7 +332,7 @@
       "name": "就業保險法",
       "category": "七、薪資",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -342,7 +342,7 @@
       "name": "勞工職業災害保險及保護法",
       "category": "七、薪資",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -352,7 +352,7 @@
       "name": "全民健康保險法",
       "category": "七、薪資",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -362,7 +362,7 @@
       "name": "民法",
       "category": "八、付款及契約",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -372,7 +372,7 @@
       "name": "票據法",
       "category": "八、付款及契約",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -383,7 +383,7 @@
       "category": "八、付款及契約",
       "trackable": true,
       "note": "扣薪、扣押相關",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -394,7 +394,7 @@
       "category": "八、付款及契約",
       "trackable": true,
       "note": "付款資料、員工資料相關",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -404,7 +404,7 @@
       "name": "固定資產耐用年數表",
       "category": "九、固定資產",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -426,7 +426,7 @@
       "category": "九、固定資產",
       "trackable": true,
       "note": "折舊規定，與第 10 項同一法規",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -437,7 +437,7 @@
       "category": "九、固定資產",
       "trackable": true,
       "note": "固定資產章節，與第 4 項同一法規",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -447,7 +447,7 @@
       "name": "印花稅法",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -457,7 +457,7 @@
       "name": "房屋稅條例",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -467,7 +467,7 @@
       "name": "土地稅法",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -477,7 +477,7 @@
       "name": "契稅條例",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -487,7 +487,7 @@
       "name": "娛樂稅法",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -497,7 +497,7 @@
       "name": "關稅法",
       "category": "十一、進出口",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -507,7 +507,7 @@
       "name": "海關緝私條例",
       "category": "十一、進出口",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -518,7 +518,7 @@
       "category": "十一、進出口",
       "trackable": true,
       "note": "即通稱之關稅稅則",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -528,7 +528,7 @@
       "name": "貨物稅條例",
       "category": "十一、進出口",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -538,7 +538,7 @@
       "name": "證券交易法",
       "category": "十二、上市櫃公司",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -548,7 +548,7 @@
       "name": "公開發行公司財務報告編製準則",
       "category": "十二、上市櫃公司",
       "trackable": true,
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -559,7 +559,7 @@
       "category": "十二、上市櫃公司",
       "trackable": true,
       "note": "公開資訊觀測站申報規定之主要依據",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -570,7 +570,7 @@
       "category": "十二、上市櫃公司",
       "trackable": true,
       "note": "內部控制制度相關法規",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -647,7 +647,7 @@
       "category": "十三、企業常用行政規範",
       "trackable": true,
       "note": "上市櫃適用",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
@@ -658,7 +658,7 @@
       "category": "十三、企業常用行政規範",
       "trackable": true,
       "note": "與第 55 項同一法規，上市櫃適用",
-      "status": "pending",
+      "status": "fetch_error",
       "modifiedDate": null,
       "pcode": null,
       "url": null
