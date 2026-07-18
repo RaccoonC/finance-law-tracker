@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T08:03:18.923Z",
+  "generated_at": "2026-07-18T08:08:56.686Z",
   "source": "https://law.moj.gov.tw/api/Ch/Law/JSON",
   "fetchError": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
   "laws": [
@@ -8,30 +8,39 @@
       "name": "商業會計法",
       "category": "一、基本法規",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 2,
       "name": "商業會計處理準則",
       "category": "一、基本法規",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 3,
       "name": "商業使用電子方式處理會計資料辦法",
       "category": "一、基本法規",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 4,
@@ -39,10 +48,13 @@
       "category": "一、基本法規",
       "trackable": true,
       "note": "EAS",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 5,
@@ -50,10 +62,13 @@
       "category": "一、基本法規",
       "trackable": false,
       "note": "IFRS，上市櫃適用；非國內單一法規，無法自動追蹤，請參考金管會/會計研究發展基金會公告",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，IFRS，上市櫃適用；非國內單一法規，無法自動追蹤，請參考金管會/會計研究發展基金會公告",
+      "matchType": "not_trackable"
     },
     {
       "id": 6,
@@ -61,10 +76,13 @@
       "category": "一、基本法規",
       "trackable": true,
       "note": "部分企業適用",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 7,
@@ -72,10 +90,13 @@
       "category": "二、會計憑證",
       "trackable": true,
       "note": "即通稱之帳簿憑證保存辦法",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 8,
@@ -83,10 +104,13 @@
       "category": "二、會計憑證",
       "trackable": true,
       "note": "電子憑證保存相關規定，實務多依此要點及財政部函釋辦理",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 9,
@@ -94,30 +118,39 @@
       "category": "二、會計憑證",
       "trackable": false,
       "note": "屬多項函釋彙整，非單一法規名稱，無法自動追蹤",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，屬多項函釋彙整，非單一法規名稱，無法自動追蹤",
+      "matchType": "not_trackable"
     },
     {
       "id": 10,
       "name": "所得稅法",
       "category": "三、所得稅法",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 11,
       "name": "所得稅法施行細則",
       "category": "三、所得稅法",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 12,
@@ -125,50 +158,65 @@
       "category": "三、所得稅法",
       "trackable": true,
       "note": "即通稱之營利事業所得稅查核準則",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 13,
       "name": "所得基本稅額條例",
       "category": "三、所得稅法",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 14,
       "name": "加值型及非加值型營業稅法",
       "category": "四、營業稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 15,
       "name": "加值型及非加值型營業稅法施行細則",
       "category": "四、營業稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 16,
       "name": "統一發票使用辦法",
       "category": "四、營業稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 17,
@@ -176,20 +224,26 @@
       "category": "四、營業稅",
       "trackable": true,
       "note": "與第 8 項相同法規，兩分類共用",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 18,
       "name": "營業人開立銷售憑證時限表",
       "category": "四、營業稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 19,
@@ -197,10 +251,13 @@
       "category": "四、營業稅",
       "trackable": false,
       "note": "函釋彙整，非單一法規名稱",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，函釋彙整，非單一法規名稱",
+      "matchType": "not_trackable"
     },
     {
       "id": 20,
@@ -208,10 +265,13 @@
       "category": "五、扣繳及所得申報",
       "trackable": true,
       "note": "即通稱之各類所得扣繳申報辦法／扣繳率標準",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 21,
@@ -219,10 +279,13 @@
       "category": "五、扣繳及所得申報",
       "trackable": true,
       "note": "扣繳憑單相關規定",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 22,
@@ -230,10 +293,13 @@
       "category": "五、扣繳及所得申報",
       "trackable": false,
       "note": "與第 21 項重疊，屬填發規定彙整",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，與第 21 項重疊，屬填發規定彙整",
+      "matchType": "not_trackable"
     },
     {
       "id": 23,
@@ -241,10 +307,13 @@
       "category": "五、扣繳及所得申報",
       "trackable": true,
       "note": "非居住者扣繳規定",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 24,
@@ -252,130 +321,169 @@
       "category": "五、扣繳及所得申報",
       "trackable": false,
       "note": "外國人扣繳規定範圍較廣，涉多項法規，建議另行確認具體法規名稱",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，外國人扣繳規定範圍較廣，涉多項法規，建議另行確認具體法規名稱",
+      "matchType": "not_trackable"
     },
     {
       "id": 25,
       "name": "公司法",
       "category": "六、公司治理",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 26,
       "name": "公司登記辦法",
       "category": "六、公司治理",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 27,
       "name": "商業登記法",
       "category": "六、公司治理",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 28,
       "name": "商業登記申請辦法",
       "category": "六、公司治理",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 29,
       "name": "勞動基準法",
       "category": "七、薪資",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 30,
       "name": "勞工退休金條例",
       "category": "七、薪資",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 31,
       "name": "勞工保險條例",
       "category": "七、薪資",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 32,
       "name": "就業保險法",
       "category": "七、薪資",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 33,
       "name": "勞工職業災害保險及保護法",
       "category": "七、薪資",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 34,
       "name": "全民健康保險法",
       "category": "七、薪資",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 35,
       "name": "民法",
       "category": "八、付款及契約",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 36,
       "name": "票據法",
       "category": "八、付款及契約",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 37,
@@ -383,10 +491,13 @@
       "category": "八、付款及契約",
       "trackable": true,
       "note": "扣薪、扣押相關",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 38,
@@ -394,20 +505,26 @@
       "category": "八、付款及契約",
       "trackable": true,
       "note": "付款資料、員工資料相關",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 39,
       "name": "固定資產耐用年數表",
       "category": "九、固定資產",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 40,
@@ -415,10 +532,13 @@
       "category": "九、固定資產",
       "trackable": false,
       "note": "附於查核準則之附表，非獨立法規，隨第 12 項一併追蹤",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，附於查核準則之附表，非獨立法規，隨第 12 項一併追蹤",
+      "matchType": "not_trackable"
     },
     {
       "id": 41,
@@ -426,10 +546,13 @@
       "category": "九、固定資產",
       "trackable": true,
       "note": "折舊規定，與第 10 項同一法規",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 42,
@@ -437,80 +560,104 @@
       "category": "九、固定資產",
       "trackable": true,
       "note": "固定資產章節，與第 4 項同一法規",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 43,
       "name": "印花稅法",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 44,
       "name": "房屋稅條例",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 45,
       "name": "土地稅法",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 46,
       "name": "契稅條例",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 47,
       "name": "娛樂稅法",
       "category": "十、地方稅",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 48,
       "name": "關稅法",
       "category": "十一、進出口",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 49,
       "name": "海關緝私條例",
       "category": "十一、進出口",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 50,
@@ -518,40 +665,52 @@
       "category": "十一、進出口",
       "trackable": true,
       "note": "即通稱之關稅稅則",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 51,
       "name": "貨物稅條例",
       "category": "十一、進出口",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 52,
       "name": "證券交易法",
       "category": "十二、上市櫃公司",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 53,
       "name": "公開發行公司財務報告編製準則",
       "category": "十二、上市櫃公司",
       "trackable": true,
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 54,
@@ -559,10 +718,13 @@
       "category": "十二、上市櫃公司",
       "trackable": true,
       "note": "公開資訊觀測站申報規定之主要依據",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 55,
@@ -570,10 +732,13 @@
       "category": "十二、上市櫃公司",
       "trackable": true,
       "note": "內部控制制度相關法規",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 56,
@@ -581,10 +746,13 @@
       "category": "十三、企業常用行政規範",
       "trackable": false,
       "note": "函釋彙整，非單一法規名稱，無法自動追蹤",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，函釋彙整，非單一法規名稱，無法自動追蹤",
+      "matchType": "not_trackable"
     },
     {
       "id": 57,
@@ -592,10 +760,13 @@
       "category": "十三、企業常用行政規範",
       "trackable": false,
       "note": "函釋彙整，非單一法規名稱，無法自動追蹤",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，函釋彙整，非單一法規名稱，無法自動追蹤",
+      "matchType": "not_trackable"
     },
     {
       "id": 58,
@@ -603,10 +774,13 @@
       "category": "十三、企業常用行政規範",
       "trackable": false,
       "note": "函釋彙整，非單一法規名稱，無法自動追蹤",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，函釋彙整，非單一法規名稱，無法自動追蹤",
+      "matchType": "not_trackable"
     },
     {
       "id": 59,
@@ -614,10 +788,13 @@
       "category": "十三、企業常用行政規範",
       "trackable": false,
       "note": "函釋彙整，非單一法規名稱，無法自動追蹤",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，函釋彙整，非單一法規名稱，無法自動追蹤",
+      "matchType": "not_trackable"
     },
     {
       "id": 60,
@@ -625,10 +802,13 @@
       "category": "十三、企業常用行政規範",
       "trackable": false,
       "note": "函令彙整，非單一法規名稱，無法自動追蹤",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，函令彙整，非單一法規名稱，無法自動追蹤",
+      "matchType": "not_trackable"
     },
     {
       "id": 61,
@@ -636,10 +816,13 @@
       "category": "十三、企業常用行政規範",
       "trackable": false,
       "note": "部分企業適用，由會計研究發展基金會發布，非全國法規資料庫收錄範圍",
-      "status": "not_trackable",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "非全國法規資料庫收錄之單一命名法規，部分企業適用，由會計研究發展基金會發布，非全國法規資料庫收錄範圍",
+      "matchType": "not_trackable"
     },
     {
       "id": 62,
@@ -647,10 +830,13 @@
       "category": "十三、企業常用行政規範",
       "trackable": true,
       "note": "上市櫃適用",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     },
     {
       "id": 63,
@@ -658,10 +844,13 @@
       "category": "十三、企業常用行政規範",
       "trackable": true,
       "note": "與第 55 項同一法規，上市櫃適用",
-      "status": "fetch_error",
-      "modifiedDate": null,
+      "checked_at": "2026-07-18T08:08:56.686Z",
+      "last_amend_date": null,
+      "publish_date": null,
       "pcode": null,
-      "url": null
+      "url": null,
+      "fetch_error": "解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。",
+      "matchType": "not_found"
     }
   ]
 }
