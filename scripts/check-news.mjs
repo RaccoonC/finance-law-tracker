@@ -73,7 +73,12 @@ function parseRssItems(xml) {
 }
 
 async function fetchNewsForKeyword(keyword) {
-  const query = encodeURIComponent(`"${keyword}" (修正 OR 修法 OR 草案 OR 新制)`);
+  // 除了「法規名稱 + 修正/修法/草案/新制」，再加一組財務會計情境詞，
+  // 避免像「民法」「勞動基準法」這種涵蓋範圍很廣的法規，
+  // 搜到一堆跟財務會計完全無關的新聞（例如親屬編修法、勞資糾紛個案等）。
+  const query = encodeURIComponent(
+    `"${keyword}" (修正 OR 修法 OR 草案 OR 新制) (財務 OR 會計 OR 稅務 OR 公司 OR 企業 OR 財政部 OR 金管會 OR 稅捐 OR 申報)`
+  );
   const url = `https://news.google.com/rss/search?q=${query}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant`;
   try {
     const res = await fetch(url, {
