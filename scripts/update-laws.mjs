@@ -35,44 +35,63 @@ function getName(record) {
 function getPCode(record) {
   return pickField(record, ["PCode", "pcode", "LawPCode"]);
 }
-// 最新修正日期（法規沿革中最後一次修正/廢止的日期）
-function getAmendDate(record) {
-  return pickField(record, [
-    "LawModifiedDate",
-    "lawModifiedDate",
-    "ModifiedDate",
-    "LawModifyDate",
-    "AmendDate",
-  ]);
+// 最新修正日期（法規沿革中最後一次修正/廢止/制定的日期，8 碼西元年 YYYYMMDD）
+function getAmendDateRaw(record) {
+  return pickField(record, ["LawModifiedDate", "lawModifiedDate", "ModifiedDate"]);
 }
-// 公布/發布日期（法規最初制定公布的日期）
-function getPublishDate(record) {
-  return pickField(record, [
-    "LawFoundDate",
-    "LawPublishDate",
-    "PublishDate",
-    "LawEffectiveDate",
-    "EffectiveDate",
-    "LawAnnounceDate",
-  ]);
+function getHistories(record) {
+  return pickField(record, ["LawHistories", "lawHistories", "Histories"]);
 }
 function getForewordUrl(record) {
   return pickField(record, ["LawURL", "LawUrl", "lawURL"]);
 }
+function getCategory(record) {
+  return pickField(record, ["LawCategory", "LawLevel"]);
+}
 
-// 官方日期常見格式是 7 碼民國年（如 1130731 = 民國113年07月31日），
-// 轉成前端頁面 parseROCDate() 看得懂的「民國113年07月31日」字串。
-function rocToChineseDate(rocStr) {
-  if (!rocStr) return null;
-  const s = String(rocStr).trim();
-  const m = s.match(/^(\d{2,3})(\d{2})(\d{2})$/);
-  if (m) {
-    const [, roc, mm, dd] = m;
-    return `民國${Number(roc)}年${mm}月${dd}日`;
+// 官方 LawModifiedDate 是 8 碼西元年格式（例如 19470101 = 西元1947年1月1日），
+// 轉成前端頁面 parseROCDate() 看得懂的「民國36年01月01日」字串。
+function gregorianToROCString(raw) {
+  if (!raw) return null;
+  const s = String(raw).trim();
+  const m = s.match(/^(\d{4})(\d{2})(\d{2})$/);
+  if (!m) return null;
+  const [, yyyy, mm, dd] = m;
+  const rocYear = Number(yyyy) - 1911;
+  if (rocYear <= 0) return null;
+  return `民國${rocYear}年${mm}月${dd}日`;
+}
+
+// 中文數字（含十/百）轉阿拉伯數字，用來解析 LawHistories 裡「三十六年一月一日」這種寫法
+function cnNumberToInt(cn) {
+  const digits = { 零:0, 一:1, 二:2, 三:3, 四:4, 五:5, 六:6, 七:7, 八:8, 九:9 };
+  const units = { 十:10, 百:100, 千:1000 };
+  if (/^\d+$/.test(cn)) return parseInt(cn, 10);
+  let total = 0;
+  let current = 0;
+  for (const ch of cn) {
+    if (digits[ch] !== undefined) {
+      current = digits[ch];
+    } else if (units[ch] !== undefined) {
+      total += (current || 1) * units[ch];
+      current = 0;
+    }
   }
-  // 如果本來就已經是「中華民國113年07月31日」之類的中文格式，原樣保留
-  if (/民國/.test(s)) return s.replace(/^中華/, "");
-  return s; // 格式不明，原樣保留讓人工檢查
+  return total + current;
+}
+
+// 從 LawHistories 自由文字裡，抓出「…年…月…日〈至多15字〉公布」這段，
+// 換算成「民國36年01月01日」字串。找不到就回傳 null。
+function extractPublishDate(historiesText) {
+  if (!historiesText) return null;
+  const re = /中華民國([一二三四五六七八九十百零\d]+)年([一二三四五六七八九十百零\d]+)月([一二三四五六七八九十百零\d]+)日[^\n]{0,15}?公布/;
+  const m = historiesText.match(re);
+  if (!m) return null;
+  const rocYear = cnNumberToInt(m[1]);
+  const month = cnNumberToInt(m[2]);
+  const day = cnNumberToInt(m[3]);
+  if (!rocYear || !month || !day) return null;
+  return `民國${rocYear}年${String(month).padStart(2, "0")}月${String(day).padStart(2, "0")}日`;
 }
 
 // 名稱正規化：拿掉常見的版本註記、全形/半形空白，方便模糊比對
@@ -234,8 +253,8 @@ async function main() {
     const pcode = getPCode(record);
     return {
       ...base,
-      last_amend_date: rocToChineseDate(getAmendDate(record)),
-      publish_date: rocToChineseDate(getPublishDate(record)),
+      last_amend_date: gregorianToROCString(getAmendDateRaw(record)),
+      publish_date: extractPublishDate(getHistories(record)),
       pcode,
       url: getForewordUrl(record) || (pcode ? `${LAW_DETAIL_BASE}${pcode}` : null),
       fetch_error: matchType === "fuzzy" ? `模糊比對到「${getName(record)}」，建議人工核對是否為同一法規` : null,
