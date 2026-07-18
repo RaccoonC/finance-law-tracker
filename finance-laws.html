@@ -349,8 +349,9 @@
         <div style="display:flex;gap:8px;align-items:center">
           <div class="search-box">
             <svg width="14" height="14" fill="none" stroke="#9ca3af" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" id="search-input" placeholder="搜尋法規名稱..." oninput="filterSearch(this.value)">
+            <input type="text" id="search-input" placeholder="搜尋法規名稱或條文內容..." oninput="filterSearch(this.value)">
           </div>
+          <span id="fulltext-status" style="font-size:11px;color:var(--gray)"></span>
         </div>
       </div>
 
@@ -499,8 +500,24 @@ async function loadData() {
   renderManual();
 }
 
+function cnNumberToInt(cn) {
+  const digits = { 零:0, 一:1, 二:2, 三:3, 四:4, 五:5, 六:6, 七:7, 八:8, 九:9 };
+  const units = { 十:10, 百:100 };
+  let total = 0, current = 0;
+  for (const ch of cn) {
+    if (digits[ch] !== undefined) current = digits[ch];
+    else if (units[ch] !== undefined) { total += (current || 1) * units[ch]; current = 0; }
+  }
+  return total + current;
+}
+
+function categoryOrder(cat) {
+  const m = cat.match(/^([一二三四五六七八九十百零]+)、/);
+  return m ? cnNumberToInt(m[1]) : 999; // 抓不到編號的排最後
+}
+
 function buildCategorySidebar() {
-  const cats = [...new Set(LAWS.map(l => l.cat))].sort();
+  const cats = [...new Set(LAWS.map(l => l.cat))].sort((a, b) => categoryOrder(a) - categoryOrder(b));
   const container = document.getElementById('category-list');
   container.innerHTML = `
     <div class="sidebar-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
