@@ -270,7 +270,7 @@
     <div class="logo-mark">財</div>
     <div>
       <div class="site-title">財務法規追蹤系統</div>
-      <div class="site-subtitle">Finance Compliance Tracker · 財務組專用</div>
+      <div class="site-subtitle">Finance Compliance Tracker · 財務會計部門專用</div>
     </div>
   </div>
   <div class="header-right">
@@ -486,6 +486,7 @@ async function loadData() {
       publish_date: law.publish_date,
       note: law.fetch_error || '',
       url: law.url,
+      source_url: law.source_url,
       checked_at: law.checked_at,
       matchType: law.matchType,
       trackable: law.trackable,
@@ -497,7 +498,7 @@ async function loadData() {
     const manualGroups = new Map();
     all.filter(l => l.trackable === false).forEach(l => {
       if (!manualGroups.has(l.cat)) manualGroups.set(l.cat, []);
-      manualGroups.get(l.cat).push(l.name + (l.note ? `（${l.note}）` : ''));
+      manualGroups.get(l.cat).push({ name: l.name, note: l.note, url: l.source_url });
     });
     MANUAL = [...manualGroups.entries()].map(([category, items]) => ({ category, items }));
   } catch (e) {
@@ -700,7 +701,13 @@ function renderManual() {
   container.innerHTML = MANUAL.map(group => `
     <div class="manual-group">
       <h3>${group.category}</h3>
-      <ul>${group.items.map(i => `<li>${i}</li>`).join('')}</ul>
+      <ul>${group.items.map(i => {
+        const nameHtml = i.url
+          ? `<a href="${i.url}" target="_blank" rel="noopener" style="color:var(--navy-dim);font-weight:600">${i.name}</a>`
+          : i.name;
+        const noteHtml = i.note ? `<span class="note" style="color:var(--gray);font-size:.85rem">（${i.note}）</span>` : '';
+        return `<li>${nameHtml} ${noteHtml}</li>`;
+      }).join('')}</ul>
     </div>`).join('');
 }
 
