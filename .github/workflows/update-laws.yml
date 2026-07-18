@@ -1,0 +1,40 @@
+name: Update Finance Laws Data
+
+on:
+  schedule:
+    # 每天台灣時間早上 7:00 執行（UTC 前一天 23:00）
+    - cron: "0 23 * * *"
+  workflow_dispatch: {} # 允許在 GitHub 網頁上手動點「Run workflow」測試
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run scraper
+        run: node scripts/update-laws.mjs
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/laws-data.json
+          if git diff --cached --quiet; then
+            echo "沒有更新內容"
+          else
+            git commit -m "chore: update finance laws data $(date -u +%Y-%m-%d)"
+            git push
+          fi
