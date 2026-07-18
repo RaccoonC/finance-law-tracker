@@ -59,11 +59,6 @@ def build_email_html(newly_laws, newly_errors, newly_news):
     parts = []
     parts.append("<div style='font-family:sans-serif;font-size:14px;color:#1a2035;line-height:1.7'>")
     parts.append("<h2 style='color:#1a2a4a'>財務法規追蹤系統 · 異動通知</h2>")
-    parts.append(
-        f"<p style='margin:0 0 16px'><a href='{DASHBOARD_URL}' "
-        "style='display:inline-block;background:#1a2a4a;color:#fff;text-decoration:none;"
-        "padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600'>前往財務法規追蹤系統網頁 →</a></p>"
-    )
 
     if newly_laws:
         parts.append("<h3 style='color:#c0392b'>🔴 偵測到法規異動</h3><ul>")
