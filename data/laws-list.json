@@ -60,6 +60,6 @@
   { "id": 59, "name": "經濟部函釋", "category": "十三、企業常用行政規範", "trackable": false, "note": "函釋彙整，非單一法規名稱，無法自動追蹤" },
   { "id": 60, "name": "金管會函令", "category": "十三、企業常用行政規範", "trackable": false, "note": "函令彙整，非單一法規名稱，無法自動追蹤" },
   { "id": 61, "name": "審計準則公報", "category": "十三、企業常用行政規範", "trackable": false, "note": "部分企業適用，由會計研究發展基金會發布，非全國法規資料庫收錄範圍" },
-  { "id": 62, "name": "上市上櫃公司治理實務守則", "category": "十三、企業常用行政規範", "trackable": true, "note": "上市櫃適用" },
+  { "id": 62, "name": "上市上櫃公司治理實務守則", "category": "十三、企業常用行政規範", "trackable": false, "note": "屬證券交易所／櫃買中心自律規範，非全國法規資料庫收錄範圍，請查 twse-regulation.twse.com.tw" },
   { "id": 63, "name": "公開發行公司建立內部控制制度處理準則", "category": "十三、企業常用行政規範", "trackable": true, "note": "與第 55 項同一法規，上市櫃適用" }
 ]
