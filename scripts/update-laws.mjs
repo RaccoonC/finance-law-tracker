@@ -303,6 +303,7 @@ async function main() {
 
   const results = trackedLaws.map((law) => {
     const base = { ...law, checked_at: checkedAt };
+    const prevForNotify = previousByName.get(law.name);
     if (!law.trackable) {
       return {
         ...base,
@@ -313,11 +314,16 @@ async function main() {
         fetch_error: law.note || "無法自動追蹤",
         matchType: "not_trackable",
         fulltext_synced_at: null,
+        newly_detected: false,
+        newly_error: false,
       };
     }
 
     const match = findMatch(law, dump, indexes);
     if (!match) {
+      // 只有「原本比對得到、這次卻突然失敗」才算需要提醒的異常，
+      // 原本就是 not_found／not_trackable 的話，天天都會失敗，不用天天提醒。
+      const wasOk = prevForNotify && ["exact", "normalized", "fuzzy"].includes(prevForNotify.matchType);
       return {
         ...base,
         last_amend_date: null,
@@ -327,6 +333,8 @@ async function main() {
         fetch_error: fetchError || "在官方開放資料中找不到符合名稱的法規，可能名稱需要微調",
         matchType: "not_found",
         fulltext_synced_at: null,
+        newly_detected: false,
+        newly_error: !!wasOk,
       };
     }
 
@@ -341,10 +349,13 @@ async function main() {
 
     // 只有在修正日期或公布日期跟上次不一樣時，才重新擷取全文；
     // 沒變動就沿用舊全文，避免每天無謂重抓／重寫大量條文內容。
-    const prev = previousByName.get(law.name);
+    const prev = prevForNotify;
     const datesUnchanged =
       prev && prev.last_amend_date === lastAmendDate && prev.publish_date === publishDate;
     const previousText = previousFulltextByName.get(law.name);
+    // 「這次才新偵測到」的異動：上次有紀錄、而且日期真的變了才算，
+    // 避免第一次執行（prev 不存在）或日期本來就沒變時被誤判成異動。
+    const newlyDetected = !!prev && !datesUnchanged;
 
     let fulltextSyncedAt;
     if (datesUnchanged && previousText) {
@@ -367,6 +378,8 @@ async function main() {
       fetch_error: matchType === "fuzzy" ? `模糊比對到「${getName(record)}」，建議人工核對是否為同一法規` : null,
       matchType,
       fulltext_synced_at: fulltextSyncedAt,
+      newly_detected: newlyDetected,
+      newly_error: false,
     };
   });
 
