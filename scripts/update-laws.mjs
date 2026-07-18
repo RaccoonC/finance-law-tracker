@@ -22,6 +22,7 @@ const LAW_DETAIL_BASE = "https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=";
 const DATA_DIR = new URL("../data/", import.meta.url);
 const LIST_PATH = new URL("laws-list.json", DATA_DIR);
 const OUTPUT_PATH = new URL("laws-data.json", DATA_DIR);
+const FULLTEXT_OUTPUT_PATH = new URL("laws-fulltext.json", DATA_DIR);
 
 function pickField(record, candidateKeys) {
   for (const key of candidateKeys) {
@@ -48,8 +49,35 @@ function getHistories(record) {
 function getForewordUrl(record) {
   return pickField(record, ["LawURL", "LawUrl", "lawURL"]);
 }
-function getCategory(record) {
-  return pickField(record, ["LawCategory", "LawLevel"]);
+function getForeword(record) {
+  return pickField(record, ["LawForeword", "lawForeword", "Foreword"]);
+}
+function getArticles(record) {
+  return pickField(record, ["LawArticles", "lawArticles", "Articles"]);
+}
+
+// 把「前言 + 各條文」串成一份純文字全文，章節標題（ArticleType "C"）不加條號，
+// 一般條文（ArticleType "A"）在前面加上條號，方便閱讀與關鍵字定位。
+function buildFullText(record) {
+  const parts = [];
+  const foreword = getForeword(record);
+  if (foreword) parts.push(String(foreword).trim());
+
+  const articles = getArticles(record);
+  if (Array.isArray(articles)) {
+    for (const art of articles) {
+      const type = pickField(art, ["ArticleType", "articleType"]);
+      const no = pickField(art, ["ArticleNo", "articleNo"]) || "";
+      const content = pickField(art, ["ArticleContent", "articleContent"]) || "";
+      if (!content) continue;
+      if (type === "C") {
+        parts.push(String(content).trim());
+      } else {
+        parts.push(`${no ? no + "　" : ""}${String(content).trim()}`);
+      }
+    }
+  }
+  return parts.join("\n\n").trim();
 }
 
 // 官方 LawModifiedDate 是 8 碼西元年格式（例如 19470101 = 西元1947年1月1日），
@@ -228,9 +256,42 @@ function findMatch(law, dump, { byExactName, byNormalizedName }) {
   return null;
 }
 
+async function loadPreviousOutput() {
+  try {
+    const raw = await readFile(OUTPUT_PATH, "utf8");
+    const json = JSON.parse(raw);
+    const byName = new Map();
+    for (const law of json.laws || []) {
+      byName.set(law.name, law);
+    }
+    return byName;
+  } catch {
+    return new Map(); // 第一次執行，還沒有舊資料
+  }
+}
+
+async function loadPreviousFulltext() {
+  try {
+    const raw = await readFile(FULLTEXT_OUTPUT_PATH, "utf8");
+    const json = JSON.parse(raw);
+    const byName = new Map();
+    for (const item of json.laws || []) {
+      byName.set(item.name, item.content);
+    }
+    return byName;
+  } catch {
+    return new Map();
+  }
+}
+
 async function main() {
   const listRaw = await readFile(LIST_PATH, "utf8");
   const trackedLaws = JSON.parse(listRaw);
+
+  const [previousByName, previousFulltextByName] = await Promise.all([
+    loadPreviousOutput(),
+    loadPreviousFulltext(),
+  ]);
 
   let dump = [];
   let fetchError = null;
@@ -243,6 +304,7 @@ async function main() {
 
   const indexes = buildIndexes(dump);
   const checkedAt = new Date().toISOString();
+  const fulltextEntries = [];
 
   const results = trackedLaws.map((law) => {
     const base = { ...law, checked_at: checkedAt };
@@ -255,6 +317,7 @@ async function main() {
         url: null,
         fetch_error: "非全國法規資料庫收錄之單一命名法規，" + (law.note || "無法自動追蹤"),
         matchType: "not_trackable",
+        fulltext_synced_at: null,
       };
     }
 
@@ -268,19 +331,43 @@ async function main() {
         url: null,
         fetch_error: fetchError || "在官方開放資料中找不到符合名稱的法規，可能名稱需要微調",
         matchType: "not_found",
+        fulltext_synced_at: null,
       };
     }
 
     const { record, matchType } = match;
     const pcode = getPCode(record);
+    const lastAmendDate = gregorianToROCString(getAmendDateRaw(record));
+    const publishDate = extractPublishDate(getHistories(record));
+
+    // 只有在修正日期或公布日期跟上次不一樣時，才重新擷取全文；
+    // 沒變動就沿用舊全文，避免每天無謂重抓／重寫大量條文內容。
+    const prev = previousByName.get(law.name);
+    const datesUnchanged =
+      prev && prev.last_amend_date === lastAmendDate && prev.publish_date === publishDate;
+    const previousText = previousFulltextByName.get(law.name);
+
+    let fulltextSyncedAt;
+    if (datesUnchanged && previousText) {
+      fulltextEntries.push({ name: law.name, content: previousText });
+      fulltextSyncedAt = prev.fulltext_synced_at || checkedAt;
+      console.log(`(${law.name}) 日期未變動，沿用舊條文全文`);
+    } else {
+      const text = buildFullText(record);
+      if (text) fulltextEntries.push({ name: law.name, content: text });
+      fulltextSyncedAt = checkedAt;
+      console.log(`(${law.name}) ${prev ? "偵測到日期變動" : "首次擷取"}，重新擷取條文全文（長度 ${text.length}）`);
+    }
+
     return {
       ...base,
-      last_amend_date: gregorianToROCString(getAmendDateRaw(record)),
-      publish_date: extractPublishDate(getHistories(record)),
+      last_amend_date: lastAmendDate,
+      publish_date: publishDate,
       pcode,
       url: getForewordUrl(record) || (pcode ? `${LAW_DETAIL_BASE}${pcode}` : null),
       fetch_error: matchType === "fuzzy" ? `模糊比對到「${getName(record)}」，建議人工核對是否為同一法規` : null,
       matchType,
+      fulltext_synced_at: fulltextSyncedAt,
     };
   });
 
@@ -290,9 +377,8 @@ async function main() {
     console.warn(`有 ${notFound.length} 筆找不到符合名稱的法規：`, notFound.map((r) => r.name));
   }
   if (fuzzy.length) {
-    console.warn(`有 ${fuzzy.length} 筆是模糊比對，建議人工核對：`, fuzzy.map((r) => `${r.name} → ${byNameOf(r)}`));
+    console.warn(`有 ${fuzzy.length} 筆是模糊比對，建議人工核對：`, fuzzy.map((r) => `${r.name} → ${r.fetch_error}`));
   }
-  function byNameOf(r) { return r.fetch_error; }
 
   const output = {
     generated_at: checkedAt,
@@ -300,10 +386,16 @@ async function main() {
     fetchError,
     laws: results,
   };
+  const fulltextOutput = {
+    generated_at: checkedAt,
+    laws: fulltextEntries,
+  };
 
   await mkdir(path.dirname(new URL(OUTPUT_PATH).pathname), { recursive: true }).catch(() => {});
   await writeFile(OUTPUT_PATH, JSON.stringify(output, null, 2), "utf8");
+  await writeFile(FULLTEXT_OUTPUT_PATH, JSON.stringify(fulltextOutput), "utf8"); // 全文檔案不縮排，減少檔案大小
   console.log(`已寫入 ${OUTPUT_PATH.pathname}`);
+  console.log(`已寫入 ${FULLTEXT_OUTPUT_PATH.pathname}（共 ${fulltextEntries.length} 筆全文）`);
 }
 
 main().catch((err) => {
