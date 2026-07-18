@@ -37,6 +37,7 @@ from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LAWS_DATA_PATH = os.path.join(BASE_DIR, "data", "laws-data.json")
+NEWS_FEED_PATH = os.path.join(BASE_DIR, "data", "news-feed.json")
 
 SMTP_HOST = os.environ.get("MAIL_SMTP_HOST", "smtp.gmail.com")
 SMTP_PORT = int(os.environ.get("MAIL_SMTP_PORT", "465"))
@@ -52,7 +53,7 @@ def load_json(path, default):
         return default
 
 
-def build_email_html(newly_laws, newly_errors):
+def build_email_html(newly_laws, newly_errors, newly_news):
     parts = []
     parts.append("<div style='font-family:sans-serif;font-size:14px;color:#1a2035;line-height:1.7'>")
     parts.append("<h2 style='color:#1a2a4a'>財務法規追蹤系統 · 異動通知</h2>")
@@ -74,6 +75,17 @@ def build_email_html(newly_laws, newly_errors):
             parts.append(f"<li>{law['name']} — {law.get('fetch_error','')}</li>")
         parts.append("</ul>")
 
+    if newly_news:
+        parts.append("<h3 style='color:#1a2a4a'>📰 新出現的相關新聞</h3><ul>")
+        for n in newly_news[:20]:
+            parts.append(
+                f"<li><a href='{n['link']}'>{n['title']}</a>"
+                f"（關鍵字：{n.get('keyword','')}｜來源：{n.get('source','')}）</li>"
+            )
+        parts.append("</ul>")
+        if len(newly_news) > 20:
+            parts.append(f"<p style='color:#6b7280'>...等共 {len(newly_news)} 則，其餘請至網站查看。</p>")
+
     parts.append(
         "<p style='color:#6b7280;font-size:12px;margin-top:20px'>"
         "此為系統自動寄送之通知信，請至財務法規追蹤系統網頁查看完整清單與詳細資訊。"
@@ -94,23 +106,27 @@ def main():
         return
 
     laws_data = load_json(LAWS_DATA_PATH, {"laws": []})
-    all_laws = laws_data.get("laws", [])
+    news_feed = load_json(NEWS_FEED_PATH, {"items": []})
 
+    all_laws = laws_data.get("laws", [])
     newly_laws = [l for l in all_laws if l.get("newly_detected")]
     newly_errors = [l for l in all_laws if l.get("newly_error")]
+    newly_news = [n for n in news_feed.get("items", []) if n.get("first_seen_this_run")]
 
-    if not newly_laws and not newly_errors:
-        print("本次執行沒有偵測到新的法規異動或抓取失敗，不寄送通知信。")
+    if not newly_laws and not newly_errors and not newly_news:
+        print("本次執行沒有偵測到新的法規異動、抓取失敗或新聞，不寄送通知信。")
         return
 
     subject_parts = []
     if newly_laws:
         subject_parts.append(f"{len(newly_laws)} 筆法規異動")
+    if newly_news:
+        subject_parts.append(f"{len(newly_news)} 則新聞")
     if newly_errors:
         subject_parts.append(f"{len(newly_errors)} 筆抓取失敗")
     subject = "【財務法規追蹤】" + "、".join(subject_parts) + f"（{datetime.now().strftime('%Y-%m-%d')}）"
 
-    html_body = build_email_html(newly_laws, newly_errors)
+    html_body = build_email_html(newly_laws, newly_errors, newly_news)
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
