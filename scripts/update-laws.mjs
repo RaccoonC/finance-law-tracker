@@ -310,7 +310,7 @@ async function main() {
         publish_date: null,
         pcode: null,
         url: null,
-        fetch_error: "非全國法規資料庫收錄之單一命名法規，" + (law.note || "無法自動追蹤"),
+        fetch_error: law.note || "無法自動追蹤",
         matchType: "not_trackable",
         fulltext_synced_at: null,
       };
