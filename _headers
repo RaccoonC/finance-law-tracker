@@ -1,0 +1,11 @@
+/*.html
+  Content-Type: text/html; charset=utf-8
+
+/*.json
+  Content-Type: application/json; charset=utf-8
+
+/data/*.json
+  Content-Type: application/json; charset=utf-8
+
+/data/*
+  Content-Type: application/json; charset=utf-8

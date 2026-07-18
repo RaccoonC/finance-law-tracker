@@ -1,0 +1,11 @@
+{
+  "name": "finance-law-tracker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update-laws": "node scripts/update-laws.mjs"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10"
+  }
+}

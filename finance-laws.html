@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>財務法規追蹤系統</title>
+<style>
+  :root{--blue:#143b72;--light:#f5f8fc;--line:#d8e1ee;--text:#1f2937;--muted:#667085;--accent:#b91c1c;--ok:#0f7a4d;}
+  *{box-sizing:border-box} body{margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.75}
+  header{background:linear-gradient(135deg,#0f2f5f,#1b4f92);color:#fff;padding:40px 20px;text-align:center}
+  header h1{margin:0;font-size:1.9rem} header p{margin:10px auto 0;max-width:820px;color:#e6eef8}
+  nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:2;padding:10px 16px;overflow:auto;white-space:nowrap}
+  nav a{display:inline-block;margin:0 8px;padding:6px 10px;border-radius:999px;color:var(--blue);text-decoration:none;font-weight:600;font-size:.95rem}
+  nav a:hover{background:var(--light)}
+  main{max-width:1100px;margin:0 auto;padding:28px 18px 60px}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 20px}
+  .search-panel{position:sticky;top:47px;z-index:1;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 24px;box-shadow:0 6px 24px rgba(16,24,40,.08)}
+  .search-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  #searchInput{flex:1;min-width:220px;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-size:1rem;font-family:inherit;outline:none}
+  #searchInput:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(20,59,114,.12)}
+  #clearSearch{border:0;background:var(--blue);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;font-family:inherit}
+  h2{color:var(--blue);border-bottom:3px solid var(--line);padding-bottom:8px;margin-top:38px}
+  table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:.95rem}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--light);color:var(--blue)}
+  tr.hidden-by-search{display:none}
+  .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.8rem;font-weight:700}
+  .tag-ok{background:#e7f6ee;color:var(--ok)}
+  .tag-warn{background:#fef2f2;color:var(--accent)}
+  .tag-na{background:#f2f4f7;color:var(--muted)}
+  a.law-link{color:var(--blue);font-weight:600;text-decoration:none}
+  a.law-link:hover{text-decoration:underline}
+  .note{color:var(--muted);font-size:.85rem}
+  .state-msg{padding:16px;border-radius:10px;background:var(--light);color:var(--muted);margin:20px 0}
+  footer{background:#f2f4f7;color:#667085;text-align:center;padding:24px 16px;font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>財務法規追蹤系統</h1>
+  <p>自動比對「全國法規資料庫」開放資料，列出財務／會計／稅務相關法規的最後修正（發布）日期，供日常核銷與法規更新提醒使用。</p>
+</header>
+<nav>
+  <a href="expense-review.html">← 回支出報核憑證審核要點</a>
+</nav>
+<main>
+  <p class="meta" id="metaLine">資料載入中…</p>
+
+  <div class="search-panel">
+    <div class="search-row">
+      <label for="searchInput"><strong style="color:var(--blue)">快速查詢</strong></label>
+      <input id="searchInput" type="search" placeholder="輸入法規名稱關鍵字，例如：所得稅、營業稅、公司法" autocomplete="off" />
+      <button id="clearSearch" type="button">清除</button>
+    </div>
+  </div>
+
+  <div id="content"><p class="state-msg">正在讀取 data/laws-data.json …</p></div>
+</main>
+<footer>財務法規追蹤系統・資料來源：全國法規資料庫（law.moj.gov.tw）開放資料，每日自動更新一次<br>屬函釋、準則彙整或非國內單一法規者無法自動追蹤，請點選項目旁說明另行查證。</footer>
+
+<script>
+async function init(){
+  const contentEl = document.getElementById('content');
+  const metaEl = document.getElementById('metaLine');
+  let data;
+  try{
+    const res = await fetch('data/laws-data.json', { cache: 'no-store' });
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+  }catch(err){
+    contentEl.innerHTML = '<p class="state-msg">目前讀不到 data/laws-data.json（'+ err.message +'）。'
+      + '請確認 GitHub Actions 是否已成功執行過一次，或本機是否透過 http server 開啟本頁（file:// 開啟會被瀏覽器擋下 fetch）。</p>';
+    metaEl.textContent = '';
+    return;
+  }
+
+  metaEl.textContent = '資料更新時間：' + new Date(data.generatedAt).toLocaleString('zh-TW')
+    + (data.fetchError ? '（上次抓取有錯誤：' + data.fetchError + '）' : '');
+
+  const byCategory = new Map();
+  for(const law of data.laws){
+    if(!byCategory.has(law.category)) byCategory.set(law.category, []);
+    byCategory.get(law.category).push(law);
+  }
+
+  const parts = [];
+  for(const [category, laws] of byCategory){
+    parts.push('<section data-category="'+ category +'">');
+    parts.push('<h2>'+ category +'</h2>');
+    parts.push('<table><thead><tr><th style="width:26%">法規名稱</th><th style="width:14%">狀態</th><th style="width:16%">最後修正/發布日期</th><th>備註</th></tr></thead><tbody>');
+    for(const law of laws){
+      const tag = law.status === 'ok'
+        ? '<span class="tag tag-ok">已比對</span>'
+        : law.status === 'not_trackable'
+          ? '<span class="tag tag-na">無法自動追蹤</span>'
+          : '<span class="tag tag-warn">尚未比對到</span>';
+      const nameCell = law.url
+        ? '<a class="law-link" href="'+ law.url +'" target="_blank" rel="noopener">'+ law.name +'</a>'
+        : law.name;
+      const dateCell = law.modifiedDate || '—';
+      const noteCell = law.note ? '<span class="note">'+ law.note +'</span>' : '';
+      parts.push('<tr data-search="'+ (law.name + ' ' + (law.note||'')).toLowerCase() +'">'
+        + '<td>'+ nameCell +'</td>'
+        + '<td>'+ tag +'</td>'
+        + '<td>'+ dateCell +'</td>'
+        + '<td>'+ noteCell +'</td>'
+        + '</tr>');
+    }
+    parts.push('</tbody></table></section>');
+  }
+  contentEl.innerHTML = parts.join('');
+
+  const input = document.getElementById('searchInput');
+  const clearBtn = document.getElementById('clearSearch');
+  function applySearch(){
+    const kw = input.value.trim().toLowerCase();
+    document.querySelectorAll('tbody tr').forEach(row => {
+      const match = !kw || row.dataset.search.includes(kw);
+      row.classList.toggle('hidden-by-search', !match);
+    });
+    document.querySelectorAll('main section[data-category]').forEach(section => {
+      const anyVisible = Array.from(section.querySelectorAll('tbody tr')).some(r => !r.classList.contains('hidden-by-search'));
+      section.style.display = (kw && !anyVisible) ? 'none' : '';
+    });
+  }
+  input.addEventListener('input', applySearch);
+  clearBtn.addEventListener('click', () => { input.value=''; applySearch(); input.focus(); });
+}
+init();
+</script>
+</body>
+</html>

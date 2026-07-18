@@ -1,0 +1,9 @@
+{
+  // 這個名稱必須跟 Cloudflare 專案名稱一致（見下方說明）
+  "name": "finance-law-tracker",
+  "compatibility_date": "2026-07-18",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page"
+  }
+}
