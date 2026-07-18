@@ -90,9 +90,14 @@ def build_email_html(newly_laws, newly_errors, newly_news):
 
     parts.append(
         "<p style='color:#6b7280;font-size:12px;margin-top:20px'>"
-        f"此為系統自動寄送之通知信，請至<a href='{DASHBOARD_URL}'>財務法規追蹤系統網頁</a>查看完整清單與詳細資訊。"
+        "此為系統自動寄送之通知信，如需查看完整清單與詳細資訊，請點擊下方按鈕。"
         "全國法規資料庫每週五才整批更新，實際異動頻率約為每週一次。"
         "</p>"
+    )
+    parts.append(
+        f"<p style='margin:8px 0 0'><a href='{DASHBOARD_URL}' "
+        "style='display:inline-block;background:#1a2a4a;color:#ffffff;text-decoration:none;"
+        "padding:9px 18px;border-radius:6px;font-size:13px;font-weight:600'>財務法規追蹤系統網頁 →</a></p>"
     )
     parts.append("</div>")
     return "".join(parts)
