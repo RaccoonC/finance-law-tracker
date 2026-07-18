@@ -13,7 +13,10 @@ import { writeFile, mkdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import AdmZip from "adm-zip";
 
-const API_URL = "https://law.moj.gov.tw/api/Ch/Law/JSON";
+const API_URLS = [
+  "https://law.moj.gov.tw/api/Ch/Law/JSON",   // 法律層級（憲法、法律）
+  "https://law.moj.gov.tw/api/Ch/Order/JSON", // 法規命令層級（辦法、準則、要點、細則…）
+];
 const LAW_DETAIL_BASE = "https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=";
 
 const DATA_DIR = new URL("../data/", import.meta.url);
@@ -134,12 +137,12 @@ function extractArray(json, sourceLabel) {
   return [];
 }
 
-async function fetchLawDump() {
-  console.log(`下載開放資料：${API_URL}`);
-  const res = await fetch(API_URL, {
+async function fetchOneDump(url) {
+  console.log(`下載開放資料：${url}`);
+  const res = await fetch(url, {
     headers: { "User-Agent": "finance-law-tracker/1.0 (+github actions)" },
   });
-  if (!res.ok) throw new Error(`下載失敗：HTTP ${res.status}`);
+  if (!res.ok) throw new Error(`下載失敗（${url}）：HTTP ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
   const isZip = buf.length > 2 && buf[0] === 0x50 && buf[1] === 0x4b;
 
@@ -163,12 +166,31 @@ async function fetchLawDump() {
   }
 
   if (combined.length === 0) {
-    throw new Error("解壓縮/解析後找不到任何法規資料，請人工確認 zip 內檔案結構。");
+    throw new Error(`解壓縮/解析後找不到任何法規資料（${url}），請人工確認 zip 內檔案結構。`);
   }
 
-  console.log(`共取得 ${combined.length} 筆法規，範例第一筆：`);
+  console.log(`（${url}）共取得 ${combined.length} 筆，範例第一筆：`);
   console.log(JSON.stringify(combined[0], null, 2).slice(0, 1000));
   return combined;
+}
+
+async function fetchAllDumps() {
+  let all = [];
+  const errors = [];
+  for (const url of API_URLS) {
+    try {
+      const part = await fetchOneDump(url);
+      all = all.concat(part);
+    } catch (err) {
+      console.error(err.message);
+      errors.push(err.message);
+    }
+  }
+  if (all.length === 0) {
+    throw new Error(errors.join("；") || "所有來源都抓取失敗");
+  }
+  console.log(`兩個來源合計取得 ${all.length} 筆法規/法規命令資料`);
+  return all;
 }
 
 function buildIndexes(dump) {
@@ -213,7 +235,7 @@ async function main() {
   let dump = [];
   let fetchError = null;
   try {
-    dump = await fetchLawDump();
+    dump = await fetchAllDumps();
   } catch (err) {
     fetchError = err.message;
     console.error("抓取全量資料失敗：", err.message);
@@ -274,7 +296,7 @@ async function main() {
 
   const output = {
     generated_at: checkedAt,
-    source: API_URL,
+    source: API_URLS,
     fetchError,
     laws: results,
   };
