@@ -88,6 +88,8 @@ function normalizeName(name) {
 function stripBOM(text) {
   return text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
 }
+
+function extractArray(json, sourceLabel) {
   if (Array.isArray(json)) return json;
   if (json && typeof json === "object") {
     const direct = json.Laws || json.laws || json.Data || json.data;
