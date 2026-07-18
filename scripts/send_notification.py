@@ -42,6 +42,8 @@ NEWS_FEED_PATH = os.path.join(BASE_DIR, "data", "news-feed.json")
 SMTP_HOST = os.environ.get("MAIL_SMTP_HOST", "smtp.gmail.com")
 SMTP_PORT = int(os.environ.get("MAIL_SMTP_PORT", "465"))
 
+DASHBOARD_URL = "https://finance-law-tracker.tierhr.workers.dev/"
+
 
 def load_json(path, default):
     if not os.path.exists(path):
@@ -57,6 +59,11 @@ def build_email_html(newly_laws, newly_errors, newly_news):
     parts = []
     parts.append("<div style='font-family:sans-serif;font-size:14px;color:#1a2035;line-height:1.7'>")
     parts.append("<h2 style='color:#1a2a4a'>財務法規追蹤系統 · 異動通知</h2>")
+    parts.append(
+        f"<p style='margin:0 0 16px'><a href='{DASHBOARD_URL}' "
+        "style='display:inline-block;background:#1a2a4a;color:#fff;text-decoration:none;"
+        "padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600'>前往財務法規追蹤系統網頁 →</a></p>"
+    )
 
     if newly_laws:
         parts.append("<h3 style='color:#c0392b'>🔴 偵測到法規異動</h3><ul>")
@@ -88,7 +95,7 @@ def build_email_html(newly_laws, newly_errors, newly_news):
 
     parts.append(
         "<p style='color:#6b7280;font-size:12px;margin-top:20px'>"
-        "此為系統自動寄送之通知信，請至財務法規追蹤系統網頁查看完整清單與詳細資訊。"
+        f"此為系統自動寄送之通知信，請至<a href='{DASHBOARD_URL}'>財務法規追蹤系統網頁</a>查看完整清單與詳細資訊。"
         "全國法規資料庫每週五才整批更新，實際異動頻率約為每週一次。"
         "</p>"
     )
