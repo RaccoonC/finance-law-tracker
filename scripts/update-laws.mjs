@@ -111,29 +111,13 @@ function cnNumberToInt(cn) {
   return total + current;
 }
 
-// 從 LawHistories 自由文字裡，抓出所有「…年…月…日〈公文文號等〉公布」的日期，
-// 取「最新一次」（日期最大的那筆），對應到目前這個版本的公布日期。
-// 換算成「民國36年01月01日」字串。找不到就回傳 null。
-function extractPublishDate(historiesText) {
-  if (!historiesText) return null;
-  // 日期與「公布」之間可能夾著很長的公文文號（例如「總統華總一經字第10300093351號令修正公布」），
-  // 放寬到 60 字，避免抓不到現代法規的公布紀錄。
-  const re = /中華民國([一二三四五六七八九十百零\d]+)年([一二三四五六七八九十百零\d]+)月([一二三四五六七八九十百零\d]+)日[^\n]{0,60}?公布/g;
-  let best = null;
-  let bestKey = -1;
-  let m;
-  while ((m = re.exec(historiesText)) !== null) {
-    const rocYear = cnNumberToInt(m[1]);
-    const month = cnNumberToInt(m[2]);
-    const day = cnNumberToInt(m[3]);
-    if (!rocYear || !month || !day) continue;
-    const key = rocYear * 10000 + month * 100 + day; // 用來比較日期先後
-    if (key > bestKey) {
-      bestKey = key;
-      best = `民國${rocYear}年${String(month).padStart(2, "0")}月${String(day).padStart(2, "0")}日`;
-    }
-  }
-  return best;
+// 判斷這部法規「有沒有被修正過」：沿革文字裡如果出現「修正…公布/發布」，
+// 代表至少修正過一次，此時 LawModifiedDate 對應的是「最新修正日期」；
+// 如果從沒出現過，代表這部法規從制定公布後就沒改過，LawModifiedDate 其實就是「公布日期」。
+// 這兩個欄位互斥，不會同時都有值（跟全國法規資料庫網站上顯示的邏輯一致）。
+function hasBeenAmended(historiesText) {
+  if (!historiesText) return false;
+  return /修正[\s\S]{0,20}?(?:公布|發布)/.test(historiesText);
 }
 
 // 名稱正規化：拿掉常見的版本註記、全形/半形空白，方便模糊比對
@@ -348,8 +332,12 @@ async function main() {
 
     const { record, matchType } = match;
     const pcode = getPCode(record);
-    const lastAmendDate = gregorianToROCString(getAmendDateRaw(record));
-    const publishDate = extractPublishDate(getHistories(record));
+    const actionDate = gregorianToROCString(getAmendDateRaw(record));
+    const amended = hasBeenAmended(getHistories(record));
+    // 兩欄互斥：修正過的法規只填「最新修正日期」；從未修正過的只填「公布日期」，
+    // 跟全國法規資料庫網站本身顯示的邏輯一致，不會同一部法規兩個欄位都有值。
+    const lastAmendDate = amended ? actionDate : null;
+    const publishDate = amended ? null : actionDate;
 
     // 只有在修正日期或公布日期跟上次不一樣時，才重新擷取全文；
     // 沒變動就沿用舊全文，避免每天無謂重抓／重寫大量條文內容。
