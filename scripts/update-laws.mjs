@@ -84,7 +84,10 @@ function normalizeName(name) {
     .trim();
 }
 
-function extractArray(json, sourceLabel) {
+// 去掉 UTF-8 BOM（檔案開頭常見的隱藏標記字元，JSON.parse 遇到會直接報錯）
+function stripBOM(text) {
+  return text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
+}
   if (Array.isArray(json)) return json;
   if (json && typeof json === "object") {
     const direct = json.Laws || json.laws || json.Data || json.data;
@@ -126,7 +129,7 @@ async function fetchLawDump() {
     const entries = zip.getEntries().filter((e) => !e.isDirectory);
     console.log(`zip 內含 ${entries.length} 個檔案：`, entries.map((e) => e.entryName).slice(0, 20));
     for (const entry of entries) {
-      const text = entry.getData().toString("utf8");
+      const text = stripBOM(entry.getData().toString("utf8"));
       try {
         const arr = extractArray(JSON.parse(text), entry.entryName);
         if (arr.length) combined = combined.concat(arr);
@@ -135,7 +138,7 @@ async function fetchLawDump() {
       }
     }
   } else {
-    combined = extractArray(JSON.parse(buf.toString("utf8")), "root");
+    combined = extractArray(JSON.parse(stripBOM(buf.toString("utf8"))), "root");
   }
 
   if (combined.length === 0) {
