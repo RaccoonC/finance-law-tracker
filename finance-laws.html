@@ -715,6 +715,7 @@ function init() {
 
 function updateCounters() {
   const total = LAWS.length;
+  const trackedTotal = LAWS.filter(l => !l.isManualUpload).length; // 「追蹤法規總數」不計入使用者自行上傳的補充資料
   const modified = LAWS.filter(l => l.status === 'modified').length;
   const pending = LAWS.filter(l => l.status === 'pending').length;
   const active = LAWS.filter(l => l.status === 'active').length;
@@ -723,8 +724,8 @@ function updateCounters() {
   document.getElementById('cnt-modified').textContent = modified;
   document.getElementById('cnt-pending').textContent = pending;
 
-  document.getElementById('stat-total').textContent = total;
-  document.getElementById('stat-total-sub').textContent = [...new Set(LAWS.map(l=>l.cat))].length + ' 個分類';
+  document.getElementById('stat-total').textContent = trackedTotal;
+  document.getElementById('stat-total-sub').textContent = [...new Set(LAWS.filter(l => !l.isManualUpload).map(l=>l.cat))].length + ' 個分類';
   document.getElementById('stat-modified').textContent = modified;
   document.getElementById('stat-pending').textContent = pending;
   document.getElementById('stat-active').textContent = active;
