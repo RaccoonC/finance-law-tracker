@@ -240,37 +240,6 @@
     "note": "付款資料、員工資料相關"
   },
   {
-    "id": 39,
-    "name": "固定資產耐用年數表",
-    "category": "九、固定資產",
-    "trackable": false,
-    "note": "屬財政部行政規則，非全國法規資料庫收錄範圍，請查 law-out.mof.gov.tw",
-    "source_url": "https://law-out.mof.gov.tw/LawQuery.aspx"
-  },
-  {
-    "id": 40,
-    "name": "營利事業所得稅查核準則固定資產折舊率表",
-    "category": "九、固定資產",
-    "trackable": false,
-    "note": "附於查核準則之附表，非獨立法規，隨第 12 項一併追蹤",
-    "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=G0340051"
-  },
-  {
-    "id": 41,
-    "name": "所得稅法",
-    "category": "九、固定資產",
-    "trackable": true,
-    "note": "折舊規定，與第 10 項同一法規"
-  },
-  {
-    "id": 42,
-    "name": "企業會計準則公報",
-    "category": "九、固定資產",
-    "trackable": false,
-    "note": "固定資產章節，與第 4 項同一法規，非政府法規",
-    "source_url": "https://www.ardf.org.tw/"
-  },
-  {
     "id": 43,
     "name": "印花稅法",
     "category": "十、地方稅",
@@ -352,68 +321,5 @@
     "category": "十二、上市櫃公司",
     "trackable": true,
     "note": "內部控制制度相關法規"
-  },
-  {
-    "id": 56,
-    "name": "財政部解釋令",
-    "category": "十三、企業常用行政規範",
-    "trackable": false,
-    "note": "函釋彙整，非單一法規名稱，無法自動追蹤",
-    "source_url": "https://law-out.mof.gov.tw/LawQuery.aspx"
-  },
-  {
-    "id": 57,
-    "name": "財政部函釋",
-    "category": "十三、企業常用行政規範",
-    "trackable": false,
-    "note": "函釋彙整，非單一法規名稱，無法自動追蹤",
-    "source_url": "https://law-out.mof.gov.tw/LawQuery.aspx"
-  },
-  {
-    "id": 58,
-    "name": "國稅局函釋",
-    "category": "十三、企業常用行政規範",
-    "trackable": false,
-    "note": "函釋彙整，非單一法規名稱，無法自動追蹤",
-    "source_url": "https://law-out.mof.gov.tw/LawQuery.aspx"
-  },
-  {
-    "id": 59,
-    "name": "經濟部函釋",
-    "category": "十三、企業常用行政規範",
-    "trackable": false,
-    "note": "函釋彙整，非單一法規名稱，無法自動追蹤",
-    "source_url": "https://gcis.nat.gov.tw/elaw/lawDanyQuery.action"
-  },
-  {
-    "id": 60,
-    "name": "金管會函令",
-    "category": "十三、企業常用行政規範",
-    "trackable": false,
-    "note": "函令彙整，非單一法規名稱，無法自動追蹤",
-    "source_url": "https://law.fsc.gov.tw/"
-  },
-  {
-    "id": 61,
-    "name": "審計準則公報",
-    "category": "十三、企業常用行政規範",
-    "trackable": false,
-    "note": "部分企業適用，由會計研究發展基金會發布，非全國法規資料庫收錄範圍",
-    "source_url": "https://www.ardf.org.tw/"
-  },
-  {
-    "id": 62,
-    "name": "上市上櫃公司治理實務守則",
-    "category": "十三、企業常用行政規範",
-    "trackable": false,
-    "note": "屬證券交易所／櫃買中心自律規範，非全國法規資料庫收錄範圍，請查 twse-regulation.twse.com.tw",
-    "source_url": "https://law.twse.com.tw/FLAW/FLAWDAT01.aspx?lsid=FL007304"
-  },
-  {
-    "id": 63,
-    "name": "公開發行公司建立內部控制制度處理準則",
-    "category": "十三、企業常用行政規範",
-    "trackable": true,
-    "note": "與第 55 項同一法規，上市櫃適用"
   }
 ]
