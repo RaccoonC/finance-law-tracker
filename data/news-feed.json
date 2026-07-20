@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T10:27:09.781Z",
+  "generated_at": "2026-07-20T10:34:53.743Z",
   "recent_window_days": 14,
   "items": [
     {
@@ -49,7 +49,7 @@
       "source": "MSN",
       "keyword": "娛樂稅法",
       "first_seen_at": "2026-07-20T10:27:09.781Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -493,16 +493,6 @@
       "is_new": true
     },
     {
-      "title": "新聞中的法律／從酷澎案看個資合規風險| 稅務法務| 產經",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1pdzZTaGFQYzJseFBRSzZ3VHdyaURBOE5fM1pseU5Ld1Y0bjNZWG9pZ2JOZ19PcUNZbFNKN2gyTXZrekxzOWoxRVlBNGhWd1da?oc=5",
-      "pub_date": "Mon, 02 Mar 2026 08:00:00 GMT",
-      "source": "UDN",
-      "keyword": "個人資料保護法",
-      "first_seen_at": "2026-07-20T10:27:09.781Z",
-      "first_seen_this_run": true,
-      "is_new": true
-    },
-    {
       "title": "接軌IFRS 18新規！金管會修正期貨商財報準則",
       "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB0eGxHT0E3LWJRb3MwVUlUYml6SV80bURFT0ZUV3pCTkpYdUxTSTlJMi1uRTBoVEFieVhXeVZzbjJlQ1FnWUt4VzhCVWQyb2RCcnJFNER5ZHJ1a2l2RGszSGc3ckxGdkYzcmF0VVRaZVY?oc=5",
       "pub_date": "Wed, 25 Feb 2026 08:00:00 GMT",
@@ -719,7 +709,7 @@
       "source": "草根影響力新視野",
       "keyword": "全民健康保險法",
       "first_seen_at": "2026-07-20T10:27:09.781Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -730,6 +720,16 @@
       "keyword": "全民健康保險法",
       "first_seen_at": "2026-07-20T05:35:33.728Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "個資修法三讀通過，公私部門共同迎向法遵新紀元",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE10eGFNUHk0TWl6Z1BwTk1WSkpZaGU3YVg4Vm90VXlzbjVCMjBYRGdvNTI0WEh5Qk9lOU52cWdMZmxfYkVkbXpnSE5sX0gxVVIwc3p2QWJ3?oc=5",
+      "pub_date": "Mon, 03 Nov 2025 08:00:00 GMT",
+      "source": "中央社 CNA",
+      "keyword": "個人資料保護法",
+      "first_seen_at": "2026-07-20T10:34:53.743Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -779,7 +779,7 @@
       "source": "LINE TODAY",
       "keyword": "海關緝私條例",
       "first_seen_at": "2026-07-20T10:27:09.781Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -899,7 +899,7 @@
       "source": "信傳媒",
       "keyword": "營利事業所得稅查核準則",
       "first_seen_at": "2026-07-20T10:27:09.781Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
