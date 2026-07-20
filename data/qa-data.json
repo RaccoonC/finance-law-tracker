@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-20T05:24:35.540Z",
+  "items": [
+    {
+      "name": "經費結報常見疑義問答集",
+      "category": "十四、問與答",
+      "last_amend_date": null,
+      "publish_date": null,
+      "url": "https://ebasnew.dgbas.gov.tw/PublicinsideAudit/Detail/0/1718",
+      "fetch_error": "抓取失敗：fetch failed",
+      "matchType": "not_found",
+      "trackable": true,
+      "checked_at": "2026-07-20T05:24:35.540Z",
+      "content_hash": null,
+      "content_updated_at": null,
+      "newly_detected": false,
+      "newly_error": false
+    }
+  ]
+}
