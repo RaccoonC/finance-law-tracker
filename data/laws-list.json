@@ -242,75 +242,75 @@
   {
     "id": 43,
     "name": "印花稅法",
-    "category": "十、地方稅",
+    "category": "九、地方稅",
     "trackable": true
   },
   {
     "id": 44,
     "name": "房屋稅條例",
-    "category": "十、地方稅",
+    "category": "九、地方稅",
     "trackable": true
   },
   {
     "id": 45,
     "name": "土地稅法",
-    "category": "十、地方稅",
+    "category": "九、地方稅",
     "trackable": true
   },
   {
     "id": 46,
     "name": "契稅條例",
-    "category": "十、地方稅",
+    "category": "九、地方稅",
     "trackable": true
   },
   {
     "id": 47,
     "name": "娛樂稅法",
-    "category": "十、地方稅",
+    "category": "九、地方稅",
     "trackable": true
   },
   {
     "id": 48,
     "name": "關稅法",
-    "category": "十一、進出口",
+    "category": "十、進出口",
     "trackable": true
   },
   {
     "id": 49,
     "name": "海關緝私條例",
-    "category": "十一、進出口",
+    "category": "十、進出口",
     "trackable": true
   },
   {
     "id": 50,
     "name": "海關進口稅則",
-    "category": "十一、進出口",
+    "category": "十、進出口",
     "trackable": true,
     "note": "即通稱之關稅稅則"
   },
   {
     "id": 51,
     "name": "貨物稅條例",
-    "category": "十一、進出口",
+    "category": "十、進出口",
     "trackable": true
   },
   {
     "id": 52,
     "name": "證券交易法",
-    "category": "十二、上市櫃公司",
+    "category": "十一、上市櫃公司",
     "trackable": true
   },
   {
     "id": 53,
     "name": "證券發行人財務報告編製準則",
-    "category": "十二、上市櫃公司",
+    "category": "十一、上市櫃公司",
     "trackable": true,
     "note": "原清單寫「公開發行公司財務報告編製準則」，官方正式名稱為此"
   },
   {
     "id": 54,
     "name": "公開發行公司資訊公開管理辦法",
-    "category": "十二、上市櫃公司",
+    "category": "十一、上市櫃公司",
     "trackable": false,
     "note": "查無獨立法規名稱，公開資訊觀測站申報規定建議直接查 mops.twse.com.tw",
     "source_url": "https://www.twse.com.tw/"
@@ -318,7 +318,7 @@
   {
     "id": 55,
     "name": "公開發行公司建立內部控制制度處理準則",
-    "category": "十二、上市櫃公司",
+    "category": "十一、上市櫃公司",
     "trackable": true,
     "note": "內部控制制度相關法規"
   }
