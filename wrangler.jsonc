@@ -2,8 +2,15 @@
   // 這個名稱必須跟 Cloudflare 專案名稱一致（見下方說明）
   "name": "finance-law-tracker",
   "compatibility_date": "2026-07-18",
+  "main": "worker.js",
   "assets": {
     "directory": "./",
+    "binding": "ASSETS",
     "not_found_handling": "404-page"
-  }
+  },
+  "kv_namespaces": [
+    // ⚠️ id 需要你自己到 Cloudflare Dashboard 建立 KV namespace 後填入，
+    //    詳見 README.md「六、補充資料共用儲存（KV）設定」
+    { "binding": "MANUAL_ENTRIES", "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+  ]
 }
