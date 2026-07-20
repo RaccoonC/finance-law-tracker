@@ -205,15 +205,16 @@ async function fetchAllDumps() {
       const part = await fetchOneDump(url);
       all = all.concat(part);
     } catch (err) {
-      console.error(err.message);
-      errors.push(err.message);
+      const causeDetail = err.cause ? `（底層原因：${err.cause.code || err.cause.message || err.cause}）` : "";
+      console.error(err.message + causeDetail);
+      errors.push(err.message + causeDetail);
     }
   }
   if (all.length === 0) {
     throw new Error(errors.join("；") || "所有來源都抓取失敗");
   }
   console.log(`兩個來源合計取得 ${all.length} 筆法規/法規命令資料`);
-  return all;
+  return { items: all, partialErrors: errors }; // errors 可能非空：部分來源失敗，但還有資料可用，不算整體失敗
 }
 
 function buildIndexes(dump) {
@@ -289,9 +290,15 @@ async function main() {
   ]);
 
   let dump = [];
-  let fetchError = null;
+  let fetchError = null; // 整體全部來源都失敗時才會有值
+  let partialFetchError = null; // 部分來源失敗（例如只有 Order 端點失敗），但還是有資料可用
   try {
-    dump = await fetchAllDumps();
+    const result = await fetchAllDumps();
+    dump = result.items;
+    if (result.partialErrors.length) {
+      partialFetchError = result.partialErrors.join("；");
+      console.warn("部分資料來源抓取失敗（其餘來源仍正常）：", partialFetchError);
+    }
   } catch (err) {
     fetchError = err.message;
     console.error("抓取全量資料失敗：", err.message);
@@ -330,7 +337,10 @@ async function main() {
         publish_date: null,
         pcode: null,
         url: null,
-        fetch_error: fetchError || "在官方開放資料中找不到符合名稱的法規，可能名稱需要微調",
+        fetch_error:
+          fetchError ||
+          (partialFetchError ? `本次部分資料來源抓取失敗，可能是暫時性問題：${partialFetchError}` : null) ||
+          "在官方開放資料中找不到符合名稱的法規，可能名稱需要微調",
         matchType: "not_found",
         fulltext_synced_at: null,
         newly_detected: false,
@@ -396,6 +406,7 @@ async function main() {
     generated_at: checkedAt,
     source: API_URLS,
     fetchError,
+    partialFetchError,
     laws: results,
   };
   const fulltextOutput = {
