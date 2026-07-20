@@ -267,6 +267,28 @@
   .news-desc { font-size: 12px; color: var(--text-sub); }
   .news-date { font-size: 11px; color: var(--gray); margin-top: 4px; }
 
+  .notice-box {
+    background: var(--yellow-bg); border: 1px solid rgba(176,122,16,0.25); border-radius: 8px;
+    padding: 12px 16px; font-size: 13px; color: var(--text-sub); line-height: 1.7; margin-bottom: 20px;
+  }
+  .notice-box code { background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+
+  .upload-form { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+  .form-row { margin-bottom: 12px; }
+  .form-row label { display: block; font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .form-row input[type="text"], .form-row textarea {
+    width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 9px 12px;
+    font-family: inherit; font-size: 13px; color: var(--text); resize: vertical; outline: none; box-sizing: border-box;
+  }
+  .form-row input[type="text"]:focus, .form-row textarea:focus { border-color: var(--navy); }
+
+  .upload-item {
+    background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 13px 16px; margin-bottom: 10px;
+  }
+  .upload-item-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+  .upload-item-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .upload-item-content { font-size: 12.5px; color: var(--text-sub); white-space: pre-wrap; line-height: 1.6; max-height: 120px; overflow-y: auto; }
+
   @media (max-width: 768px) {
     aside { display: none; }
     .summary-bar { grid-template-columns: repeat(2, 1fr); }
@@ -303,6 +325,7 @@
       <div class="sidebar-label">功能導覽</div>
       <div class="sidebar-item active" id="sb-laws" onclick="switchTab('laws')">📋 法規總覽</div>
       <div class="sidebar-item" id="sb-news" onclick="switchTab('news')">📰 最新動態</div>
+      <div class="sidebar-item" id="sb-upload" onclick="switchTab('upload')">📤 新增補充資料</div>
       <div class="sidebar-item" id="sb-manual" onclick="switchTab('manual')">⚠️ 需自行查看</div>
     </div>
     <div class="sidebar-section" style="margin-top:12px">
@@ -399,6 +422,38 @@
       <div class="news-list" id="news-list"></div>
     </div>
 
+    <div id="tab-upload" class="tab-panel">
+      <div class="section-header">
+        <div class="section-title">新增補充資料</div>
+      </div>
+      <div class="notice-box">
+        這裡新增的資料會<strong>直接存到共用的線上資料庫，所有使用者馬上都看得到</strong>，
+        全文檢索也會馬上吃得到，不需要再另外上傳到 GitHub。
+        <strong>目前這個功能沒有登入驗證</strong>，拿到網址的人都可以新增或刪除資料，請留意。
+      </div>
+
+      <div class="upload-form">
+        <div class="form-row">
+          <label for="upload-name">資料名稱</label>
+          <input type="text" id="upload-name" placeholder="例如：114年度差旅費核銷補充說明">
+        </div>
+        <div class="form-row">
+          <label for="upload-content">內容</label>
+          <textarea id="upload-content" rows="8" placeholder="貼上或輸入完整內容，全文檢索會搜尋這裡的文字"></textarea>
+        </div>
+        <div class="form-row" style="display:flex;gap:8px;align-items:center">
+          <button class="btn btn-primary" id="upload-submit-btn" onclick="addManualEntry()">新增（所有人立即可見）</button>
+          <span id="upload-status" style="font-size:12px;color:var(--gray)"></span>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top:24px">
+        <div class="section-title">目前清單</div>
+        <span style="font-size:11px;color:var(--gray)">所有使用者共用</span>
+      </div>
+      <div id="upload-list"></div>
+    </div>
+
     <div id="tab-manual" class="tab-panel">
       <div class="section-header">
         <div class="section-title">無法自動追蹤的項目</div>
@@ -446,6 +501,7 @@
 
 let LAWS = [];
 let MANUAL = [];
+let MANUAL_ENTRIES_SERVER = [];
 let NEWS = [];
 let LAWS_FULLTEXT_MAP = {}; // 法規名稱 -> 條文全文
 let fulltextLoaded = false;
@@ -547,6 +603,35 @@ async function loadData() {
     console.error('讀取 qa-data.json 失敗（可能還沒執行過，不影響其他功能）', e);
   }
 
+  // 人工透過「新增補充資料」分頁上傳的資料，存在 Cloudflare KV，
+  // 透過 /api/manual-entries 這個 API 讀取，所有使用者共用同一份。
+  try {
+    const raw = await fetchManualEntries();
+    MANUAL_ENTRIES_SERVER = raw.entries || [];
+    const manualItems = MANUAL_ENTRIES_SERVER.map((entry, idx) => ({
+      id: 'manual-' + idx,
+      name: entry.name,
+      cat: entry.category || '十五、補充資料',
+      last_amend_date: null,
+      publish_date: null,
+      note: '',
+      url: null,
+      source_url: null,
+      checked_at: entry.added_at,
+      matchType: 'ok',
+      trackable: true,
+      fulltext_synced_at: entry.added_at,
+      content_updated_at: entry.added_at,
+    }));
+    all = all.concat(manualItems);
+    manualItems.forEach((item, idx) => {
+      LAWS_FULLTEXT_MAP[item.name] = MANUAL_ENTRIES_SERVER[idx].content;
+    });
+  } catch (e) {
+    console.error('讀取補充資料失敗', e);
+    MANUAL_ENTRIES_SERVER = [];
+  }
+
   LAWS = all.filter(l => l.trackable !== false).map(l => ({ ...l, status: deriveStatus(l) }));
 
   const manualGroups = new Map();
@@ -561,6 +646,7 @@ async function loadData() {
   renderLaws();
   renderManual();
   loadNews();
+  renderUploadList();
 
   // 全文索引檔案通常有一定大小，不擋住主要畫面顯示，
   // 載入完成後才「補畫」一次，讓正在輸入的關鍵字也能吃到全文比對結果。
@@ -832,8 +918,89 @@ function filterSearch(val) {
 function switchTab(tab) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
-  document.querySelectorAll('#sb-laws, #sb-news, #sb-manual').forEach(i => i.classList.remove('active'));
+  document.querySelectorAll('#sb-laws, #sb-news, #sb-upload, #sb-manual').forEach(i => i.classList.remove('active'));
   document.getElementById('sb-' + tab).classList.add('active');
+}
+
+function escapeHtmlUpload(str) {
+  return String(str).replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[ch]));
+}
+
+async function fetchManualEntries() {
+  const res = await fetch('/api/manual-entries', { cache: 'no-store' });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+async function addManualEntry() {
+  const nameEl = document.getElementById('upload-name');
+  const contentEl = document.getElementById('upload-content');
+  const statusEl = document.getElementById('upload-status');
+  const btnEl = document.getElementById('upload-submit-btn');
+  const name = nameEl.value.trim();
+  const content = contentEl.value.trim();
+  if (!name || !content) {
+    showToast('請填寫資料名稱和內容');
+    return;
+  }
+  btnEl.disabled = true;
+  if (statusEl) statusEl.textContent = '上傳中…';
+  try {
+    const res = await fetch('/api/manual-entries', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, content }),
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const raw = await res.json();
+    MANUAL_ENTRIES_SERVER = raw.entries || [];
+    nameEl.value = '';
+    contentEl.value = '';
+    renderUploadList();
+    showToast('已新增，所有人立即可見');
+    if (statusEl) statusEl.textContent = '';
+  } catch (e) {
+    console.error('新增補充資料失敗', e);
+    if (statusEl) statusEl.textContent = '上傳失敗，請稍後再試';
+  } finally {
+    btnEl.disabled = false;
+  }
+}
+
+async function removeManualEntry(name) {
+  if (!confirm(`確定要刪除「${name}」嗎？所有人都會看不到。`)) return;
+  try {
+    const res = await fetch('/api/manual-entries?name=' + encodeURIComponent(name), { method: 'DELETE' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const raw = await res.json();
+    MANUAL_ENTRIES_SERVER = raw.entries || [];
+    renderUploadList();
+    showToast('已刪除');
+  } catch (e) {
+    console.error('刪除補充資料失敗', e);
+    showToast('刪除失敗，請稍後再試');
+  }
+}
+
+function renderUploadList() {
+  const container = document.getElementById('upload-list');
+  if (!container) return;
+
+  if (!MANUAL_ENTRIES_SERVER.length) {
+    container.innerHTML = '<div class="empty-state">目前沒有補充資料</div>';
+    return;
+  }
+
+  container.innerHTML = MANUAL_ENTRIES_SERVER.map(e => `
+    <div class="upload-item">
+      <div class="upload-item-head">
+        <span class="upload-item-name">${escapeHtmlUpload(e.name)}</span>
+        <button class="row-action" onclick="removeManualEntry('${e.name.replace(/'/g, "\\'")}')">刪除</button>
+      </div>
+      <div class="upload-item-content">${escapeHtmlUpload(e.content)}</div>
+    </div>`).join('');
 }
 
 function openModal(id) {
