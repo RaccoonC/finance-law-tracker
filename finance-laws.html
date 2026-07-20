@@ -147,13 +147,13 @@
   .law-table { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 24px; }
 
   .law-table-header {
-    display: grid; grid-template-columns: 40px 1.1fr 120px 130px 130px 120px 90px; padding: 10px 16px;
+    display: grid; grid-template-columns: 40px 1fr 100px 160px 160px 160px 90px; padding: 10px 16px;
     background: #f8f9fc; border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700;
     color: var(--gray); letter-spacing: 0.05em; text-transform: uppercase;
   }
 
   .law-row {
-    display: grid; grid-template-columns: 40px 1.1fr 120px 130px 130px 120px 90px; padding: 13px 16px;
+    display: grid; grid-template-columns: 40px 1fr 100px 160px 160px 160px 90px; padding: 13px 16px;
     border-bottom: 1px solid #f0f2f6; align-items: center; cursor: pointer; transition: background 0.1s;
   }
   .law-row:last-child { border-bottom: none; }
@@ -305,7 +305,7 @@
     <div class="logo-mark">財</div>
     <div>
       <div class="site-title">財務法規追蹤系統</div>
-      <div class="site-subtitle">Finance Compliance Tracker · 財務會計部門專用</div>
+      <div class="site-subtitle">Finance Compliance Tracker · 財務組專用</div>
     </div>
     <a href="expense-review.html" style="background:var(--accent);color:#fff;text-decoration:none;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;white-space:nowrap">← 支出報核憑證審核要點</a>
   </div>
@@ -580,31 +580,6 @@ async function loadData() {
     console.error('讀取 laws-data.json 失敗', e);
   }
 
-  // 問答集（例如經費結報常見疑義問答集）是另一支腳本抓的，資料放在獨立的
-  // qa-data.json，這裡跟主要法規清單合併，統一用同一套畫面顯示。
-  try {
-    const res = await fetch('data/qa-data.json', { cache: 'no-store' });
-    const raw = await res.json();
-    const qaItems = (raw.items || []).map((item, idx) => ({
-      id: 'qa-' + idx,
-      name: item.name,
-      cat: item.category || '未分類',
-      last_amend_date: item.last_amend_date,
-      publish_date: item.publish_date,
-      note: item.fetch_error || '',
-      url: item.url,
-      source_url: null,
-      checked_at: item.checked_at,
-      matchType: item.matchType,
-      trackable: item.trackable,
-      fulltext_synced_at: item.content_updated_at,
-      content_updated_at: item.content_updated_at,
-    }));
-    all = all.concat(qaItems);
-  } catch (e) {
-    console.error('讀取 qa-data.json 失敗（可能還沒執行過，不影響其他功能）', e);
-  }
-
   // 人工透過「新增補充資料」分頁上傳的資料，存在 Cloudflare KV，
   // 透過 /api/manual-entries 這個 API 讀取，所有使用者共用同一份。
   try {
@@ -613,7 +588,7 @@ async function loadData() {
     const manualItems = MANUAL_ENTRIES_SERVER.map((entry, idx) => ({
       id: 'manual-' + idx,
       name: entry.name,
-      cat: entry.category || '十五、補充資料',
+      cat: entry.category || '十四、補充資料',
       last_amend_date: null,
       publish_date: null,
       upload_date: entry.added_at,
@@ -670,15 +645,6 @@ async function loadFullText() {
     });
   } catch (e) {
     console.error('讀取 laws-fulltext.json 失敗', e);
-  }
-  try {
-    const qaRes = await fetch('data/qa-fulltext.json', { cache: 'no-store' });
-    const qaRaw = await qaRes.json();
-    (qaRaw.laws || []).forEach(item => {
-      LAWS_FULLTEXT_MAP[item.name] = item.content;
-    });
-  } catch (e) {
-    console.error('讀取 qa-fulltext.json 失敗（可能還沒執行過，不影響其他功能）', e);
   }
   fulltextLoaded = true;
   if (statusEl) statusEl.textContent = '（可搜尋條文全文）';
