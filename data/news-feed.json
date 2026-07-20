@@ -1,7 +1,17 @@
 {
-  "generated_at": "2026-07-20T02:47:25.807Z",
+  "generated_at": "2026-07-20T04:05:20.473Z",
   "recent_window_days": 14,
   "items": [
+    {
+      "title": "周三審稅法 解「大老婆逆襲」爭議",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOb09PQmtZU21DcjhCZTlqdUFTU0l4b0x2LURlM0JOUUppdDBOaVQ2M2VJVktBVVZGdVVuYWRXTHo4Z0lmM0xNNXRTbk53Yng3WXZ6SS0zeEhhZUc1d0xpeW1GWXk5ZUkyZXJ0YUZ1dGw0SGhDZkJLaWVVNTRCbHVuTjV1RUk1dw?oc=5",
+      "pub_date": "Mon, 20 Jul 2026 02:48:45 GMT",
+      "source": "中國時報- 翻爆",
+      "keyword": "房屋稅條例",
+      "first_seen_at": "2026-07-20T04:05:20.473Z",
+      "first_seen_this_run": true,
+      "is_new": true
+    },
     {
       "title": "公司法新制上路！經發局提醒：設立登記後須上勞動講習",
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE8zd3lPZmxrRmkxRzd0eUJ0OEtxRUJwNFhubnJpRUNTaXhaYm14Z2Z3VEhuNWd3aFZZb2ppYkxUQVRDR19nSk1vSXJWdlQ?oc=5",
@@ -9,7 +19,7 @@
       "source": "桃園電子報",
       "keyword": "公司法、商業登記法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -39,7 +49,7 @@
       "source": "好房網News",
       "keyword": "所得稅法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -143,16 +153,6 @@
       "is_new": true
     },
     {
-      "title": "公司法修正草案初審通過關鍵條文皆保留| 財經",
-      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1nOV9iZWtqa1V5RTBBd09nQlZQYXBsTTZqVWEwWWRJWnhxV2ZUeFh2OXhXc0JSYnQ1OFl3WHc3SnJ2eDItT1hJ?oc=5",
-      "pub_date": "Tue, 07 Jul 2026 22:35:46 GMT",
-      "source": "三立新聞網SETN.com",
-      "keyword": "公司法",
-      "first_seen_at": "2026-07-18T16:45:54.759Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
       "title": "防堵國人海外避稅 行政院會通過「所得基本稅額條例」修法",
       "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBhVnl1RDY2UVNnT3JLZHlGZmlnV3djemtOV1M2OVFra2wxUm1HWXgySlJWWXB5bjhUbG1LalFhcmZFeV9pNjR3?oc=5",
       "pub_date": "Tue, 07 Jul 2026 13:07:54 GMT",
@@ -189,7 +189,7 @@
       "source": "kpmg.com",
       "keyword": "上市上櫃公司治理實務守則",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -243,16 +243,6 @@
       "is_new": true
     },
     {
-      "title": "行政院修正相關草案 婚育家庭減稅大禮包 來了",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFA4TV9ZNllUajR2cXUyQnMzNmRteDhZVmRuVkZScU9fbFJRVE9SS3EweG1uTkpyT0FxNmh1SnpCcG5ITWloOXRFQVNjbTRvVklWUVZMa1I2Ni0zUdIBX0FVX3lxTE9PbmFRM0NndTNOT0dZenFIWkc4czNIR3F1clFtcUFjYXZfSTJ2QzdXTFFZOUYyU2phcXdtdEM4akVHZ1Y2T2U1S2VyOVQ1NFhLVURMdlh1NXBlUWw5WGIw?oc=5",
-      "pub_date": "Thu, 25 Jun 2026 16:58:29 GMT",
-      "source": "經濟日報",
-      "keyword": "房屋稅條例",
-      "first_seen_at": "2026-07-18T23:57:56.345Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
       "title": "政院拍板養育未成年子女免稅額加碼50％ 明年報稅適用",
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAwU3lETDZxLS1fYlZSTF9meWlac0hWaHMzemFic0R2SlFQTG5jSGJUSUdPNUZmT0xXSzFXWjA3V2cySUpZbFA5bldlOEtienFDZzBrbUdFejdUd2RJTVNz0gFkQVVfeXFMTzBOSzJVSjJ1MDJzUmlnaWI5eU5zOFBYanhhQjhkbENDSlRqS2VDQXJaNWF1SkhoVHhqLUlCOVRPUW9DeTRnZy1BRkJnWW9MTzVBM2FmOFNTeGZjcVlEVDJzMDYtVQ?oc=5",
       "pub_date": "Thu, 25 Jun 2026 07:00:00 GMT",
@@ -289,7 +279,7 @@
       "source": "澎湖e傳媒",
       "keyword": "娛樂稅法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -339,7 +329,7 @@
       "source": "moea.gov.tw",
       "keyword": "個人資料保護法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -379,7 +369,7 @@
       "source": "經濟日報",
       "keyword": "經濟部函釋",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -423,23 +413,13 @@
       "is_new": true
     },
     {
-      "title": "房屋贈與移轉 別忽略契稅",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5uOFlJalhhdkNYdlFkeU5PQXdBcDZDQWFiZU1MWGo5a1FPVWw4b1Znd0RzTUJqVWdOVzdnN3hLZWxmUUlfUF9XemlIQ0JDUW0yN3hocmYzbWRTUdIBX0FVX3lxTE9WMVFWOUJBNzdacm90QW1EMWFPaEpNN2xlS1dKUHhzT2hjQnFqVHUxNUJlczZGblNiUUxpNDI0Xzd3TTNfbkthUUQ5d1F1SVAyRzhhWHVmZC1FY3VRN0Nz?oc=5",
-      "pub_date": "Wed, 22 Apr 2026 07:00:00 GMT",
-      "source": "經濟日報",
-      "keyword": "契稅條例",
-      "first_seen_at": "2026-07-18T16:45:54.759Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
       "title": "金管會籲保險業務員勞務契約回歸民法不宜納保險法| 產經",
       "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zOEVxaFB4V1ZGMVRTOFZpR1pNcFBBMHd0bXA4aEw4WFdwSEtQVWVQcDZlM1RtVFR6aEZGTGFvQVh5bFBWakRuc3NpMGhNRklUUU5LU2dlZlZLMld0MkE?oc=5",
       "pub_date": "Tue, 21 Apr 2026 07:00:00 GMT",
       "source": "中央社 CNA",
       "keyword": "民法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -449,7 +429,7 @@
       "source": "經濟日報",
       "keyword": "契稅條例",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -457,7 +437,7 @@
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFB5NVRtSzU2RkNaTWlZU0RJaEUxeXVMYlJmOWs0MGVqYVZlRjRmT3pUQzNjRTAtTVR0VXE4TjNwenRGRHQ0T2luQ2pJcWtUQ1pCWWd6TTdpTlk4QnJLWWNCTDlEY0ppakFIQWx5TGI4Rlc3TWZkdnZR?oc=5",
       "pub_date": "Fri, 17 Apr 2026 23:33:32 GMT",
       "source": "kpmg.com",
-      "keyword": "國際財務報導準則、公開發行公司建立內部控制制度處理準則",
+      "keyword": "公開發行公司建立內部控制制度處理準則",
       "first_seen_at": "2026-07-18T16:45:54.759Z",
       "first_seen_this_run": false,
       "is_new": true
@@ -579,6 +559,16 @@
       "source": "旺得富理財網",
       "keyword": "海關進口稅則",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
+      "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "接軌IFRS 18新規！金管會修正期貨商財報準則",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB0eGxHT0E3LWJRb3MwVUlUYml6SV80bURFT0ZUV3pCTkpYdUxTSTlJMi1uRTBoVEFieVhXeVZzbjJlQ1FnWUt4VzhCVWQyb2RCcnJFNER5ZHJ1a2l2RGszSGc3ckxGdkYzcmF0VVRaZVY?oc=5",
+      "pub_date": "Wed, 25 Feb 2026 08:00:00 GMT",
+      "source": "理財鴿",
+      "keyword": "國際財務報導準則",
+      "first_seen_at": "2026-07-20T04:05:20.473Z",
       "first_seen_this_run": true,
       "is_new": true
     },
@@ -669,7 +659,7 @@
       "source": "經濟日報",
       "keyword": "印花稅法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -689,7 +679,7 @@
       "source": "U-CAR新聞",
       "keyword": "貨物稅條例",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -710,6 +700,16 @@
       "keyword": "商業會計法",
       "first_seen_at": "2026-07-18T16:45:54.759Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "立院三讀公司法、商業登記法 公司、商業登記後應參加勞動權益講習",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tWHY1TXRsVDNqT0d2M09EYlVScFRpRGp4Tkxrajg3TUlSakpFaEtXRzJCRDVzM2hGd0Z2OTZMRkMzZGJzZmZndm02bzNkQnlYUVJ0aDZHc0plQ2lFTUhv0gFkQVVfeXFMT3RSUzNaWFRBTWVqbUJOQnJBVVJRR2hlOUdOZlNpdG9TSXZxU2x6eDFMcHViWC1weGZ2RFBzaTZpOG9DdFEyN0F2THllbFFNV1JzUXlZb09YZHR2cVJ6Q3ZMNHQwTA?oc=5",
+      "pub_date": "Tue, 09 Dec 2025 08:00:00 GMT",
+      "source": "自由財經",
+      "keyword": "公司法",
+      "first_seen_at": "2026-07-20T04:05:20.473Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -763,12 +763,12 @@
       "is_new": true
     },
     {
-      "title": "補充保費新制傷到誰？政府只會對小資族開刀",
-      "link": "https://news.google.com/rss/articles/CBMirwJBVV95cUxORlhTeEJpRUF6SkNicUhYc2tKeDM5VHNYcl9HUTduYjdrckRhdUdEUDA0ZzRjNE5KTENwc3hGRXJld2J6end1NDBxV3BDVHFyelA0cWE0M0QtLXVfMmZBWWlRMmRmOS1mMm8tSkFkR2xMTnNLZUV0WGMzenJjdXhHcUF6cDNUa1dxQkxPX3d1WWNoSkRZVThlNXlLQks4RUxBcmhVblhHVXQ2YWZubjlGU3FlNVR3c2xrTWVMek80eEF3QmJjR0w1aHZmbFhJbWR1WGJYdWRvOGtPTGZVX3J4MkNNRld3cm4xRG5VQ09XXzU3NFRJcndKTlJJd2lrTkhSSkd6R19fSWNNYjhHcFFuVHNtWjQ1Z2NDVFpSekYtTmdORmxnWklIV0J6b2lyRmc?oc=5",
+      "title": "健保補充保費改革惹議 朝野立委也不挺",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE11b05SbktpRjFIdzZwb24zSnl5U29YR0NBeTRMYURuNmY1UWhHNlJSMnI0TmFvZ0xxM1EwN2JEZWhQMTJ2YkdoMklZaGdrTkh0VXRtYUFRQQ?oc=5",
       "pub_date": "Fri, 07 Nov 2025 08:00:00 GMT",
-      "source": "草根影響力新視野",
+      "source": "rti.org.tw",
       "keyword": "全民健康保險法",
-      "first_seen_at": "2026-07-20T02:47:25.807Z",
+      "first_seen_at": "2026-07-20T04:05:20.473Z",
       "first_seen_this_run": true,
       "is_new": true
     },
@@ -853,6 +853,16 @@
       "is_new": true
     },
     {
+      "title": "掃貨注意！進口仿冒品不再小額免罰、最高能罰貨價3倍…旅客自帶A貨通關也有問題？關務署親解兩者差異| 今周刊",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9iMndfRVpyamJDRFJRSzByNUdTMUx3X3VHX0hXeExReW1SUDFVQUtVZlFMWXZFNzI3dDB1SHI4SUx1c0NETDVnaDhzeFZZcWR3eTI0SzZ3?oc=5",
+      "pub_date": "Thu, 12 Jun 2025 07:00:00 GMT",
+      "source": "LINE TODAY",
+      "keyword": "海關緝私條例",
+      "first_seen_at": "2026-07-20T04:05:20.473Z",
+      "first_seen_this_run": true,
+      "is_new": true
+    },
+    {
       "title": "最高罰5萬！桃園經發局：公司變更「這些項目」最常逾期登記",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9BbjV3N2s2b2lacUtQUm51NlljNlJDekFIbGp4ekxpNmpLcHhFNGhVYkN5TVE5WnpjZzlkR0lkbHNibGR0WnFmY2dRWUxGTzViVDJmR2Nza0UyMXBObnBPbUtYc1otVkFUVTJR0gFwQVVfeXFMTmdSLTBtTmltM2FMZ0ozSGN1Q0MtOGxsd3hDVzlZa0pHTENLWGctRzBKek82SklocGY4Y2tTWHdUcGNZNU9lYzl3S3htcXRteHRRT21HV1U5YzN2Qk9iWW1YS0ZXd0NHbzhFTDFCSWEzRA?oc=5",
       "pub_date": "Sun, 08 Jun 2025 07:00:00 GMT",
@@ -883,23 +893,13 @@
       "is_new": true
     },
     {
-      "title": "6月海關新制上路！帶仿冒品回國「不論金額」沒收又罰款| Newtalk",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0xX0FPN2FSbWNIdWo0V1o4X0plcVRidDJqMVhTc1d2VENDWEMxM0FDQ2ZPR1hYeXdpMFkyTDExSnVVTnpOZjZYZjlBaVcteXExSUZEWWt3?oc=5",
-      "pub_date": "Sun, 16 Mar 2025 07:00:00 GMT",
-      "source": "LINE TODAY",
-      "keyword": "海關緝私條例",
-      "first_seen_at": "2026-07-18T16:45:54.759Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
       "title": "海關新制 私運仿冒品不限金額均將罰鍰 估6月上路",
       "link": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxONERPNFk3LWx6X2pCQzFlNFczZXA1R3BQWGNLQVl1SUNlRVFmSmM0RW9vUy16TU5iVjVmM0MtbjREUU9kZ25sUElZYXYzdEZuUTYyVXNGYWN6WUFMeFRDTzREbkhpWXZMU2NaWWVnNmNvNGpfcl9RWnhEa3h3R1N6TUNTOTVYajJTVFY2VVJHcHBIVTczMGM0djdhVkR0N3owNFRra3h6M0pMbTBCbnlBcmpubDNEaXlzQ3IwR2FZSWk3NDZ3SnVyQndOVVNWSkF0cHp0d25MOEh2TEZVdGpOMXk3Zkw5UU9kWFZXMUJYdjZlcGU5M0tHZ3FvczdtUUxfX0hQclN0WWVELVcySUN6RHlYdHoyQlRXc1Q0dmFxRTNvdFFDWXNLdWRnOFFMR2tJMk81RDQzUnBYVjBHV3h2dkxIay1YVXp2STk4YTBfcHJncDQ?oc=5",
       "pub_date": "Sun, 16 Mar 2025 07:00:00 GMT",
       "source": "Yahoo新聞",
       "keyword": "海關緝私條例",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -909,7 +909,7 @@
       "source": "新新聞",
       "keyword": "強制執行法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -953,6 +953,16 @@
       "is_new": true
     },
     {
+      "title": "報稅季將至！資誠提醒營利事業所得稅申報應留意事項",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5YRDBCYm1HMmlWMEVUVTBpNlBrR0hzV2VkQkZDZ3dRMTdfbmtxZTBVU2p4UlJqLTRMdHJsN2xMVXBraXVaMmZjVkZDeHjSAUxBVV95cUxOWEQwQmJtRzJpVjBFVFUwaTZQa0dIc1dlZEJGQ2d3UTE3X25rcWUwVVNqeFJSai00THRybDdsTFVwa2l1WjJmY1ZGQ3h4?oc=5",
+      "pub_date": "Thu, 25 Apr 2024 07:00:00 GMT",
+      "source": "立報傳媒",
+      "keyword": "營利事業所得稅查核準則",
+      "first_seen_at": "2026-07-20T04:05:20.473Z",
+      "first_seen_this_run": true,
+      "is_new": true
+    },
+    {
       "title": "國家地理雜誌 2024春遊臺灣 百K挑戰｜Taiwan Cycling Exploration",
       "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNT2JCUVl6dDRQZzRYRTY2RDZCTGxmMmNZN3RWUVF6UUsyQkNnS2FIams3VTJSVFZ4aDB5T0dsN2xiNHJ0MlNYdnk3UHFqUF9ERk95bFlWcTJUdlFzOGluXzhTUFQzT210cjY4VmdBdHdYSDJzdWJGcUlHb01Fa2VoaVpR?oc=5",
       "pub_date": "Wed, 10 Apr 2024 14:55:30 GMT",
@@ -969,17 +979,7 @@
       "source": "中央社 CNA",
       "keyword": "營利事業所得稅查核準則",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
-      "is_new": true
-    },
-    {
-      "title": "財政部更新「營利事業所得稅查核準則」 員工伙食津貼上調至每人每月最高3千元",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5faUpVZHYxS3RucmJYT3BYcDNvOWRxX1ZfWEtSMG5KV3JBS0hUdXc3cVhfTDFSVGtsR25EWVJSUUt4TTg0Q1FOQ2NsamZYQnRna1pGZGJlVG5OUQ?oc=5",
-      "pub_date": "Tue, 12 Dec 2023 08:00:00 GMT",
-      "source": "信傳媒",
-      "keyword": "營利事業所得稅查核準則",
-      "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -990,6 +990,16 @@
       "keyword": "營利事業所得稅查核準則",
       "first_seen_at": "2026-07-18T16:45:54.759Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "購買未辦保存登記房屋也要報繳契稅| 房地稅務",
+      "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxQdkJRRzUtQjMyaUF3XzU2U2M1eTZFMFlOMjZFVGVMcEpoZ283ZTl2aTFsbUwteHB6VUJFLWNCR01lSUNaUUU1bWxSeE84c09ic1Y1el8wNUxMclFDZmNWczRJdWNxaENuU0ZhSmhxbE9XYWZETUxyR2VqTkFBWnF0YmUyMEZDYkd5SGczZlhjTWk1VENkU1M4VGt2SDJSOWZVbndNd09zZFdxS053UXNDeXhiZnkxWXBBNm8zemZBTTBwLVI0Ry1IeFRPZEg2LTc4aU5BZnBCLXZaNGFRd3VWdzZhbVRZVW1oQUJsRkZWWGhfbVhuN1ZDM2xDQWJYbTZsYXlyaUJpOC1RYTYwODJJZ3p0clEwYTBRVzRYRmpNSlhSZw?oc=5",
+      "pub_date": "Sun, 22 Oct 2023 07:00:00 GMT",
+      "source": "MyGoNews",
+      "keyword": "契稅條例",
+      "first_seen_at": "2026-07-20T04:05:20.473Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -1009,7 +1019,7 @@
       "source": "卡優新聞網",
       "keyword": "金管會函令",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -1039,7 +1049,7 @@
       "source": "工商時報",
       "keyword": "營業人開立銷售憑證時限表",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -1069,7 +1079,7 @@
       "source": "新唐人亞太電視台",
       "keyword": "公司登記辦法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -1249,7 +1259,7 @@
       "source": "自由財經",
       "keyword": "各類所得扣繳率標準",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
