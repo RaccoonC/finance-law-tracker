@@ -11,6 +11,6 @@
   "kv_namespaces": [
     // ⚠️ id 需要你自己到 Cloudflare Dashboard 建立 KV namespace 後填入，
     //    詳見 README.md「六、補充資料共用儲存（KV）設定」
-    { "binding": "MANUAL_ENTRIES", "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+    { "binding": "MANUAL_ENTRIES", "id": "63de892bef8444f5bb84aac02fcef988" }
   ]
 }
