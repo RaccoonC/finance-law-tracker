@@ -64,6 +64,17 @@ function extractRocDateHint(text) {
   return `民國${m[1]}年${m[2].padStart(2, "0")}月${m[3].padStart(2, "0")}日`;
 }
 
+// 頁面上有一個很乾淨的「上版日期」欄位（西元格式，例如 2025/12/30），
+// 比從整頁文字裡硬找「中華民國...」字樣準確很多（問答集內容本身
+// 就夾雜大量歷史函釋日期，容易誤判成版本日期）。優先用這個。
+function extractVersionDate(html) {
+  const m = html.match(/<div class="sub">\s*上版日期\s*<\/div>\s*<div class="info">\s*(\d{4})\/(\d{1,2})\/(\d{1,2})\s*<\/div>/);
+  if (!m) return null;
+  const rocYear = Number(m[1]) - 1911;
+  if (rocYear <= 0) return null;
+  return `民國${rocYear}年${m[2].padStart(2, "0")}月${m[3].padStart(2, "0")}日`;
+}
+
 function sha256(text) {
   return crypto.createHash("sha256").update(text, "utf8").digest("hex");
 }
@@ -107,7 +118,7 @@ async function main() {
     const text = stripHtmlToText(html);
     const hash = sha256(text);
     const title = extractTitle(html);
-    const dateHint = extractRocDateHint(text);
+    const dateHint = extractVersionDate(html) || extractRocDateHint(text);
 
     console.log(`頁面標題：${title || "（抓不到 <title>）"}`);
     console.log(`內容雜湊值：${hash}`);
@@ -133,14 +144,15 @@ async function main() {
     };
     fulltextEntry = { name: QA_NAME, content: changed ? text : prevText || text };
   } catch (err) {
-    console.error("抓取失敗：", err.message);
+    const causeDetail = err.cause ? `（${err.cause.code || err.cause.message || err.cause}）` : "";
+    console.error("抓取失敗：", err.message, causeDetail);
     item = {
       name: QA_NAME,
       category: QA_CATEGORY,
       last_amend_date: prev?.last_amend_date || null,
       publish_date: null,
       url: QA_URL,
-      fetch_error: `抓取失敗：${err.message}`,
+      fetch_error: `抓取失敗：${err.message}${causeDetail}`,
       matchType: prev ? "fetch_error" : "not_found",
       trackable: true,
       checked_at: checkedAt,
