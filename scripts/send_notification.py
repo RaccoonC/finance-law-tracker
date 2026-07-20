@@ -38,6 +38,7 @@ from datetime import datetime
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LAWS_DATA_PATH = os.path.join(BASE_DIR, "data", "laws-data.json")
 NEWS_FEED_PATH = os.path.join(BASE_DIR, "data", "news-feed.json")
+QA_DATA_PATH = os.path.join(BASE_DIR, "data", "qa-data.json")
 
 SMTP_HOST = os.environ.get("MAIL_SMTP_HOST", "smtp.gmail.com")
 SMTP_PORT = int(os.environ.get("MAIL_SMTP_PORT", "465"))
@@ -114,8 +115,9 @@ def main():
 
     laws_data = load_json(LAWS_DATA_PATH, {"laws": []})
     news_feed = load_json(NEWS_FEED_PATH, {"items": []})
+    qa_data = load_json(QA_DATA_PATH, {"items": []})
 
-    all_laws = laws_data.get("laws", [])
+    all_laws = laws_data.get("laws", []) + qa_data.get("items", [])
     newly_laws = [l for l in all_laws if l.get("newly_detected")]
     newly_errors = [l for l in all_laws if l.get("newly_error")]
     newly_news = [n for n in news_feed.get("items", []) if n.get("first_seen_this_run")]
