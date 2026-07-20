@@ -283,7 +283,7 @@
     <div class="logo-mark">財</div>
     <div>
       <div class="site-title">財務法規追蹤系統</div>
-      <div class="site-subtitle">Finance Compliance Tracker · 財務組專用</div>
+      <div class="site-subtitle">Finance Compliance Tracker · 財務會計部門專用</div>
     </div>
     <a href="expense-review.html" style="background:var(--accent);color:#fff;text-decoration:none;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;white-space:nowrap">← 支出報核憑證審核要點</a>
   </div>
@@ -471,14 +471,16 @@ function parseROCDate(str) {
 function mostRecentLawDate(law) {
   const amend = parseROCDate(law.last_amend_date);
   const publish = parseROCDate(law.publish_date);
-  if (amend && publish) return amend > publish ? amend : publish;
-  return amend || publish || null;
+  const contentUpdated = law.content_updated_at ? new Date(law.content_updated_at) : null;
+  const candidates = [amend, publish, isNaN(contentUpdated) ? null : contentUpdated].filter(Boolean);
+  if (!candidates.length) return null;
+  return candidates.reduce((a, b) => (a > b ? a : b));
 }
 
 const RECENT_MONTHS = 3;
 
 function deriveStatus(law) {
-  if (law.matchType === 'not_found' || law.matchType === 'not_trackable') return 'pending';
+  if (['not_found', 'not_trackable', 'fetch_error'].includes(law.matchType)) return 'pending';
   const recent = mostRecentLawDate(law);
   if (recent) {
     const cutoff = new Date();
@@ -496,12 +498,13 @@ function formatDateTime(iso) {
 }
 
 async function loadData() {
+  let all = [];
   try {
     const res = await fetch('data/laws-data.json', { cache: 'no-store' });
     const raw = await res.json();
     document.getElementById('last-update-laws').textContent = formatDateTime(raw.generated_at);
 
-    const all = (raw.laws || []).map((law, idx) => ({
+    all = (raw.laws || []).map((law, idx) => ({
       id: idx + 1,
       name: law.name,
       cat: law.category || '未分類',
@@ -515,20 +518,43 @@ async function loadData() {
       trackable: law.trackable,
       fulltext_synced_at: law.fulltext_synced_at,
     }));
-
-    LAWS = all.filter(l => l.trackable !== false).map(l => ({ ...l, status: deriveStatus(l) }));
-
-    const manualGroups = new Map();
-    all.filter(l => l.trackable === false).forEach(l => {
-      if (!manualGroups.has(l.cat)) manualGroups.set(l.cat, []);
-      manualGroups.get(l.cat).push({ name: l.name, note: l.note, url: l.source_url });
-    });
-    MANUAL = [...manualGroups.entries()].map(([category, items]) => ({ category, items }));
   } catch (e) {
     console.error('讀取 laws-data.json 失敗', e);
-    LAWS = [];
-    MANUAL = [];
   }
+
+  // 問答集（例如經費結報常見疑義問答集）是另一支腳本抓的，資料放在獨立的
+  // qa-data.json，這裡跟主要法規清單合併，統一用同一套畫面顯示。
+  try {
+    const res = await fetch('data/qa-data.json', { cache: 'no-store' });
+    const raw = await res.json();
+    const qaItems = (raw.items || []).map((item, idx) => ({
+      id: 'qa-' + idx,
+      name: item.name,
+      cat: item.category || '未分類',
+      last_amend_date: item.last_amend_date,
+      publish_date: item.publish_date,
+      note: item.fetch_error || '',
+      url: item.url,
+      source_url: null,
+      checked_at: item.checked_at,
+      matchType: item.matchType,
+      trackable: item.trackable,
+      fulltext_synced_at: item.content_updated_at,
+      content_updated_at: item.content_updated_at,
+    }));
+    all = all.concat(qaItems);
+  } catch (e) {
+    console.error('讀取 qa-data.json 失敗（可能還沒執行過，不影響其他功能）', e);
+  }
+
+  LAWS = all.filter(l => l.trackable !== false).map(l => ({ ...l, status: deriveStatus(l) }));
+
+  const manualGroups = new Map();
+  all.filter(l => l.trackable === false).forEach(l => {
+    if (!manualGroups.has(l.cat)) manualGroups.set(l.cat, []);
+    manualGroups.get(l.cat).push({ name: l.name, note: l.note, url: l.source_url });
+  });
+  MANUAL = [...manualGroups.entries()].map(([category, items]) => ({ category, items }));
 
   buildCategorySidebar();
   updateCounters();
@@ -552,14 +578,21 @@ async function loadFullText() {
     (raw.laws || []).forEach(item => {
       LAWS_FULLTEXT_MAP[item.name] = item.content;
     });
-    fulltextLoaded = true;
-    if (statusEl) statusEl.textContent = '（可搜尋條文全文）';
   } catch (e) {
     console.error('讀取 laws-fulltext.json 失敗', e);
-    if (statusEl) statusEl.textContent = '全文索引載入失敗，僅能搜尋法規名稱';
-  } finally {
-    fulltextLoading = false;
   }
+  try {
+    const qaRes = await fetch('data/qa-fulltext.json', { cache: 'no-store' });
+    const qaRaw = await qaRes.json();
+    (qaRaw.laws || []).forEach(item => {
+      LAWS_FULLTEXT_MAP[item.name] = item.content;
+    });
+  } catch (e) {
+    console.error('讀取 qa-fulltext.json 失敗（可能還沒執行過，不影響其他功能）', e);
+  }
+  fulltextLoaded = true;
+  if (statusEl) statusEl.textContent = '（可搜尋條文全文）';
+  fulltextLoading = false;
 }
 
 function escapeHtml(str) {
