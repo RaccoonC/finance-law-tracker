@@ -51,3 +51,19 @@ finance-law-tracker/
 
 ## 五、`data/laws-list.json` 中 `trackable: false` 的項目
 清單中約 10 筆（例如「財政部函釋」「國稅局函釋」「金管會函令」「IFRS」「審計準則公報」等）並非全國法規資料庫收錄的單一命名法規，而是函釋/準則彙整或跨機關資料，程式不會嘗試自動比對，頁面上會顯示「無法自動追蹤」，並附上備註說明查證方向。如果你有想追蹤的更精確法規名稱（例如某個特定準則的正式公告名稱），可以直接在 `laws-list.json` 補上正確名稱、把 `trackable` 改成 `true`。
+
+## 六、補充資料共用儲存（KV）設定
+「📤 新增補充資料」分頁讓使用者直接新增資料、所有人立即可見，資料存在 Cloudflare KV，需要你先手動建立一次：
+
+1. Cloudflare Dashboard → 左側選單 **儲存與資料庫（Storage & Databases）** → **KV** → **Create a namespace**
+2. Namespace 名稱隨意取（例如 `finance-law-manual-entries`），建立後會得到一組 **Namespace ID**（一串英數字）
+3. 打開 repo 裡的 `wrangler.jsonc`，找到這一段：
+   ```jsonc
+   "kv_namespaces": [
+     { "binding": "MANUAL_ENTRIES", "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+   ]
+   ```
+   把 `REPLACE_WITH_YOUR_KV_NAMESPACE_ID` 換成剛剛複製的 Namespace ID，commit 上傳
+4. Cloudflare 會自動重新部署，部署成功後「新增補充資料」分頁就能直接寫入、所有人共用
+
+**注意**：這個功能對應的 API（`/api/manual-entries`）目前**沒有登入驗證**，任何拿到網站網址的人都可以新增或刪除資料。如果之後需要加上密碼保護，需要另外設計驗證機制（可以再回來找我）。
