@@ -147,13 +147,13 @@
   .law-table { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 24px; }
 
   .law-table-header {
-    display: grid; grid-template-columns: 40px 1.2fr 130px 140px 140px 100px; padding: 10px 16px;
+    display: grid; grid-template-columns: 40px 1.1fr 120px 130px 130px 120px 90px; padding: 10px 16px;
     background: #f8f9fc; border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700;
     color: var(--gray); letter-spacing: 0.05em; text-transform: uppercase;
   }
 
   .law-row {
-    display: grid; grid-template-columns: 40px 1.2fr 130px 140px 140px 100px; padding: 13px 16px;
+    display: grid; grid-template-columns: 40px 1.1fr 120px 130px 130px 120px 90px; padding: 13px 16px;
     border-bottom: 1px solid #f0f2f6; align-items: center; cursor: pointer; transition: background 0.1s;
   }
   .law-row:last-child { border-bottom: none; }
@@ -407,6 +407,7 @@
           <div>類別</div>
           <div>最新修正日期</div>
           <div>公布日期</div>
+          <div>上傳日期</div>
           <div>操作</div>
         </div>
         <div id="law-list"></div>
@@ -537,6 +538,7 @@ const RECENT_MONTHS = 3;
 
 function deriveStatus(law) {
   if (['not_found', 'not_trackable', 'fetch_error'].includes(law.matchType)) return 'pending';
+  if (law.isManualUpload) return 'active'; // 自行上傳資料不計入「近期異動」
   const recent = mostRecentLawDate(law);
   if (recent) {
     const cutoff = new Date();
@@ -614,6 +616,8 @@ async function loadData() {
       cat: entry.category || '十五、補充資料',
       last_amend_date: null,
       publish_date: null,
+      upload_date: entry.added_at,
+      isManualUpload: true,
       note: '',
       url: null,
       source_url: null,
@@ -770,11 +774,13 @@ function updateCounters() {
 }
 
 function formatAmendCell(l) {
+  if (l.isManualUpload) return '無（為自行上傳之資料）';
   if (l.last_amend_date) return l.last_amend_date;
   if (l.publish_date) return '公布後尚未修訂過';
   return '—';
 }
 function formatPublishCell(l) {
+  if (l.isManualUpload) return '無（為自行上傳之資料）';
   if (l.publish_date) return l.publish_date;
   if (l.last_amend_date) return '請依最新修正日期為準';
   return '—';
@@ -830,6 +836,7 @@ function renderLaws() {
         <div><span class="cat-tag">${l.cat}</span></div>
         <div class="date-cell ${l.status==='modified'?'date-new':''}">${formatAmendCell(l)}</div>
         <div class="date-cell">${formatPublishCell(l)}</div>
+        <div class="date-cell">${l.isManualUpload ? formatDateTime(l.upload_date) : '—'}</div>
         <div><button class="row-action" onclick="event.stopPropagation();openModal(${l.id})">查看詳情</button></div>
       </div>`;
   }).join('');
@@ -1020,11 +1027,15 @@ function openModal(id) {
   }
 
   const statusLabel = { modified:'近期有異動 🔴', pending:'尚未比對到／抓取失敗 ⚪', active:'正常施行 🟢' };
+  const uploadDateRow = law.isManualUpload
+    ? `<div class="info-item"><label>上傳日期</label><div class="val">${formatDateTime(law.upload_date)}</div></div>`
+    : '';
   document.getElementById('modal-info').innerHTML = `
     <div class="info-item"><label>目前狀態</label><div class="val">${statusLabel[law.status]||law.status}</div></div>
     <div class="info-item"><label>類別</label><div class="val">${law.cat}</div></div>
     <div class="info-item"><label>最新修正日期</label><div class="val">${formatAmendCell(law)}</div></div>
     <div class="info-item"><label>公布日期</label><div class="val">${formatPublishCell(law)}</div></div>
+    ${uploadDateRow}
     <div class="info-item"><label>上次檢查時間</label><div class="val">${formatDateTime(law.checked_at)}</div></div>
     <div class="info-item"><label>條文最後更新時間</label><div class="val">${formatDateTime(law.fulltext_synced_at)}</div></div>
     ${law.note ? `<div class="info-item" style="grid-column:1 / -1"><label>備註</label><div class="val">${law.note}</div></div>` : ''}
