@@ -731,7 +731,13 @@ function buildManualCategorySidebar() {
 function init() {
   const now = new Date();
   document.getElementById('today-date').textContent = now.toLocaleDateString('zh-TW', {year:'numeric',month:'2-digit',day:'2-digit'});
-  loadData();
+  loadData().then(() => {
+    const reopenTab = sessionStorage.getItem('reopenTab');
+    if (reopenTab) {
+      sessionStorage.removeItem('reopenTab');
+      switchTab(reopenTab);
+    }
+  });
 }
 
 function updateCounters() {
@@ -957,8 +963,10 @@ async function addManualEntry() {
     nameEl.value = '';
     contentEl.value = '';
     renderUploadList();
-    showToast('已新增，所有人立即可見');
+    showToast('已新增，所有人立即可見，頁面即將重新整理…');
     if (statusEl) statusEl.textContent = '';
+    setTimeout(() => { sessionStorage.setItem('reopenTab', 'upload'); location.reload(); }, 900);
+    return; // 即將重新整理頁面，不用再解除按鈕鎖定
   } catch (e) {
     console.error('新增補充資料失敗', e);
     if (statusEl) statusEl.textContent = '上傳失敗，請稍後再試';
@@ -975,7 +983,8 @@ async function removeManualEntry(name) {
     const raw = await res.json();
     MANUAL_ENTRIES_SERVER = raw.entries || [];
     renderUploadList();
-    showToast('已刪除');
+    showToast('已刪除，頁面即將重新整理…');
+    setTimeout(() => { sessionStorage.setItem('reopenTab', 'upload'); location.reload(); }, 900);
   } catch (e) {
     console.error('刪除補充資料失敗', e);
     showToast('刪除失敗，請稍後再試');
