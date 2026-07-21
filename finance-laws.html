@@ -110,7 +110,11 @@
 
   main { flex: 1; padding: 24px 28px; max-width: 1000px; }
 
-  .summary-bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; }
+  .summary-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .stat-group { border-radius: 10px; padding: 14px; margin-bottom: 16px; }
+  .stat-group-label { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat-group { background: #eef2f8; }
+  .stat-group-alt { background: #fdf2e9; }
 
   .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; }
   .stat-label { font-size: 11px; color: var(--gray); margin-bottom: 6px; font-weight: 500; }
@@ -362,31 +366,40 @@
         <button class="btn btn-outline" onclick="document.getElementById('alert-banner').style.display='none'" style="flex-shrink:0;font-size:11px">已知悉</button>
       </div>
 
-      <div class="summary-bar">
-        <div class="stat-card">
-          <div class="stat-label">追蹤法規總數</div>
-          <div class="stat-value" id="stat-total">0</div>
-          <div class="stat-change" id="stat-total-sub">—</div>
+      <div class="stat-group">
+        <div class="stat-group-label">法規類別</div>
+        <div class="summary-bar">
+          <div class="stat-card">
+            <div class="stat-label">追蹤法規總數</div>
+            <div class="stat-value" id="stat-total">0</div>
+            <div class="stat-change" id="stat-total-sub">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">近期異動</div>
+            <div class="stat-value alert" id="stat-modified">0</div>
+            <div class="stat-change">需確認影響範圍</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">尚未比對到／抓取失敗</div>
+            <div class="stat-value warn" id="stat-pending">0</div>
+            <div class="stat-change">需人工核對名稱</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">目前無異動</div>
+            <div class="stat-value ok" id="stat-active">0</div>
+            <div class="stat-change">最近一次檢查結果正常</div>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">近期異動</div>
-          <div class="stat-value alert" id="stat-modified">0</div>
-          <div class="stat-change">需確認影響範圍</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">尚未比對到／抓取失敗</div>
-          <div class="stat-value warn" id="stat-pending">0</div>
-          <div class="stat-change">需人工核對名稱</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">目前無異動</div>
-          <div class="stat-value ok" id="stat-active">0</div>
-          <div class="stat-change">最近一次檢查結果正常</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">追蹤資料總數</div>
-          <div class="stat-value" id="stat-manual-total">0</div>
-          <div class="stat-change">使用者自行上傳之補充資料</div>
+      </div>
+
+      <div class="stat-group stat-group-alt">
+        <div class="stat-group-label">補充資料類別</div>
+        <div class="summary-bar" style="grid-template-columns: 1fr">
+          <div class="stat-card">
+            <div class="stat-label">追蹤資料總數</div>
+            <div class="stat-value" id="stat-manual-total">0</div>
+            <div class="stat-change">使用者自行上傳之補充資料</div>
+          </div>
         </div>
       </div>
 
@@ -750,7 +763,7 @@ function updateCounters() {
   const trackedTotal = LAWS.filter(l => !l.isManualUpload).length; // 「追蹤法規總數」不計入使用者自行上傳的補充資料
   const modified = LAWS.filter(l => l.status === 'modified').length;
   const pending = LAWS.filter(l => l.status === 'pending').length;
-  const active = LAWS.filter(l => l.status === 'active').length;
+  const active = LAWS.filter(l => l.status === 'active' && !l.isManualUpload).length;
 
   document.getElementById('cnt-all').textContent = total;
   document.getElementById('cnt-modified').textContent = modified;
