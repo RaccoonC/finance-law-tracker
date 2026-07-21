@@ -336,6 +336,10 @@
       </div>
     </div>
     <div class="sidebar-section" style="margin-top:12px">
+      <div class="sidebar-label">補充資料類別</div>
+      <div id="manual-category-list"></div>
+    </div>
+    <div class="sidebar-section" style="margin-top:12px">
       <div class="sidebar-label">快速篩選</div>
       <div class="sidebar-item" onclick="filterStatus('modified')">🔴 近期有異動
         <span class="sidebar-count alert" id="cnt-modified">0</span>
@@ -587,7 +591,7 @@ async function loadData() {
     const manualItems = MANUAL_ENTRIES_SERVER.map((entry, idx) => ({
       id: 'manual-' + idx,
       name: entry.name,
-      cat: entry.category || '十二、補充資料',
+      cat: entry.category || '補充資料',
       last_amend_date: null,
       publish_date: null,
       upload_date: entry.added_at,
@@ -694,13 +698,30 @@ function categoryOrder(cat) {
 }
 
 function buildCategorySidebar() {
-  const cats = [...new Set(LAWS.map(l => l.cat))].sort((a, b) => categoryOrder(a) - categoryOrder(b));
+  const cats = [...new Set(LAWS.filter(l => !l.isManualUpload).map(l => l.cat))].sort((a, b) => categoryOrder(a) - categoryOrder(b));
   const container = document.getElementById('category-list');
   container.innerHTML = `
     <div class="sidebar-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
       <span class="sidebar-count" id="cnt-all">0</span>
     </div>
   ` + cats.map(cat => `
+    <div class="sidebar-item" onclick="filterCat('${cat.replace(/'/g, "\\'")}', this)">${cat}
+      <span class="sidebar-count" data-cat="${cat}">0</span>
+    </div>
+  `).join('');
+
+  buildManualCategorySidebar();
+}
+
+function buildManualCategorySidebar() {
+  const container = document.getElementById('manual-category-list');
+  if (!container) return;
+  const manualCats = [...new Set(LAWS.filter(l => l.isManualUpload).map(l => l.cat))];
+  if (!manualCats.length) {
+    container.innerHTML = '<div class="sidebar-item" style="color:var(--gray);cursor:default">尚無補充資料</div>';
+    return;
+  }
+  container.innerHTML = manualCats.map(cat => `
     <div class="sidebar-item" onclick="filterCat('${cat.replace(/'/g, "\\'")}', this)">${cat}
       <span class="sidebar-count" data-cat="${cat}">0</span>
     </div>
@@ -731,6 +752,10 @@ function updateCounters() {
   document.getElementById('stat-active').textContent = active;
 
   document.querySelectorAll('#category-list [data-cat]').forEach(el => {
+    const cat = el.dataset.cat;
+    el.textContent = LAWS.filter(l => l.cat === cat).length;
+  });
+  document.querySelectorAll('#manual-category-list [data-cat]').forEach(el => {
     const cat = el.dataset.cat;
     el.textContent = LAWS.filter(l => l.cat === cat).length;
   });
@@ -875,7 +900,7 @@ function filterStatus(s, el) {
 
 function filterCat(cat, el) {
   currentCat = cat;
-  document.querySelectorAll('#category-list .sidebar-item').forEach(i => i.classList.remove('active'));
+  document.querySelectorAll('#category-list .sidebar-item, #manual-category-list .sidebar-item').forEach(i => i.classList.remove('active'));
   if (el) el.classList.add('active');
   renderLaws();
 }
