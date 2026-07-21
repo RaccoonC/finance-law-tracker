@@ -110,7 +110,7 @@
 
   main { flex: 1; padding: 24px 28px; max-width: 1000px; }
 
-  .summary-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .summary-bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; }
 
   .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; }
   .stat-label { font-size: 11px; color: var(--gray); margin-bottom: 6px; font-weight: 500; }
@@ -382,6 +382,11 @@
           <div class="stat-label">目前無異動</div>
           <div class="stat-value ok" id="stat-active">0</div>
           <div class="stat-change">最近一次檢查結果正常</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">追蹤資料總數</div>
+          <div class="stat-value" id="stat-manual-total">0</div>
+          <div class="stat-change">使用者自行上傳之補充資料</div>
         </div>
       </div>
 
@@ -756,6 +761,7 @@ function updateCounters() {
   document.getElementById('stat-modified').textContent = modified;
   document.getElementById('stat-pending').textContent = pending;
   document.getElementById('stat-active').textContent = active;
+  document.getElementById('stat-manual-total').textContent = LAWS.filter(l => l.isManualUpload).length;
 
   document.querySelectorAll('#category-list [data-cat]').forEach(el => {
     const cat = el.dataset.cat;
