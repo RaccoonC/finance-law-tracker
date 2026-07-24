@@ -108,6 +108,13 @@
 
   .sidebar-count.alert { background: var(--red-bg); color: var(--red); }
 
+  #laws-submenu { overflow: hidden; }
+  #laws-submenu.collapsed { display: none; }
+  .submenu-item { padding-left: 30px; font-size: 12.5px; }
+  .submenu-label { padding-left: 18px; margin-top: 8px; }
+  #laws-submenu-toggle { transition: transform 0.15s; display: inline-block; }
+  #laws-submenu-toggle.collapsed { transform: rotate(-90deg); }
+
   main { flex: 1; padding: 24px 28px; max-width: 1000px; }
 
   .summary-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -328,27 +335,26 @@
   <aside>
     <div class="sidebar-section">
       <div class="sidebar-label">功能導覽</div>
-      <div class="sidebar-item active" id="sb-laws" onclick="switchTab('laws')">📋 法規總覽</div>
+      <div class="sidebar-item active" id="sb-laws" style="display:flex;align-items:center;justify-content:space-between">
+        <span onclick="switchTab('laws')" style="flex:1">📋 法規總覽</span>
+        <span id="laws-submenu-toggle" onclick="toggleLawsSubmenu()" style="cursor:pointer;padding:2px 6px;font-size:10px;color:var(--gray)">▾</span>
+      </div>
+      <div id="laws-submenu">
+        <div id="cat-everything" class="sidebar-item submenu-item" onclick="filterCat('everything', this)">🗂️ 全部法規&amp;補充資料
+          <span class="sidebar-count" id="cnt-everything">0</span>
+        </div>
+        <div class="sidebar-label submenu-label">法規類別</div>
+        <div id="category-list">
+          <div class="sidebar-item submenu-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
+            <span class="sidebar-count" id="cnt-all">0</span>
+          </div>
+        </div>
+        <div class="sidebar-label submenu-label">補充資料類別</div>
+        <div id="manual-category-list"></div>
+      </div>
       <div class="sidebar-item" id="sb-news" onclick="switchTab('news')">📰 最新動態</div>
       <div class="sidebar-item" id="sb-upload" onclick="switchTab('upload')">📤 新增補充資料</div>
       <div class="sidebar-item" id="sb-manual" onclick="switchTab('manual')">⚠️ 需自行查看</div>
-    </div>
-    <div class="sidebar-section" style="margin-top:12px">
-      <div id="cat-everything" class="sidebar-item" onclick="filterCat('everything', this)">🗂️ 全部法規&amp;補充資料
-        <span class="sidebar-count" id="cnt-everything">0</span>
-      </div>
-    </div>
-    <div class="sidebar-section" style="margin-top:12px">
-      <div class="sidebar-label">法規類別</div>
-      <div id="category-list">
-        <div class="sidebar-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
-          <span class="sidebar-count" id="cnt-all">0</span>
-        </div>
-      </div>
-    </div>
-    <div class="sidebar-section" style="margin-top:12px">
-      <div class="sidebar-label">補充資料類別</div>
-      <div id="manual-category-list"></div>
     </div>
     <div class="sidebar-section" style="margin-top:12px">
       <div class="sidebar-label">快速篩選</div>
@@ -728,11 +734,11 @@ function buildCategorySidebar() {
   const cats = [...new Set(LAWS.filter(l => !l.isManualUpload).map(l => l.cat))].sort((a, b) => categoryOrder(a) - categoryOrder(b));
   const container = document.getElementById('category-list');
   container.innerHTML = `
-    <div class="sidebar-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
+    <div class="sidebar-item submenu-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
       <span class="sidebar-count" id="cnt-all">0</span>
     </div>
   ` + cats.map(cat => `
-    <div class="sidebar-item" onclick="filterCat('${cat.replace(/'/g, "\\'")}', this)">${cat}
+    <div class="sidebar-item submenu-item" onclick="filterCat('${cat.replace(/'/g, "\\'")}', this)">${cat}
       <span class="sidebar-count" data-cat="${cat}">0</span>
     </div>
   `).join('');
@@ -745,11 +751,11 @@ function buildManualCategorySidebar() {
   if (!container) return;
   const manualCats = [...new Set(LAWS.filter(l => l.isManualUpload).map(l => l.cat))];
   if (!manualCats.length) {
-    container.innerHTML = '<div class="sidebar-item" style="color:var(--gray);cursor:default">尚無補充資料</div>';
+    container.innerHTML = '<div class="sidebar-item submenu-item" style="color:var(--gray);cursor:default">尚無補充資料</div>';
     return;
   }
   container.innerHTML = manualCats.map(cat => `
-    <div class="sidebar-item" onclick="filterCat('${cat.replace(/'/g, "\\'")}', this)">${cat}
+    <div class="sidebar-item submenu-item" onclick="filterCat('${cat.replace(/'/g, "\\'")}', this)">${cat}
       <span class="sidebar-count" data-cat="${cat}">0</span>
     </div>
   `).join('');
@@ -934,6 +940,13 @@ function filterStatus(s, el) {
   document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
   if (el) el.classList.add('active');
   renderLaws();
+}
+
+function toggleLawsSubmenu() {
+  const submenu = document.getElementById('laws-submenu');
+  const toggle = document.getElementById('laws-submenu-toggle');
+  submenu.classList.toggle('collapsed');
+  toggle.classList.toggle('collapsed');
 }
 
 function filterCat(cat, el) {
