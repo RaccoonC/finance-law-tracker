@@ -111,7 +111,8 @@
   main { flex: 1; padding: 24px 28px; max-width: 1000px; }
 
   .summary-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .stat-group { border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 16px; }
+  .stat-group-row { display: flex; gap: 16px; margin-bottom: 16px; align-items: stretch; }
+  .stat-group { border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 0; }
   .stat-group-label { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
   .stat-group { background: #dbe6f7; }
   .stat-group-alt { background: #fbe3cc; }
@@ -296,6 +297,7 @@
   @media (max-width: 768px) {
     aside { display: none; }
     .summary-bar { grid-template-columns: repeat(2, 1fr); }
+    .stat-group-row { flex-direction: column; }
     .law-table-header { display: none; }
     .law-row { grid-template-columns: 1fr; gap: 4px; }
     main { padding: 16px; }
@@ -366,39 +368,41 @@
         <button class="btn btn-outline" onclick="document.getElementById('alert-banner').style.display='none'" style="flex-shrink:0;font-size:11px">已知悉</button>
       </div>
 
-      <div class="stat-group">
-        <div class="stat-group-label">法規類別</div>
-        <div class="summary-bar">
-          <div class="stat-card">
-            <div class="stat-label">追蹤法規總數</div>
-            <div class="stat-value" id="stat-total">0</div>
-            <div class="stat-change" id="stat-total-sub">—</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">近期異動</div>
-            <div class="stat-value alert" id="stat-modified">0</div>
-            <div class="stat-change">需確認影響範圍</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">尚未比對到／抓取失敗</div>
-            <div class="stat-value warn" id="stat-pending">0</div>
-            <div class="stat-change">需人工核對名稱</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">目前無異動</div>
-            <div class="stat-value ok" id="stat-active">0</div>
-            <div class="stat-change">最近一次檢查結果正常</div>
+      <div class="stat-group-row">
+        <div class="stat-group" style="flex: 3">
+          <div class="stat-group-label">法規類別</div>
+          <div class="summary-bar">
+            <div class="stat-card">
+              <div class="stat-label">追蹤法規總數</div>
+              <div class="stat-value" id="stat-total">0</div>
+              <div class="stat-change" id="stat-total-sub">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">近期異動</div>
+              <div class="stat-value alert" id="stat-modified">0</div>
+              <div class="stat-change">需確認影響範圍</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">尚未比對到／抓取失敗</div>
+              <div class="stat-value warn" id="stat-pending">0</div>
+              <div class="stat-change">需人工核對名稱</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">目前無異動</div>
+              <div class="stat-value ok" id="stat-active">0</div>
+              <div class="stat-change">最近一次檢查結果正常</div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="stat-group stat-group-alt">
-        <div class="stat-group-label">補充資料類別</div>
-        <div class="summary-bar" style="grid-template-columns: 1fr">
-          <div class="stat-card">
-            <div class="stat-label">追蹤資料總數</div>
-            <div class="stat-value" id="stat-manual-total">0</div>
-            <div class="stat-change">使用者自行上傳之補充資料</div>
+        <div class="stat-group stat-group-alt" style="flex: 1">
+          <div class="stat-group-label">補充資料類別</div>
+          <div class="summary-bar" style="grid-template-columns: 1fr">
+            <div class="stat-card">
+              <div class="stat-label">追蹤資料總數</div>
+              <div class="stat-value" id="stat-manual-total">0</div>
+              <div class="stat-change">使用者自行上傳之補充資料</div>
+            </div>
           </div>
         </div>
       </div>
@@ -668,7 +672,7 @@ async function loadFullText() {
     console.error('讀取 laws-fulltext.json 失敗', e);
   }
   fulltextLoaded = true;
-  if (statusEl) statusEl.textContent = '（可搜尋條文全文）';
+  if (statusEl) statusEl.textContent = '全文檢索';
   fulltextLoading = false;
 }
 
@@ -759,13 +763,12 @@ function init() {
 }
 
 function updateCounters() {
-  const total = LAWS.length;
-  const trackedTotal = LAWS.filter(l => !l.isManualUpload).length; // 「追蹤法規總數」不計入使用者自行上傳的補充資料
+  const trackedTotal = LAWS.filter(l => !l.isManualUpload).length; // 「追蹤法規總數」「全部法規」都不計入使用者自行上傳的補充資料
   const modified = LAWS.filter(l => l.status === 'modified').length;
   const pending = LAWS.filter(l => l.status === 'pending').length;
   const active = LAWS.filter(l => l.status === 'active' && !l.isManualUpload).length;
 
-  document.getElementById('cnt-all').textContent = total;
+  document.getElementById('cnt-all').textContent = trackedTotal;
   document.getElementById('cnt-modified').textContent = modified;
   document.getElementById('cnt-pending').textContent = pending;
 
@@ -814,7 +817,8 @@ function renderLaws() {
     })
     .filter(({ law, matched }) => {
       const matchStatus = currentFilter === 'all' || law.status === currentFilter;
-      const matchCat = currentCat === 'all' || law.cat === currentCat;
+      // 「全部法規」不包含使用者自行上傳的補充資料，補充資料只在明確點選其分類時才顯示
+      const matchCat = currentCat === 'all' ? !law.isManualUpload : law.cat === currentCat;
       return matchStatus && matchCat && matched;
     });
 
