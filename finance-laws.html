@@ -961,16 +961,6 @@ function filterStatus(s, el) {
 function toggleLawsSubmenu() {
   const submenu = document.getElementById('laws-submenu');
   const toggle = document.getElementById('laws-submenu-toggle');
-  const wasOnLaws = document.getElementById('tab-laws').classList.contains('active');
-
-  if (!wasOnLaws) {
-    switchTab('laws');
-    filterCat('everything', document.getElementById('cat-everything'));
-    submenu.classList.remove('collapsed');
-    toggle.classList.remove('collapsed');
-    return;
-  }
-
   submenu.classList.toggle('collapsed');
   toggle.classList.toggle('collapsed');
 }
