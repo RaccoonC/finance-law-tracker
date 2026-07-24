@@ -340,12 +340,12 @@
         <span id="laws-submenu-toggle" onclick="toggleLawsSubmenu()" style="cursor:pointer;padding:2px 6px;font-size:30px;color:var(--gray)">▾</span>
       </div>
       <div id="laws-submenu">
-        <div id="cat-everything" class="sidebar-item submenu-item" onclick="filterCat('everything', this)">🗂️ 全部法規&amp;補充資料
+        <div id="cat-everything" class="sidebar-item submenu-item active" onclick="filterCat('everything', this)">🗂️ 全部法規&amp;補充資料
           <span class="sidebar-count" id="cnt-everything">0</span>
         </div>
         <div class="sidebar-label submenu-label">法規類別</div>
         <div id="category-list">
-          <div class="sidebar-item submenu-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
+          <div class="sidebar-item submenu-item" id="cat-all" onclick="filterCat('all', this)">全部法規
             <span class="sidebar-count" id="cnt-all">0</span>
           </div>
         </div>
@@ -545,7 +545,7 @@ let fulltextLoaded = false;
 let fulltextLoading = false;
 
 let currentFilter = 'all';
-let currentCat = 'all';
+let currentCat = 'everything';
 let currentSearch = '';
 let notes = JSON.parse(localStorage.getItem('finance-law-notes') || '{}');
 let currentLawId = null;
@@ -734,7 +734,7 @@ function buildCategorySidebar() {
   const cats = [...new Set(LAWS.filter(l => !l.isManualUpload).map(l => l.cat))].sort((a, b) => categoryOrder(a) - categoryOrder(b));
   const container = document.getElementById('category-list');
   container.innerHTML = `
-    <div class="sidebar-item submenu-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
+    <div class="sidebar-item submenu-item" id="cat-all" onclick="filterCat('all', this)">全部法規
       <span class="sidebar-count" id="cnt-all">0</span>
     </div>
   ` + cats.map(cat => `
@@ -744,6 +744,22 @@ function buildCategorySidebar() {
   `).join('');
 
   buildManualCategorySidebar();
+  applyActiveSidebarCat();
+}
+
+// 依目前的 currentCat，正確標示側邊欄哪一個項目是選中狀態
+// （因為分類清單每次載入資料都會重建 HTML，選中狀態不會自動保留，要重新套用）
+function applyActiveSidebarCat() {
+  document.querySelectorAll('#category-list .sidebar-item, #manual-category-list .sidebar-item, #cat-everything').forEach(i => i.classList.remove('active'));
+  if (currentCat === 'everything') {
+    document.getElementById('cat-everything').classList.add('active');
+  } else if (currentCat === 'all') {
+    document.getElementById('cat-all').classList.add('active');
+  } else {
+    document.querySelectorAll('#category-list [data-cat], #manual-category-list [data-cat]').forEach(el => {
+      if (el.dataset.cat === currentCat) el.closest('.sidebar-item').classList.add('active');
+    });
+  }
 }
 
 function buildManualCategorySidebar() {
