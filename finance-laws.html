@@ -979,6 +979,7 @@ function filterCat(cat, el) {
   currentCat = cat;
   document.querySelectorAll('#category-list .sidebar-item, #manual-category-list .sidebar-item, #cat-everything').forEach(i => i.classList.remove('active'));
   if (el) el.classList.add('active');
+  switchTab('laws'); // 不管原本在哪個分頁，點篩選項目一律先切到「法規總覽」才看得到結果
   renderLaws();
 }
 
