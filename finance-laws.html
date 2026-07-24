@@ -334,6 +334,11 @@
       <div class="sidebar-item" id="sb-manual" onclick="switchTab('manual')">⚠️ 需自行查看</div>
     </div>
     <div class="sidebar-section" style="margin-top:12px">
+      <div id="cat-everything" class="sidebar-item" onclick="filterCat('everything', this)">🗂️ 全部法規&amp;補充資料
+        <span class="sidebar-count" id="cnt-everything">0</span>
+      </div>
+    </div>
+    <div class="sidebar-section" style="margin-top:12px">
       <div class="sidebar-label">法規類別</div>
       <div id="category-list">
         <div class="sidebar-item active" id="cat-all" onclick="filterCat('all', this)">全部法規
@@ -769,6 +774,7 @@ function updateCounters() {
   const active = LAWS.filter(l => l.status === 'active' && !l.isManualUpload).length;
 
   document.getElementById('cnt-all').textContent = trackedTotal;
+  document.getElementById('cnt-everything').textContent = LAWS.length;
   document.getElementById('cnt-modified').textContent = modified;
   document.getElementById('cnt-pending').textContent = pending;
 
@@ -817,8 +823,11 @@ function renderLaws() {
     })
     .filter(({ law, matched }) => {
       const matchStatus = currentFilter === 'all' || law.status === currentFilter;
-      // 「全部法規」不包含使用者自行上傳的補充資料，補充資料只在明確點選其分類時才顯示
-      const matchCat = currentCat === 'all' ? !law.isManualUpload : law.cat === currentCat;
+      // 「全部法規」不包含使用者自行上傳的補充資料；「全部法規&補充資料」則兩者都顯示；
+      // 其他情況照分類名稱比對（含補充資料類別的分類）
+      const matchCat = currentCat === 'everything' ? true
+        : currentCat === 'all' ? !law.isManualUpload
+        : law.cat === currentCat;
       return matchStatus && matchCat && matched;
     });
 
@@ -929,7 +938,7 @@ function filterStatus(s, el) {
 
 function filterCat(cat, el) {
   currentCat = cat;
-  document.querySelectorAll('#category-list .sidebar-item, #manual-category-list .sidebar-item').forEach(i => i.classList.remove('active'));
+  document.querySelectorAll('#category-list .sidebar-item, #manual-category-list .sidebar-item, #cat-everything').forEach(i => i.classList.remove('active'));
   if (el) el.classList.add('active');
   renderLaws();
 }
