@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T23:54:50.697Z",
+  "generated_at": "2026-07-25T23:50:20.006Z",
   "recent_window_days": 14,
   "items": [
     {
@@ -10,6 +10,16 @@
       "keyword": "勞工退休金條例",
       "first_seen_at": "2026-07-23T23:49:07.760Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "婚育家庭減徵房地稅修法 地方反對中央請客地方買單",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5CUEx2Z09DZW9ycHQ0d3A2LTFNbXhOZE9uMFd6OHp6TkpoTFZFalZzOUt4UFRaUjBpQ0hOSll1eHI5eTRzVlk5eHZrUjhRUVdxMnV5ZHZxZ09rWWfSAWBBVV95cUxOQVlCYTJia3JfMW9yQWFTV1ZqTU4yd1plNmdzaHJVOXlWc0xQYWJJc0RjR1pFaHlBY1FrTzBCV1Y5SnlQZ09IUW5icFBvcGxvOHVzMVd2OG96eWhGTXZ0RkM?oc=5",
+      "pub_date": "Wed, 22 Jul 2026 04:25:36 GMT",
+      "source": "經濟日報",
+      "keyword": "房屋稅條例",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -37,7 +47,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBuS0s5bUVvWDlwTWpnUUxMODNyUGtVeFp6R1lKa3I1MThGTnFUWnN3NzZvVUd1T1FONTJIVVpqQ2JydVZYeDdLTy1JemtlMUxi?oc=5",
       "pub_date": "Tue, 21 Jul 2026 10:15:43 GMT",
       "source": "UDN",
-      "keyword": "房屋稅條例、土地稅法",
+      "keyword": "土地稅法",
       "first_seen_at": "2026-07-21T23:46:46.921Z",
       "first_seen_this_run": false,
       "is_new": true
@@ -59,16 +69,6 @@
       "source": "傑報人力資源服務集團",
       "keyword": "勞動基準法、勞工退休金條例",
       "first_seen_at": "2026-07-21T23:46:46.921Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
-      "title": "周三審稅法 解「大老婆逆襲」爭議",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOb09PQmtZU21DcjhCZTlqdUFTU0l4b0x2LURlM0JOUUppdDBOaVQ2M2VJVktBVVZGdVVuYWRXTHo4Z0lmM0xNNXRTbk53Yng3WXZ6SS0zeEhhZUc1d0xpeW1GWXk5ZUkyZXJ0YUZ1dGw0SGhDZkJLaWVVNTRCbHVuTjV1RUk1dw?oc=5",
-      "pub_date": "Mon, 20 Jul 2026 02:53:59 GMT",
-      "source": "中國時報- 翻爆",
-      "keyword": "房屋稅條例",
-      "first_seen_at": "2026-07-20T04:05:20.473Z",
       "first_seen_this_run": false,
       "is_new": true
     },
@@ -103,19 +103,19 @@
       "is_new": true
     },
     {
-      "title": "所得稅法修法提案 39案全數保留協商",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE16TkdOUno1YkVXaWdnQW13U3NxUjdLVUtWWnZMVVB0Wmk2dS0wUXZ6amNUZURvZS0yNWszS0V5Rzl0MUJLYU1zVlBzd2lMNmpT0gFWQVVfeXFMUGdscy1obDdkd1Nra3M0RnlJSGl1N0xpcUF2MkFNSUZ6QXY2RTU3dGhfcE8tdVlRUXVJU2VnMjN5UFJZVHIzVVVnWmtzQ3RLZkdmcllEaGc?oc=5",
+      "title": "財委會今審所得稅法修正 未成年子女免稅額增50%等39案保留送協商",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBhdm5NbkNMU3JxZVpFTHVpdzFSOWRhLVhtbFlXdmNGQjZySUNJNF9VeGRqV3NYeU1fTUxuLWdoejdhSjVCdTc5WnE5YjdKbnNS0gFWQVVfeXFMUG1QVV9ibVJaOVJ2eVVpQ2RxQ015bTZCX2FJTC1xb3l0TXdKNmR4czhzMmU1OGl1UGhWYlQyVmdnWC11b3lNNF93SUphMUxXTHZiNkJvOXc?oc=5",
       "pub_date": "Thu, 16 Jul 2026 07:00:00 GMT",
       "source": "UDN",
       "keyword": "所得稅法",
-      "first_seen_at": "2026-07-24T23:54:50.697Z",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
       "first_seen_this_run": true,
       "is_new": true
     },
     {
       "title": "減稅大紅包今年就適用？「這項目」免稅額飆升50% 所得法修法最新進度曝光 | 李瑋萱 | 新聞",
       "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5zVGVKM3BCUjVIR053bnFObzBZQ1lOU21GdjBielhLLVBOS3ZhQjNHOHdZZGxSS0xoSDF0NzZNLXFVMGdWUEZULVZOeGRGdw?oc=5",
-      "pub_date": "Thu, 16 Jul 2026 05:48:57 GMT",
+      "pub_date": "Thu, 16 Jul 2026 07:00:00 GMT",
       "source": "風傳媒",
       "keyword": "所得稅法",
       "first_seen_at": "2026-07-18T16:45:54.759Z",
@@ -129,7 +129,7 @@
       "source": "mol.gov.tw",
       "keyword": "勞動基準法、勞工退休金條例",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -193,23 +193,23 @@
       "is_new": true
     },
     {
-      "title": "AI 時代斜槓更容易！「網紅課稅」新制，不可不知的數位創作稅務新常識 #創作者經濟 (249636)",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE05TTBfTElLWXlRblV1YV9fZWZWWWJDN3VlTHk5cUJpSm9RekNqdjliM0hoTXFXZGNJc2JxaWJZSG5CTjVwZ3kyUFRDbmZwQQ?oc=5",
+      "title": "AI時代斜槓更容易！「網紅稅」新制，不可不知的數位創作稅務新常識",
+      "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE80RlNRR29vNG03OGR5enB3WlJrcFhKcVRtcHVYYWxIdnlybFk5c2Z2S0x0SWtMTmp2S3dyM1VmeUlUaXQwWXBSYTlB?oc=5",
       "pub_date": "Tue, 30 Jun 2026 07:00:00 GMT",
-      "source": "Cool3c",
+      "source": "roomie.tw",
       "keyword": "加值型及非加值型營業稅法",
-      "first_seen_at": "2026-07-24T23:54:50.697Z",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
       "first_seen_this_run": true,
       "is_new": true
     },
     {
-      "title": "學甲爐碴案郭再欽遭重判 法院：棄置、填埋非屬再利用行為",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3MG9vT1dxa1kzYUZYMjlBSFlpanpFY1J3Q2EtcURwa3ZYUnBYU1dGUDkwUDlNVjNldHdKblN0dHNaa1lKcFVoZXhMMTd1TkFrTENCNmVmZmYtd9IBX0FVX3lxTE80czEwMXVmcUhMbTlHS0Z3MjlCRWYzTlhtOXRmOHZpRDllYllWNmM2bGVENkx0MG8yeVkzUTYteXB5Ty1WWU52UldIRE9YZDJxa2tfVjlZU21oTmMwVHZF?oc=5",
+      "title": "學甲爐碴案郭再欽遭重判 法院：棄置、填埋非屬再利用行為 | 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1IQ0h5YTM2NUhsaWJtWkZ1VnZfdmZyNGRZVUt3Rm5yNGdYTnpTSnQwQW9ud3RTZ2JncnA2OHQ4LV9ySVRqaFY4ZE1Dd1NBOEI2SGcxYm1B?oc=5",
       "pub_date": "Mon, 29 Jun 2026 07:00:00 GMT",
-      "source": "經濟日報",
+      "source": "LINE TODAY",
       "keyword": "商業會計法",
-      "first_seen_at": "2026-07-21T23:46:46.921Z",
-      "first_seen_this_run": false,
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -229,6 +229,16 @@
       "source": "工商時報",
       "keyword": "土地稅法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
+      "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "金控銀行2028年接軌IFRS 18　財報獲利來源更清楚",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VeWhGM2FrTmN5NktwazRXekFTSWFvbHZzWm9SUGhIRERlUzVXVklMZG81aFQ3dWhvUHR2VW96cU9lNlhUUnh1OU54LUVNd3prTEJCOWx5TnZUZ9IBX0FVX3lxTE1JVk5WMUVUZkZnamlLbmpINldfODFJZUNSSlV0MnRMcVM4bFlybmMxRjFGM1d2OFFndzhTVXlVNHktWUxac3hLajE0b1pNQjRUSVNaQUliQWxxa3lndXhV?oc=5",
+      "pub_date": "Tue, 23 Jun 2026 07:00:00 GMT",
+      "source": "經濟日報",
+      "keyword": "證券發行人財務報告編製準則",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
       "first_seen_this_run": true,
       "is_new": true
     },
@@ -239,7 +249,7 @@
       "source": "澎湖e傳媒",
       "keyword": "娛樂稅法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -263,6 +273,16 @@
       "is_new": true
     },
     {
+      "title": "高資產族群要留意　遺贈稅3變革　今年拚修法",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBuSnlLYzVuWlROZkZ4OVZzeW9reVk3OXRTU013R09uZ2ZFQzZ0OHpGZnpabUhxZmlVRlUtU0ZjQTkySXRMSmxhSVpJZzBpT0RIY2ZfVUFBaHBrRWNVM3JGSWFwLUY2ZkxoYVo40gFwQVVfeXFMTW5YSjg0WWVhS2tfT3ctaUZ0Q3N1VmJldEc4X25BbXl1UUdCbjJqekJRU0VkVlhtVkwyb0ZKamtnbS1PS0RZNEVrTFNOUHF5WGZpX1V4SE53UFVaNmx3dUVvM1pNeTJURno2Ui1vMzBZQQ?oc=5",
+      "pub_date": "Mon, 08 Jun 2026 07:00:00 GMT",
+      "source": "好房網News",
+      "keyword": "民法",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
+      "is_new": true
+    },
+    {
       "title": "民法繼承預告修法四重點特留分保障走向遺囑自由- 日報",
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBSUFYzblJveFNsanVWQ3ZOWFg3R2kzZ1VnNC1zRDllY1lpTzk5MTRjWkdWNEp2WERYY25acGpKakxSNmJtc0VQcjVCRTBjNUxabkNielBYcXJfMTVRWTFB?oc=5",
       "pub_date": "Fri, 05 Jun 2026 07:00:00 GMT",
@@ -279,7 +299,7 @@
       "source": "經濟日報",
       "keyword": "就業保險法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -323,23 +343,13 @@
       "is_new": true
     },
     {
-      "title": "今年撥補勞保1300億 賴：政府當勞工靠山",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE41bnB0a1M4M1otQmFQbnU2YVNMcjl6b1BiazQyeVk0VGJJNHJGUkxPLU9WYTFodXRSRDFPLUVnMDlUSW1nS3pJUHlmQ3RNUW1xZVZ3TzJB0gFbQVVfeXFMTlRLZml3V0VDcV9aTnlva09YMFZfam81ZzgybHdnYWFReVBySmRCa2hPMi1zNnd1YlF5X192cjk2TWpoLWhpRDEtMDdQaEhJYzlFcGtZMG9XbUN4WQ?oc=5",
-      "pub_date": "Fri, 01 May 2026 07:00:00 GMT",
-      "source": "自由財經",
-      "keyword": "勞工保險條例",
-      "first_seen_at": "2026-07-23T23:49:07.760Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
-      "title": "賴總統：今年撥補勞保1300億 政府做勞工的靠山",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9uSUtXZnJJUzl2cEstVDNRMzdia3ZNNjNnTnBGRmRkSXp6UGp4MlotTWtOUUxYU2J3V25PNmpOSUlsTTI4UWdZT09seVprLURDaDBqVEF3M2E?oc=5",
-      "pub_date": "Thu, 30 Apr 2026 07:14:05 GMT",
-      "source": "自由時報",
-      "keyword": "勞工保險條例",
-      "first_seen_at": "2026-07-23T23:49:07.760Z",
-      "first_seen_this_run": false,
+      "title": "財政部修正房屋稅條例第5條「其他合理需要」定義範圍",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE53OW82OVdRWlh1NmQzdGpMMDJOQ0ZzcFVXTFhwVmt3Tm01dmJCS0J4MGoyaXF3Sk1ocUcxUDdlelBtNWoyMTdSeTNiWjYyRzRIVF9PYW1QdEE1YndIZTQtMEVR?oc=5",
+      "pub_date": "Mon, 25 May 2026 07:00:00 GMT",
+      "source": "AN不動產新聞網",
+      "keyword": "房屋稅條例",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -349,7 +359,7 @@
       "source": "勁報",
       "keyword": "商業會計處理準則",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -383,23 +393,13 @@
       "is_new": true
     },
     {
-      "title": "房屋贈與移轉 別忽略契稅",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5uOFlJalhhdkNYdlFkeU5PQXdBcDZDQWFiZU1MWGo5a1FPVWw4b1Znd0RzTUJqVWdOVzdnN3hLZWxmUUlfUF9XemlIQ0JDUW0yN3hocmYzbWRTUdIBX0FVX3lxTE9WMVFWOUJBNzdacm90QW1EMWFPaEpNN2xlS1dKUHhzT2hjQnFqVHUxNUJlczZGblNiUUxpNDI0Xzd3TTNfbkthUUQ5d1F1SVAyRzhhWHVmZC1FY3VRN0Nz?oc=5",
-      "pub_date": "Wed, 22 Apr 2026 07:00:00 GMT",
+      "title": "「免贈與稅」不等於免稅！稅局揭30天內漏繳這筆錢恐挨罰",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAxQXItQXJSaDBHMW1TUEJMMlBIcXBORzBIUW14dlVMN29qcmZsQ3ozclpBb2pYb2p3RUxDdWNuUkI1di0xcXBxcmZJNjQ3dDJGOHhOdTE4Z2pEQdIBX0FVX3lxTE9zOWtwWTZWQnU0dVpnMUlFX3dBWGdwTjIxYW5Uem9TYVhzMk9fN3FWWnNGZzF6YlJjanVsZzlSQ0tLbkY5dzJ4N1BiWWtiV181MnRDZ2djM2kwS3pvTUNV?oc=5",
+      "pub_date": "Mon, 20 Apr 2026 07:00:00 GMT",
       "source": "經濟日報",
       "keyword": "契稅條例",
-      "first_seen_at": "2026-07-24T23:54:50.697Z",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
       "first_seen_this_run": true,
-      "is_new": true
-    },
-    {
-      "title": "金管會籲保險業務員勞務契約回歸民法不宜納保險法| 產經",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zOEVxaFB4V1ZGMVRTOFZpR1pNcFBBMHd0bXA4aEw4WFdwSEtQVWVQcDZlM1RtVFR6aEZGTGFvQVh5bFBWakRuc3NpMGhNRklUUU5LU2dlZlZLMld0MkE?oc=5",
-      "pub_date": "Tue, 21 Apr 2026 07:00:00 GMT",
-      "source": "中央社 CNA",
-      "keyword": "民法",
-      "first_seen_at": "2026-07-23T23:49:07.760Z",
-      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -430,6 +430,16 @@
       "keyword": "所得基本稅額條例",
       "first_seen_at": "2026-07-18T16:45:54.759Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "非居住者薪資扣繳基準 調升",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBBVkxBZXh6d0ZIVERmUElhUjJicjFBWF9mZWJSZXlsblhLcnJEcEJqZDRGbnUtU2szMzBsUlIyOEJCWVJhUElPVnpNLWxEc3dz0gFWQVVfeXFMTlhYVFVXYVlCSVl1bjM1RjdpalNVQWlyd1g0UDMxc1JjMndROGdtcVJyU0l3aEc4WDlzZk5ZQ3N5LVZXYzRMRDZQNXNNbHJ1QXUxQXFfd2c?oc=5",
+      "pub_date": "Mon, 30 Mar 2026 07:00:00 GMT",
+      "source": "UDN",
+      "keyword": "各類所得扣繳率標準",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -513,12 +523,12 @@
       "is_new": true
     },
     {
-      "title": "臺美對等貿易協定 完善勞權規範 接軌國際要求 產業競爭更有力",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB1TzFDTWU4RC1JT2JhTTVMRWVUbEttZHUzZDJSLVRzRlpjVlFEaGFwYTlKRERxd2JabVB3VjY2SEdVZlJpaEJ4Z01nRlYwMjdJdXpxb2xpVQ?oc=5",
+      "title": "台美對等貿易協定禁強迫勞動 洪申翰：勞資國家3贏[影]",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBkRmRkd2ZMMkpHVmRteVRyUzh3MlNFWUtfRksyS1gzenJXUUhHMTgzZk5JbHRJTzUwQkR6NGlNeEtyTU50TVlMei14T1J2QXE4X1VSY0hWRGgxcjI2UC1F?oc=5",
       "pub_date": "Fri, 13 Feb 2026 08:00:00 GMT",
-      "source": "mol.gov.tw",
+      "source": "中央社 CNA",
       "keyword": "關稅法",
-      "first_seen_at": "2026-07-24T23:54:50.697Z",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
       "first_seen_this_run": true,
       "is_new": true
     },
@@ -569,7 +579,7 @@
       "source": "LINE TODAY",
       "keyword": "加值型及非加值型營業稅法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -603,6 +613,16 @@
       "is_new": true
     },
     {
+      "title": "《勞工保險條例》修正草案-政策文宣",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5lQlN3OE5CNU1pdm9MRllqRTByenBnNy1ZRlpQaTB0QTlaUXg0TDV1LW1hR0p1bm1SSXVFMDJfaXFnV3o1XzJEUGpBVWdoUnhBdkkwLWMxTEJfRF9ZZktvZzVkbVU?oc=5",
+      "pub_date": "Mon, 15 Dec 2025 08:00:00 GMT",
+      "source": "tph.moj.gov.tw",
+      "keyword": "勞工保險條例",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
+      "is_new": true
+    },
+    {
       "title": "政院版財劃法可多撥1800億元當地方自主財源 卓揆：遺憾立院不接受",
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBaUzFrampTWm40cWYyZWlJZGdyZ01VenM3YnhjakNBemc4aldFV3NleWhGLUFpc21WWU9BOUVTOTdNR3d0WUVqM2ZRbEl3akRCM21vX2F0am16c3p0V0Fz0gFkQVVfeXFMUGNsOEwxalNlOUtVeFJhaUlDakZlOXprQ1E1SzY1NGJtMDBrREtSVnQ5a1hzekp5eXZJRC1pRUdhZkVkNlBnVms4MXctdm8zTmlneXh3bk1NMk9RdHE4bkptcWFDSA?oc=5",
       "pub_date": "Tue, 09 Dec 2025 08:00:00 GMT",
@@ -619,7 +639,7 @@
       "source": "三立新聞網SETN.com",
       "keyword": "商業會計法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -629,7 +649,7 @@
       "source": "自由財經",
       "keyword": "公司法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -643,12 +663,12 @@
       "is_new": true
     },
     {
-      "title": "公發公司2028年接軌IFRS 18　金管會修法預告",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1hUFZ0bVFxNDRWY0JGQWxQVkdLaVRuZlY3N0l1Q1hPRUhRelB3Z3RUVm9aWWduRWRYQUVTQmhyWmM3YmdOVFAtc1dRUjZtMTVRRXVHTjNpbW5zd9IBX0FVX3lxTFBpOU01UW5SUmV6LVBUSGVsZEd5YnFJaFpvcV9SdEZ3Zi1IZEd1blNDSUZfVl93Y1hDLXNwNlNwanltMlUxNmpVaTBqTG9wTm9BSGoxVkFsLUZqanVNbWtJ?oc=5",
-      "pub_date": "Tue, 02 Dec 2025 08:00:00 GMT",
-      "source": "經濟日報",
-      "keyword": "證券發行人財務報告編製準則",
-      "first_seen_at": "2026-07-24T23:54:50.697Z",
+      "title": "《勞工保險條例》修正草案",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNzYzRDhoVFhuaG5SZmFnbjRabXNXOUd2ZC1Nc19fTk0zNjRzeHpjb0lxd3U0MUxuWmswQVl5bVVJS01HR2FjV3NMSXVPUzZkOUdraHpRUjFMMTlYQjMyV2xRVGZWbHk4clNlc0ZLMnN4YmlvbGhyaVlrUVNGTWxiT1pIWHgxVDA?oc=5",
+      "pub_date": "Tue, 02 Dec 2025 14:39:48 GMT",
+      "source": "ey.gov.tw",
+      "keyword": "勞工保險條例",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
       "first_seen_this_run": true,
       "is_new": true
     },
@@ -679,7 +699,7 @@
       "source": "ETtoday健康雲",
       "keyword": "全民健康保險法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -753,13 +773,23 @@
       "is_new": true
     },
     {
+      "title": "掃貨注意！進口仿冒品不再小額免罰、最高能罰貨價3倍…旅客自帶A貨通關也有問題？關務署親解兩者差異| 今周刊",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9iMndfRVpyamJDRFJRSzByNUdTMUx3X3VHX0hXeExReW1SUDFVQUtVZlFMWXZFNzI3dDB1SHI4SUx1c0NETDVnaDhzeFZZcWR3eTI0SzZ3?oc=5",
+      "pub_date": "Thu, 12 Jun 2025 07:00:00 GMT",
+      "source": "LINE TODAY",
+      "keyword": "海關緝私條例",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
+      "is_new": true
+    },
+    {
       "title": "最高罰5萬！桃園經發局：公司變更「這些項目」最常逾期登記",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9BbjV3N2s2b2lacUtQUm51NlljNlJDekFIbGp4ekxpNmpLcHhFNGhVYkN5TVE5WnpjZzlkR0lkbHNibGR0WnFmY2dRWUxGTzViVDJmR2Nza0UyMXBObnBPbUtYc1otVkFUVTJR0gFwQVVfeXFMTmdSLTBtTmltM2FMZ0ozSGN1Q0MtOGxsd3hDVzlZa0pHTENLWGctRzBKek82SklocGY4Y2tTWHdUcGNZNU9lYzl3S3htcXRteHRRT21HV1U5YzN2Qk9iWW1YS0ZXd0NHbzhFTDFCSWEzRA?oc=5",
       "pub_date": "Sun, 08 Jun 2025 07:00:00 GMT",
       "source": "好房網News",
       "keyword": "公司登記辦法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -789,17 +819,17 @@
       "source": "LINE TODAY",
       "keyword": "強制執行法",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
-      "title": "6月海關新制上路！帶仿冒品回國「不論金額」沒收又罰款| Newtalk",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0xX0FPN2FSbWNIdWo0V1o4X0plcVRidDJqMVhTc1d2VENDWEMxM0FDQ2ZPR1hYeXdpMFkyTDExSnVVTnpOZjZYZjlBaVcteXExSUZEWWt3?oc=5",
-      "pub_date": "Sun, 16 Mar 2025 07:00:00 GMT",
-      "source": "LINE TODAY",
+      "title": "海關新制 私運仿冒品不限金額均將罰鍰 估6月上路",
+      "link": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxONERPNFk3LWx6X2pCQzFlNFczZXA1R3BQWGNLQVl1SUNlRVFmSmM0RW9vUy16TU5iVjVmM0MtbjREUU9kZ25sUElZYXYzdEZuUTYyVXNGYWN6WUFMeFRDTzREbkhpWXZMU2NaWWVnNmNvNGpfcl9RWnhEa3h3R1N6TUNTOTVYajJTVFY2VVJHcHBIVTczMGM0djdhVkR0N3owNFRra3h6M0pMbTBCbnlBcmpubDNEaXlzQ3IwR2FZSWk3NDZ3SnVyQndOVVNWSkF0cHp0d25MOEh2TEZVdGpOMXk3Zkw5UU9kWFZXMUJYdjZlcGU5M0tHZ3FvczdtUUxfX0hQclN0WWVELVcySUN6RHlYdHoyQlRXc1Q0dmFxRTNvdFFDWXNLdWRnOFFMR2tJMk81RDQzUnBYVjBHV3h2dkxIay1YVXp2STk4YTBfcHJncDQ?oc=5",
+      "pub_date": "Sat, 15 Mar 2025 07:00:00 GMT",
+      "source": "Yahoo新聞",
       "keyword": "海關緝私條例",
-      "first_seen_at": "2026-07-23T23:49:07.760Z",
-      "first_seen_this_run": false,
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -810,6 +840,16 @@
       "keyword": "統一發票使用辦法",
       "first_seen_at": "2026-07-18T16:45:54.759Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "中國關稅法修法12月正式上路安永提醒臺灣企業提升進出口合規管理因應新挑戰| 安永台灣",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUTg2dk0xN2VnUHY5dVFrWjJKYXFORFZEenNJc2tKVHV6UXRodE9ZY2p4ZzE3dHdzdTNGTVFqOGplcUJ0b192bEpxZXNQb3NQTWRwQk1jbGJWSUtGb3ZiVzN5SXh3c3JZd2ZxT2w5VDZadndvZndBRGEyRUhUYjVDUg?oc=5",
+      "pub_date": "Thu, 21 Nov 2024 08:00:00 GMT",
+      "source": "EY",
+      "keyword": "關稅法",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -829,7 +869,7 @@
       "source": "中央社 CNA",
       "keyword": "所得基本稅額條例",
       "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -849,26 +889,6 @@
       "source": "國家地理雜誌",
       "keyword": "電子發票實施作業要點",
       "first_seen_at": "2026-07-18T16:45:54.759Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
-      "title": "關務署發佈修正海關變賣貨物及運輸工具處理程序 即起生效",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE0tajlua3Z6WFplZ3NhOHY5MGN0TWRxTHlCZ1JOVUtBVTRRUkhjMlk2WGdPM1d2dlVWLVFjV3dsRlF0LWFIUm9HRmxvTnpCMVlJbnd4cA?oc=5",
-      "pub_date": "Fri, 08 Mar 2024 08:00:00 GMT",
-      "source": "航貿週刊",
-      "keyword": "海關緝私條例",
-      "first_seen_at": "2026-07-22T23:54:01.860Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
-      "title": "小店戶給付薪資 應扣繳稅款",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1oX3BCMkxTTkdfckN3b0ZRS1VkMU1RTko0UTd3Rzhhd0JjTHU5NXZsUzQ0VkFpVHVKeEZZVTZaampWUmRYb2lSOUMzeWxjNlRmcGxXM1pwLW81cHdPTXZrTFZVbUFPYTBnbTZV?oc=5",
-      "pub_date": "Thu, 04 Jan 2024 08:00:00 GMT",
-      "source": "104職場力",
-      "keyword": "各類所得扣繳率標準",
-      "first_seen_at": "2026-07-21T23:46:46.921Z",
       "first_seen_this_run": false,
       "is_new": true
     },
@@ -923,16 +943,6 @@
       "is_new": true
     },
     {
-      "title": "總統公布新修正海關進口部分稅則生效施行",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5jMUVfb2FjSmhZaTljdUZ2OVBGcUJlTEJsN3BPZ09sYkdEeklKRXlXdS0xckktX00zeHJNMk9VOVowcmVzcmd1Yml3MTFTdjZmbWt4dg?oc=5",
-      "pub_date": "Mon, 26 Jun 2023 07:00:00 GMT",
-      "source": "航貿週刊",
-      "keyword": "關稅法",
-      "first_seen_at": "2026-07-23T23:49:07.760Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
       "title": "員工出差交通費 可列扣 | 人資充電",
       "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5Xc1R2cXBjV2NZcUt5c0V1SmJQM0FPWUx1VG5VSHVxdUVjS3hsaHRXNjdwOUVCY0VXNFVsUzJhc1JZWmpRNHQ5SDMyZ0hBb0xubS1JdHM1eHNZNE1VMXlmWVh3VzNwR1diWVE?oc=5",
       "pub_date": "Fri, 12 May 2023 07:00:00 GMT",
@@ -940,6 +950,16 @@
       "keyword": "加值型及非加值型營業稅法施行細則",
       "first_seen_at": "2026-07-22T23:54:01.860Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "營業人轉售預售屋　開發票有眉角",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1ZQjNreVhzX09nTU9CUDhYUUNzbUtza2xneWtlQTNaSDJGRDBSa0k4NWpGRV81cnFNNnNweHVaendpQ0RoQUtBSjJnU21nQnBCaHFLX3hoY3l0M3hpOWZWTEkzMDhvSlk3Zmdn0gFwQVVfeXFMT3VsQkJsUUE5ZDVrT0ZEenRqX3JoZGtYeExqR21jb2l4RW5RZE5Ka2dJcV9RYUdJU1J0eEJhcnJRQ1Q1Y2dQdGRMb1RJVHRQek50TXkxTWYwMXl3MjlGdXU0UzBqTlc3dUVKc0ljTjJHUA?oc=5",
+      "pub_date": "Tue, 09 May 2023 07:00:00 GMT",
+      "source": "好房網News",
+      "keyword": "營業人開立銷售憑證時限表",
+      "first_seen_at": "2026-07-25T23:50:20.006Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -960,16 +980,6 @@
       "keyword": "公司登記辦法",
       "first_seen_at": "2026-07-20T02:47:25.807Z",
       "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
-      "title": "統一發票為零元或負數不可兌獎！ 在「這幾種情況下」最常見",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNbF82V1BMWGdSaHRYbXFPckNsUkYtMDhjNTdtZnR1c09aS3ZoWUt5Z25pTUM2NW42VVlaT1ZyNVBVVkh3N1Y0R1gyN0VoQ0w3RkZadjA1RElMNm1rM0ZjNDhXTGw1OXdjZERzX0NlQWNNMWM3SWxQS2xmSXFQZlNnRW9B?oc=5",
-      "pub_date": "Mon, 24 Oct 2022 07:00:00 GMT",
-      "source": "壹蘋新聞網",
-      "keyword": "營業人開立銷售憑證時限表",
-      "first_seen_at": "2026-07-24T23:54:50.697Z",
-      "first_seen_this_run": true,
       "is_new": true
     },
     {
