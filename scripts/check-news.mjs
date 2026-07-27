@@ -73,11 +73,12 @@ function parseRssItems(xml) {
 }
 
 async function fetchNewsForKeyword(keyword) {
-  // 除了「法規名稱 + 修正/修法/草案/新制」，再加一組財務會計情境詞，
-  // 避免像「民法」「勞動基準法」這種涵蓋範圍很廣的法規，
-  // 搜到一堆跟財務會計完全無關的新聞（例如親屬編修法、勞資糾紛個案等）。
+  // 情境詞盡量挑「明確指向企業/公司」的詞，避免「財務」「稅務」「申報」這種
+  // 個人稅務新聞（報稅季、個人房地產交易等）也很常出現的籠統字眼；
+  // 另外加一組排除詞，主動濾掉常見的個人稅務／消費類新聞主題
+  // （例如自住房地產減稅、換屋、首購等，跟企業財會人員關心的事無關）。
   const query = encodeURIComponent(
-    `"${keyword}" (修正 OR 修法 OR 草案 OR 新制) (財務 OR 會計 OR 稅務 OR 公司 OR 企業 OR 財政部 OR 金管會 OR 稅捐 OR 申報)`
+    `"${keyword}" (修正 OR 修法 OR 草案 OR 新制) (企業 OR 公司 OR 營利事業 OR 法人 OR 會計師 OR 財政部 OR 金管會 OR 國稅局 OR 稅捐稽徵) -個人 -自住 -首購 -換屋 -房貸 -民眾`
   );
   const url = `https://news.google.com/rss/search?q=${query}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant`;
   try {
