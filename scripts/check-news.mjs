@@ -91,7 +91,12 @@ async function fetchNewsForKeyword(keyword) {
       return { items: [], error: msg };
     }
     const xml = await res.text();
-    const items = parseRssItems(xml).slice(0, MAX_ITEMS_PER_KEYWORD);
+    // Google 新聞搜尋比對偏「相關性」，不是嚴格比對，即使加了引號也常常抓到
+    // 標題裡根本沒有出現法規名稱的新聞。這裡再自己嚴格把關一次：
+    // 標題裡沒有完整出現法規名稱的，一律不算數。
+    const items = parseRssItems(xml)
+      .filter((item) => item.title.includes(keyword))
+      .slice(0, MAX_ITEMS_PER_KEYWORD);
     return { items: items.map((item) => ({ ...item, keyword })), error: null };
   } catch (err) {
     const msg = `(${keyword}) 新聞查詢發生錯誤：${err.message}`;
