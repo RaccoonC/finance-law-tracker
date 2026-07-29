@@ -81,6 +81,12 @@
     "trackable": true
   },
   {
+    "id": 64,
+    "name": "所得基本稅額條例施行細則",
+    "category": "三、所得稅法",
+    "trackable": true
+  },
+  {
     "id": 14,
     "name": "加值型及非加值型營業稅法",
     "category": "四、營業稅",
@@ -184,8 +190,20 @@
     "trackable": true
   },
   {
+    "id": 65,
+    "name": "勞動基準法施行細則",
+    "category": "七、薪資",
+    "trackable": true
+  },
+  {
     "id": 30,
     "name": "勞工退休金條例",
+    "category": "七、薪資",
+    "trackable": true
+  },
+  {
+    "id": 66,
+    "name": "勞工退休金條例施行細則",
     "category": "七、薪資",
     "trackable": true
   },
@@ -196,14 +214,32 @@
     "trackable": true
   },
   {
+    "id": 67,
+    "name": "勞工保險條例施行細則",
+    "category": "七、薪資",
+    "trackable": true
+  },
+  {
     "id": 32,
     "name": "就業保險法",
     "category": "七、薪資",
     "trackable": true
   },
   {
+    "id": 68,
+    "name": "就業保險法施行細則",
+    "category": "七、薪資",
+    "trackable": true
+  },
+  {
     "id": 33,
     "name": "勞工職業災害保險及保護法",
+    "category": "七、薪資",
+    "trackable": true
+  },
+  {
+    "id": 69,
+    "name": "勞工職業災害保險及保護法施行細則",
     "category": "七、薪資",
     "trackable": true
   },
@@ -226,6 +262,12 @@
     "trackable": true
   },
   {
+    "id": 70,
+    "name": "票據法施行細則",
+    "category": "八、付款及契約",
+    "trackable": true
+  },
+  {
     "id": 37,
     "name": "強制執行法",
     "category": "八、付款及契約",
@@ -240,8 +282,20 @@
     "note": "付款資料、員工資料相關"
   },
   {
+    "id": 71,
+    "name": "個人資料保護法施行細則",
+    "category": "八、付款及契約",
+    "trackable": true
+  },
+  {
     "id": 43,
     "name": "印花稅法",
+    "category": "九、地方稅",
+    "trackable": true
+  },
+  {
+    "id": 72,
+    "name": "印花稅法施行細則",
     "category": "九、地方稅",
     "trackable": true
   },
@@ -254,6 +308,12 @@
   {
     "id": 45,
     "name": "土地稅法",
+    "category": "九、地方稅",
+    "trackable": true
+  },
+  {
+    "id": 73,
+    "name": "土地稅法施行細則",
     "category": "九、地方稅",
     "trackable": true
   },
@@ -272,6 +332,12 @@
   {
     "id": 48,
     "name": "關稅法",
+    "category": "十、進出口",
+    "trackable": true
+  },
+  {
+    "id": 74,
+    "name": "關稅法施行細則",
     "category": "十、進出口",
     "trackable": true
   },
@@ -297,6 +363,12 @@
   {
     "id": 52,
     "name": "證券交易法",
+    "category": "十一、上市櫃公司",
+    "trackable": true
+  },
+  {
+    "id": 75,
+    "name": "證券交易法施行細則",
     "category": "十一、上市櫃公司",
     "trackable": true
   },
