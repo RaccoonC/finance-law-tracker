@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T08:40:36.003Z",
+  "generated_at": "2026-07-29T09:13:00.894Z",
   "recent_window_days": 14,
   "items": [
     {
@@ -9,7 +9,7 @@
       "source": "鉅聞天下",
       "keyword": "民法",
       "first_seen_at": "2026-07-29T08:40:36.003Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -19,7 +19,7 @@
       "source": "富聯網",
       "keyword": "民法",
       "first_seen_at": "2026-07-29T08:40:36.003Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -49,7 +49,7 @@
       "source": "UDN",
       "keyword": "所得稅法",
       "first_seen_at": "2026-07-29T08:40:36.003Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -139,7 +139,7 @@
       "source": "台視新聞網",
       "keyword": "娛樂稅法",
       "first_seen_at": "2026-07-29T08:40:36.003Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -147,7 +147,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1fOFZvamc0U0prSnE0b3hUXzlQRzlZNGxiZ2ZOUzNCYVFMR3pnR2ktdlBSZTM2SUNaUGJ6Rjg0TjhxMVpQbnR6N2FHbzh1Z3BS0gFWQVVfeXFMTUFNNlVEd1BLcGZjQnQ3dDJ3Rk1nSVdoQWN6NmJNTGpYSXlwTnFNVFREcFM2cWFjT1A0ek1RWTRKbmRZdkI1Xy1UX0Nhd29KaU9DRjNvb3c?oc=5",
       "pub_date": "Wed, 25 Mar 2026 07:00:00 GMT",
       "source": "UDN",
-      "keyword": "勞工退休金條例",
+      "keyword": "勞工退休金條例、勞工退休金條例施行細則",
       "first_seen_at": "2026-07-27T07:28:00.628Z",
       "first_seen_this_run": false,
       "is_new": true
@@ -159,7 +159,7 @@
       "source": "工商時報",
       "keyword": "就業保險法",
       "first_seen_at": "2026-07-29T08:40:36.003Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -209,7 +209,7 @@
       "source": "自由時報",
       "keyword": "貨物稅條例",
       "first_seen_at": "2026-07-29T08:40:36.003Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -310,6 +310,16 @@
       "keyword": "加值型及非加值型營業稅法",
       "first_seen_at": "2026-07-27T07:28:00.628Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "立院財委會審查房屋稅條例修正草案（1） (圖)",
+      "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPWW1nV0JWVXNYbGVnZUdlMXkwUFFjZ1hram5VQmtQaFdPR3dIM1VjWXpVZUduN2hFeXVYQXdIb1h3YlpXaXczUm5PcjRkMmtyZkhfbk4xVmJLVXBnQmhoZF9IalAydEU4ZllBX29PR3VocGZzSms1UGRYekNDY1NVZHVEaFAtb2FFS0lPa180YWl1UGJLVEp5NHVnNmM5dW5aRFNoMTZHSHdRREdyemNGNG1fTXlkNTJRQzNPNGV5eXotT2pycjh5RU5TYWc0dF9qZjVGZjNTTUJvbXBfbnl4OXl0ejlVNTVTbHRkWm9kVEY0Um8wZGc1TklCc0tjV3RuTHdxZllpUXRkOUdhdnNVS09xZkF6dlZUc1ExbzN6VzkzWHM?oc=5",
+      "pub_date": "Wed, 15 Nov 2023 08:00:00 GMT",
+      "source": "Yahoo新聞",
+      "keyword": "房屋稅條例",
+      "first_seen_at": "2026-07-29T09:13:00.894Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
