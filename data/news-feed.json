@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T01:41:15.751Z",
+  "generated_at": "2026-08-07T23:24:04.870Z",
   "recent_window_days": 14,
   "items": [
     {
@@ -16,7 +16,7 @@
       "title": "立法院三讀通過民法修正案 刪除兄弟姊妹特留分規定",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1FbjgtZXVGWjVEY25xZFd6Y2tfWm40S2hsdF9ubGVYQy1PdmIwUzM2Vm4ybkx2YTFUeVp5QWxZUWtfaE9KLXgyOHh0TXU1QjlReExLVGg2NEtrdw?oc=5",
       "pub_date": "Tue, 28 Jul 2026 07:00:00 GMT",
-      "source": "中央社 CNA",
+      "source": "cna.com.tw",
       "keyword": "民法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -26,7 +26,7 @@
       "title": "《公司法》與《商業登記法》修正案三讀通過 桃府經發局籲準創業家提早做好準備",
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9MQlJsMHFHNlNXYXY3QkZsMU8xZ3FhVWh3RkJXb2pNLWtOSDlWVWF0WWUwTEtwQ1pZeFIyVVRuSVhPakFPM0JfWFlOeTVUM2tTUlE?oc=5",
       "pub_date": "Sun, 19 Jul 2026 07:11:00 GMT",
-      "source": "n.yam.com",
+      "source": "蕃新聞",
       "keyword": "商業登記法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -119,7 +119,7 @@
       "source": "macrocosm.tw",
       "keyword": "娛樂稅法",
       "first_seen_at": "2026-08-07T01:41:15.751Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -147,16 +147,6 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9FMUhlcG02QUtHd3UyT1hGeEUtSkFVdUVab3ZOTXM3VmphQmY5MU9oc0NQOHQ4Q2hYS3JxczJWXy1XbjV4Z2FKYkh6WWs3NXNO?oc=5",
       "pub_date": "Tue, 23 Dec 2025 08:00:00 GMT",
       "source": "客新聞 HakkaNews",
-      "keyword": "貨物稅條例",
-      "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
-      "title": "貨物稅條例、使用牌照稅法修法三讀 電動車減稅再延五年",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5hR19HaldwaHllakR5RW9Lb19rTjIxZUlsQnNvUUFpUEFIRVFkbzhyb1hzclExZUpLb2tJV2xTTzlReW1DbGstVFpHUFFUZEll0gFWQVVfeXFMTk14RE93WDZYVWp0Y3FReU03c0MzSExTbjMySGM2d1ZRVGdTbThWd2RfV054X1JraV8yOTlPSV9FcmFHSGJNbkU1NUZHczcyZ2dLc2dWM0E?oc=5",
-      "pub_date": "Tue, 23 Dec 2025 08:00:00 GMT",
-      "source": "UDN",
       "keyword": "貨物稅條例",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -193,6 +183,16 @@
       "is_new": true
     },
     {
+      "title": "總統公告貨物稅條例修正 9/7起買車最高省10萬",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9xY0tna2lGRXRGZ3RXVHZ5Y3NDa2w0N0pUZldMaFpRQ2lJbllWejkwUEI2cjB5eE9VeVhySlZUWEJKaGhSdm1lWGRzMFlHX2ZKVklXaVNrU0U?oc=5",
+      "pub_date": "Fri, 05 Sep 2025 07:00:00 GMT",
+      "source": "stock.ltn.com.tw",
+      "keyword": "貨物稅條例",
+      "first_seen_at": "2026-08-07T23:24:04.870Z",
+      "first_seen_this_run": true,
+      "is_new": true
+    },
+    {
       "title": "美版碳關稅法草案捲土重來，稅率最高200%，點名中俄高碳排產品對美國工人不公平",
       "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5KS0QzMzdhQUJPZjN0Vm00NWdIR1BrSUtfYVMwb3NQU3dFXzI1QTlNQVBFNlR0T21CQzltVFJ5eExGU3I0bjUtOWRBcw?oc=5",
       "pub_date": "Mon, 21 Apr 2025 07:00:00 GMT",
@@ -206,7 +206,7 @@
       "title": "立院財委會審查通過「海關進口稅則」部分稅則修正草案",
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1LWTRXMEJEcVZOcFJUM3c0cHY1bnI2a0JhbGpVelNOX3R1UUkwdE1OZHFHelM0SkJULUEzMVRjMTQ4UjFkN1lNVXVJd09DbWpxNUR3RQ?oc=5",
       "pub_date": "Fri, 21 Mar 2025 07:00:00 GMT",
-      "source": "航貿週刊",
+      "source": "shippingdigest.tw",
       "keyword": "海關進口稅則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -286,7 +286,7 @@
       "title": "營利事業所得稅查核準則修正草案重點說明",
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE80SmZLdU1yT201S3pDRXNuVWhvSVJ6UVUxWDdmV3VoVjVzajFNaXJjcC05MWNiQ05qbWl6bmpobjVWeVZJOW5tRWsyakx0RHFadVVueTlR?oc=5",
       "pub_date": "Wed, 19 Jul 2023 07:00:00 GMT",
-      "source": "中央社 CNA",
+      "source": "cna.com.tw",
       "keyword": "營利事業所得稅查核準則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -296,7 +296,7 @@
       "title": "所得稅法25條審查原則修正申請適用期間延長勤業眾信：給付境外技術服務報酬十年內可申請適用優惠扣繳稅率",
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1yb3hib1Fpay0zcFIxajAzamhiLXhHQ2RNeTFycXVGekNuZTVIYjAxSjZIejRzQzFnUDNXeFk5LWJDeWdicW4zNGlSUU1ydnZaa1Z1eExB?oc=5",
       "pub_date": "Tue, 20 Jun 2023 07:00:00 GMT",
-      "source": "中央社 CNA",
+      "source": "cna.com.tw",
       "keyword": "所得稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -324,12 +324,12 @@
     },
     {
       "title": "商業會計處理準則「金融工具」新修正，預計112年上路",
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNY2FsZktTNjFQU3hKVFpWeGNUR0dVSzQ0U2hZZXFQajRFMWVaQm9IdGNFMjItUWdWa0xaMDZmRmN0ZU9heTN1dlUtWk5sSm0wRnV3dloxakxIZlpPUWo5bVdqQmlyZ1R2YnlSV0Rsa2RRU1lDTXVIbjlEN3h5amtYQXRNRjJudDdsb2NR?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNeS1TNGx1YUUtak8yRDNZTElTQWwxLWRET2VXSkNRLUwyR0NFdW9xaWJkLU5JUk5uS2hxN1g2ZW5wdVk4WjhYcDFVNlRhQl9SZW1DckQ2YTNLblFaNzVZQVBpS1VWaklIWWdCeS10Z3BrQ1RORGVGQlRWNXk1V2dicktoYW5EeUhWdjM0?oc=5",
       "pub_date": "Thu, 30 Sep 2021 07:00:00 GMT",
       "source": "moea.gov.tw",
       "keyword": "商業會計處理準則",
-      "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": false,
+      "first_seen_at": "2026-08-07T23:24:04.870Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -366,7 +366,7 @@
       "title": "政院通過「勞工職業災害保險及保護法」草案 估增33萬人納職災保險",
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9lZGJnaUx1RmVqUHh6Tng5R0hJdGRON25pNDRUZE54eUhKQ0pFWXRqbHQwRWFIRnRVd245dzltV3ZTbGpMZ3FlUC15dnVsM1AtY1E?oc=5",
       "pub_date": "Thu, 25 Mar 2021 07:00:00 GMT",
-      "source": "n.yam.com",
+      "source": "蕃新聞",
       "keyword": "勞工職業災害保險及保護法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
