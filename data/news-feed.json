@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T23:46:52.140Z",
+  "generated_at": "2026-08-07T01:41:15.751Z",
   "recent_window_days": 14,
   "items": [
     {
@@ -9,7 +9,7 @@
       "source": "pwc.tw",
       "keyword": "民法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -19,17 +19,17 @@
       "source": "中央社 CNA",
       "keyword": "民法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
       "title": "《公司法》與《商業登記法》修正案三讀通過 桃府經發局籲準創業家提早做好準備",
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9MQlJsMHFHNlNXYXY3QkZsMU8xZ3FhVWh3RkJXb2pNLWtOSDlWVWF0WWUwTEtwQ1pZeFIyVVRuSVhPakFPM0JfWFlOeTVUM2tTUlE?oc=5",
       "pub_date": "Sun, 19 Jul 2026 07:11:00 GMT",
-      "source": "蕃新聞",
+      "source": "n.yam.com",
       "keyword": "商業登記法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -39,7 +39,7 @@
       "source": "桃園電子報",
       "keyword": "公司法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -49,7 +49,7 @@
       "source": "台灣新聞雲報",
       "keyword": "商業登記法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -59,7 +59,7 @@
       "source": "kpmg.com",
       "keyword": "所得稅法施行細則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -69,7 +69,7 @@
       "source": "DIGITIMES",
       "keyword": "勞動基準法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -79,7 +79,7 @@
       "source": "更生新聞網",
       "keyword": "商業登記法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -89,7 +89,7 @@
       "source": "好房網News",
       "keyword": "民法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -99,7 +99,7 @@
       "source": "cnma.org.tw",
       "keyword": "娛樂稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -109,16 +109,16 @@
       "source": "僑新聞",
       "keyword": "就業保險法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
-      "title": "《娛樂稅法》修法三讀通過 看電影、演唱會、球賽免稅",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1XY1NUT0hRa1YwNXdsRXg3ZU0tUC00Slk3SkxBR3o2N0JkbW5HcTBrd2pudHpKS29jMHA5MGx5NFktWmhfTUdaVmlnS0x3RVE?oc=5",
-      "pub_date": "Sat, 25 Apr 2026 07:00:00 GMT",
-      "source": "公視新聞網PNN",
+      "title": "娛樂稅法修正公布，藝文活動及競技比賽將非屬娛樂稅課稅項目",
+      "link": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOU3RiSVpXVnA2VXlmcmRrSDN5MVBQeTctVWJUemJ6ZC10V0w1cDRvVTgtVGhMb04tSDJBaG1IU2tlMXVsZ1U3a3JqRVNGczVkUWdDVFVyMXg4alppRUtMb09jMUtjZlp6N0FDdkNvalZHVERrMHhjMXhac3J1NUFXWTNkWmw5dUdEMzNEMTNIRmdXNjB5aU9HRnRYRzFuZU1BNkp4MVNqdU5neno1RGpqTGV3QUw3YVBsX1kwZkR0VXltV18xT2JDMGdCLWZNVTNNaVd1ZVpQbG4yWkwxOVhuNEZOV0xPZW44LTROQk85bXE5bjhLR1I5Q19WYkk4NXdwNWtvcFpUaDB5SGt6Q0Y2ZHFwdHZBY1dIRENIbk5oZ0lhNEowRllkUGNDYW9HU01fTG9CVG16ZThkMmd1NG1zSVJn?oc=5",
+      "pub_date": "Thu, 28 May 2026 07:00:00 GMT",
+      "source": "macrocosm.tw",
       "keyword": "娛樂稅法",
-      "first_seen_at": "2026-08-05T23:46:52.140Z",
+      "first_seen_at": "2026-08-07T01:41:15.751Z",
       "first_seen_this_run": true,
       "is_new": true
     },
@@ -129,7 +129,7 @@
       "source": "工商時報",
       "keyword": "娛樂稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -139,7 +139,7 @@
       "source": "UDN",
       "keyword": "勞工退休金條例、勞工退休金條例施行細則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -149,7 +149,7 @@
       "source": "客新聞 HakkaNews",
       "keyword": "貨物稅條例",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -159,7 +159,7 @@
       "source": "UDN",
       "keyword": "貨物稅條例",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -169,7 +169,7 @@
       "source": "自由財經",
       "keyword": "公司法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -179,7 +179,7 @@
       "source": "工商時報",
       "keyword": "公司法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -189,7 +189,7 @@
       "source": "自由財經",
       "keyword": "貨物稅條例",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -199,7 +199,7 @@
       "source": "CSR@天下",
       "keyword": "關稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -209,7 +209,7 @@
       "source": "航貿週刊",
       "keyword": "海關進口稅則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -219,7 +219,7 @@
       "source": "linebank.com.tw",
       "keyword": "證券交易法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -229,7 +229,7 @@
       "source": "自由財經",
       "keyword": "證券交易法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -239,7 +239,7 @@
       "source": "僑新聞",
       "keyword": "所得稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -249,7 +249,7 @@
       "source": "匯流新聞網",
       "keyword": "證券交易法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -259,7 +259,7 @@
       "source": "工商時報",
       "keyword": "海關進口稅則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -269,7 +269,7 @@
       "source": "僑新聞",
       "keyword": "加值型及非加值型營業稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -279,7 +279,7 @@
       "source": "信傳媒",
       "keyword": "所得稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -289,7 +289,7 @@
       "source": "中央社 CNA",
       "keyword": "營利事業所得稅查核準則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -299,7 +299,7 @@
       "source": "中央社 CNA",
       "keyword": "所得稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -309,7 +309,7 @@
       "source": "理財鴿",
       "keyword": "勞工職業災害保險及保護法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -319,7 +319,7 @@
       "source": "旺得富理財網",
       "keyword": "關稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -329,7 +329,7 @@
       "source": "moea.gov.tw",
       "keyword": "商業會計處理準則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -339,7 +339,7 @@
       "source": "僑新聞",
       "keyword": "海關進口稅則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -349,7 +349,7 @@
       "source": "Newtalk新聞",
       "keyword": "關稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -359,17 +359,17 @@
       "source": "理財鴿",
       "keyword": "勞工職業災害保險及保護法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
       "title": "政院通過「勞工職業災害保險及保護法」草案 估增33萬人納職災保險",
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9lZGJnaUx1RmVqUHh6Tng5R0hJdGRON25pNDRUZE54eUhKQ0pFWXRqbHQwRWFIRnRVd245dzltV3ZTbGpMZ3FlUC15dnVsM1AtY1E?oc=5",
       "pub_date": "Thu, 25 Mar 2021 07:00:00 GMT",
-      "source": "蕃新聞",
+      "source": "n.yam.com",
       "keyword": "勞工職業災害保險及保護法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -379,7 +379,7 @@
       "source": "Crowe",
       "keyword": "企業會計準則公報",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -389,7 +389,7 @@
       "source": "ey.gov.tw",
       "keyword": "勞動基準法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -399,7 +399,7 @@
       "source": "dpp.org.tw",
       "keyword": "勞動基準法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -409,7 +409,7 @@
       "source": "苦勞網",
       "keyword": "勞工保險條例、勞工保險條例施行細則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -419,7 +419,7 @@
       "source": "苦勞網",
       "keyword": "商業會計法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     }
   ],
