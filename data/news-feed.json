@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T23:29:23.720Z",
+  "generated_at": "2026-08-12T23:29:34.510Z",
   "recent_window_days": 14,
   "items": [
     {
@@ -39,7 +39,7 @@
       "source": "台灣好新聞",
       "keyword": "商業登記法",
       "first_seen_at": "2026-08-11T23:29:23.720Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -124,11 +124,11 @@
     },
     {
       "title": "勞動部修正勞工退休金條例施行細則 加強保障勞工退休金權益",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5mbFBrOGFxNU42ak1sdVI3SU82eHVaSzg2aFQ3THZKSkNFRXZHS0pVeXV5NXdpeGNzMlprSG4wd3NLZmhocncxZHVXMnhndmtXNXdyZk5GakMyd9IBX0FVX3lxTE90WWlMb3hxSXMyUGFFN1g1LVl1d0l4MWtlNGFpMHdfaGdXQmxVZjQ0Rzlrb05vWmFyVnZQcS0xNTVER2RPNll4UmFKcEFPelBuZUpXaUsyYm9XRllWVFg0?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1fOFZvamc0U0prSnE0b3hUXzlQRzlZNGxiZ2ZOUzNCYVFMR3pnR2ktdlBSZTM2SUNaUGJ6Rjg0TjhxMVpQbnR6N2FHbzh1Z3BS0gFWQVVfeXFMTUFNNlVEd1BLcGZjQnQ3dDJ3Rk1nSVdoQWN6NmJNTGpYSXlwTnFNVFREcFM2cWFjT1A0ek1RWTRKbmRZdkI1Xy1UX0Nhd29KaU9DRjNvb3c?oc=5",
       "pub_date": "Wed, 25 Mar 2026 07:00:00 GMT",
-      "source": "經濟日報",
+      "source": "UDN",
       "keyword": "勞工退休金條例、勞工退休金條例施行細則",
-      "first_seen_at": "2026-08-11T23:29:23.720Z",
+      "first_seen_at": "2026-08-12T23:29:34.510Z",
       "first_seen_this_run": true,
       "is_new": true
     },
@@ -173,22 +173,22 @@
       "is_new": true
     },
     {
-      "title": "總統公告貨物稅條例修正 9/7起買車最高省10萬",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9xY0tna2lGRXRGZ3RXVHZ5Y3NDa2w0N0pUZldMaFpRQ2lJbllWejkwUEI2cjB5eE9VeVhySlZUWEJKaGhSdm1lWGRzMFlHX2ZKVklXaVNrU0U?oc=5",
-      "pub_date": "Fri, 05 Sep 2025 07:00:00 GMT",
-      "source": "自由時報",
-      "keyword": "貨物稅條例",
-      "first_seen_at": "2026-08-11T23:29:23.720Z",
-      "first_seen_this_run": true,
-      "is_new": true
-    },
-    {
       "title": "苗栗縣府鼓勵民間參與公共建設 修正地價稅房屋稅條例",
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9wank1TmlvOWgwQjFMajhhUXA4TUY3aTR1eTJDdWpfUjU0TEo0d1pEU2lYWmVnOVRNLUdXWXhZVE9ROER6UDVONHF1a1NBMnhwR0s0SGxpUk5KZ1JkWlY4?oc=5",
       "pub_date": "Mon, 26 May 2025 07:00:00 GMT",
       "source": "中時新聞網",
       "keyword": "房屋稅條例",
       "first_seen_at": "2026-08-11T23:29:23.720Z",
+      "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "政院通過「貨物稅條例」第11條之1修正草案 鼓勵民眾購買節能電器 邁向2050淨零轉型目標|內政",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5IZzM3Q3Rfa1AtcmpnNzUzMlF1NmpCam5yVW9JcjF5a1k0X0lLY0xINmYzbXhOOVdBMU12Q2FsZEhac2dhM2ROUi1nUQ?oc=5",
+      "pub_date": "Fri, 02 May 2025 07:00:00 GMT",
+      "source": "僑新聞",
+      "keyword": "貨物稅條例",
+      "first_seen_at": "2026-08-12T23:29:34.510Z",
       "first_seen_this_run": true,
       "is_new": true
     },
@@ -199,14 +199,14 @@
       "source": "東森電視",
       "keyword": "房屋稅條例",
       "first_seen_at": "2026-08-11T23:29:23.720Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
       "title": "美版碳關稅法草案捲土重來，稅率最高200%，點名中俄高碳排產品對美國工人不公平",
       "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5KS0QzMzdhQUJPZjN0Vm00NWdIR1BrSUtfYVMwb3NQU3dFXzI1QTlNQVBFNlR0T21CQzltVFJ5eExGU3I0bjUtOWRBcw?oc=5",
       "pub_date": "Mon, 21 Apr 2025 07:00:00 GMT",
-      "source": "csr.cw.com.tw",
+      "source": "CSR@天下",
       "keyword": "關稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -216,7 +216,7 @@
       "title": "立院財委會審查通過「海關進口稅則」部分稅則修正草案",
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1LWTRXMEJEcVZOcFJUM3c0cHY1bnI2a0JhbGpVelNOX3R1UUkwdE1OZHFHelM0SkJULUEzMVRjMTQ4UjFkN1lNVXVJd09DbWpxNUR3RQ?oc=5",
       "pub_date": "Fri, 21 Mar 2025 07:00:00 GMT",
-      "source": "航貿週刊",
+      "source": "shippingdigest.tw",
       "keyword": "海關進口稅則",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -276,7 +276,7 @@
       "title": "立院開議在即 財政部首推3大法律修正案 所得稅法、營業稅法在列",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iUU5DX053MWJsbnFtS2picFJrTXhZci1PT0tBdUpsR1FrSG9KNHplanNBWklKQzh1X3BtdU1hb3doX0hWUHVJdnVkT05yZmxwSVRfWnlhZ2s0UQ?oc=5",
       "pub_date": "Fri, 16 Feb 2024 08:00:00 GMT",
-      "source": "cmmedia.com.tw",
+      "source": "信傳媒",
       "keyword": "所得稅法",
       "first_seen_at": "2026-08-05T23:46:52.140Z",
       "first_seen_this_run": false,
@@ -296,7 +296,7 @@
       "title": "行政院拍板《證券交易法》修正草案　金管會：持股申報由10%降為5%",
       "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5WR01uTUFsaU5WSzE2OXdVaTFMS2hiV2ExZjBhVTVBcHdwVkF5OElETzNGM1lVZWttM3pHeXY3UlBBNmtVMTQyQ9IBTEFVX3lxTE5PcUJaRjl0VFdjYXJuWkNWVmRlRXVWX05MZHZjczB4WVpLZjlBMGdNZGtIb21COVV5azlreW5Ub3Z3Rm9yejFuaEk2YkI?oc=5",
       "pub_date": "Thu, 22 Dec 2022 08:00:00 GMT",
-      "source": "三立新聞網SETN.com",
+      "source": "三立新聞",
       "keyword": "證券交易法",
       "first_seen_at": "2026-08-10T23:25:08.462Z",
       "first_seen_this_run": false,
