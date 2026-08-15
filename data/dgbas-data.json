@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-08-15T06:37:17.501Z",
+  "items": [
+    {
+      "name": "會計法",
+      "category": "一、基本法規",
+      "url": "https://law.dgbas.gov.tw/LawContent.aspx?id=FL017683",
+      "last_amend_date": null,
+      "publish_date": null,
+      "checked_at": "2026-08-15T06:37:17.501Z",
+      "matchType": "not_found",
+      "trackable": true,
+      "fetch_error": "抓取失敗：HTTP 403",
+      "content_updated_at": null,
+      "newly_detected": false,
+      "newly_error": false
+    },
+    {
+      "name": "內部審核處理準則",
+      "category": "一、基本法規",
+      "url": "https://law.dgbas.gov.tw/LawContent.aspx?id=FL017684",
+      "last_amend_date": null,
+      "publish_date": null,
+      "checked_at": "2026-08-15T06:37:17.501Z",
+      "matchType": "not_found",
+      "trackable": true,
+      "fetch_error": "抓取失敗：HTTP 403",
+      "content_updated_at": null,
+      "newly_detected": false,
+      "newly_error": false
+    }
+  ]
+}
