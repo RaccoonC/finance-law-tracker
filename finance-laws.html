@@ -616,31 +616,6 @@ async function loadData() {
     console.error('讀取 laws-data.json 失敗', e);
   }
 
-  // 行政院主計總處主管法規共用系統的法規（沒有公開 API，用固定網址追蹤），
-  // 資料放在獨立的 dgbas-data.json，這裡跟主要法規清單合併。
-  try {
-    const res = await fetch('data/dgbas-data.json', { cache: 'no-store' });
-    const raw = await res.json();
-    const dgbasItems = (raw.items || []).map((item, idx) => ({
-      id: 'dgbas-' + idx,
-      name: item.name,
-      cat: item.category || '未分類',
-      last_amend_date: item.last_amend_date,
-      publish_date: item.publish_date,
-      note: item.fetch_error || '',
-      url: item.url,
-      source_url: null,
-      checked_at: item.checked_at,
-      matchType: item.matchType,
-      trackable: item.trackable,
-      fulltext_synced_at: item.content_updated_at,
-      content_updated_at: item.content_updated_at,
-    }));
-    all = all.concat(dgbasItems);
-  } catch (e) {
-    console.error('讀取 dgbas-data.json 失敗（可能還沒執行過，不影響其他功能）', e);
-  }
-
   // 人工透過「新增補充資料」分頁上傳的資料，存在 Cloudflare KV，
   // 透過 /api/manual-entries 這個 API 讀取，所有使用者共用同一份。
   try {
@@ -706,15 +681,6 @@ async function loadFullText() {
     });
   } catch (e) {
     console.error('讀取 laws-fulltext.json 失敗', e);
-  }
-  try {
-    const res = await fetch('data/dgbas-fulltext.json', { cache: 'no-store' });
-    const raw = await res.json();
-    (raw.laws || []).forEach(item => {
-      LAWS_FULLTEXT_MAP[item.name] = item.content;
-    });
-  } catch (e) {
-    console.error('讀取 dgbas-fulltext.json 失敗（可能還沒執行過，不影響其他功能）', e);
   }
   fulltextLoaded = true;
   if (statusEl) statusEl.textContent = '全文檢索';
