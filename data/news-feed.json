@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T23:09:39.620Z",
+  "generated_at": "2026-08-17T01:25:43.678Z",
   "recent_window_days": 14,
   "items": [
     {
@@ -29,7 +29,7 @@
       "source": "Yahoo新聞",
       "keyword": "商業登記法",
       "first_seen_at": "2026-08-16T23:09:39.620Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -50,6 +50,16 @@
       "keyword": "所得稅法施行細則",
       "first_seen_at": "2026-08-15T23:10:13.404Z",
       "first_seen_this_run": false,
+      "is_new": true
+    },
+    {
+      "title": "薪資能用商品券發？ 三星最大工會反對南韓修勞動基準法",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZFZUZF8wX0FObnNSMXhGaTZGWHJSYzhsTEY3Mk5laDNLZF9ucGkzc2ZBQ1J4c1JEbEdWdkZ0RkFLTDF4bVMtaVRXZHFpMW1LMnFNTmVPZk9ZSWtZU19LOGZvbU4zQXA5SHUzZjVLLVJwSC1WSHZyckdSTWlxUm9NYms3MnVScmRqOXQwVUVR?oc=5",
+      "pub_date": "Mon, 13 Jul 2026 07:00:00 GMT",
+      "source": "digitimes.com.tw",
+      "keyword": "勞動基準法",
+      "first_seen_at": "2026-08-17T01:25:43.678Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -106,7 +116,7 @@
       "title": "勞動部修正勞工退休金條例施行細則 加強保障勞工退休金權益",
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1fOFZvamc0U0prSnE0b3hUXzlQRzlZNGxiZ2ZOUzNCYVFMR3pnR2ktdlBSZTM2SUNaUGJ6Rjg0TjhxMVpQbnR6N2FHbzh1Z3BS0gFWQVVfeXFMTUFNNlVEd1BLcGZjQnQ3dDJ3Rk1nSVdoQWN6NmJNTGpYSXlwTnFNVFREcFM2cWFjT1A0ek1RWTRKbmRZdkI1Xy1UX0Nhd29KaU9DRjNvb3c?oc=5",
       "pub_date": "Wed, 25 Mar 2026 07:00:00 GMT",
-      "source": "UDN",
+      "source": "udn.com",
       "keyword": "勞工退休金條例、勞工退休金條例施行細則",
       "first_seen_at": "2026-08-15T23:10:13.404Z",
       "first_seen_this_run": false,
@@ -114,12 +124,12 @@
     },
     {
       "title": "貨物稅條例、使用牌照稅法修法三讀 電動車減稅再延五年",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBfaVBSU0hHMVdaN1Y1bzVYWjRpOHpjWWhINUZrQ0N1WWsxeDB3RXkzNWl6QkNtZ3AwSTZKaFNud3hzQTdnMF96TGZvTUhSaW0xbEFiRVRWYUpZd9IBX0FVX3lxTE9qMGpzd0k5bGo5WUdrcFpZOW9XN2FtUG9TblI2OUJOZ0NoOVJSM1UtSjVvejdqejEzZnpNZ0p2Y2djZUVWTUw4Q05qVXd6c1B4Qk9XbDk1djNYNlpVZTk4?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBOSjhvWnY4RWI2WjlqOU1pUkZ4X01SNTNIb1ZXcGVzTTRUWmpGekE5cm5Ycl81ZThUVFIxdzJtRXZSbW55ampxb1ZIdVdhSkVHakhEam1Ya1pzQdIBX0FVX3lxTE9qMGpzd0k5bGo5WUdrcFpZOW9XN2FtUG9TblI2OUJOZ0NoOVJSM1UtSjVvejdqejEzZnpNZ0p2Y2djZUVWTUw4Q05qVXd6c1B4Qk9XbDk1djNYNlpVZTk4?oc=5",
       "pub_date": "Tue, 23 Dec 2025 08:00:00 GMT",
       "source": "經濟日報",
       "keyword": "貨物稅條例",
-      "first_seen_at": "2026-08-15T23:10:13.404Z",
-      "first_seen_this_run": false,
+      "first_seen_at": "2026-08-17T01:25:43.678Z",
+      "first_seen_this_run": true,
       "is_new": true
     },
     {
@@ -129,7 +139,7 @@
       "source": "客新聞",
       "keyword": "貨物稅條例",
       "first_seen_at": "2026-08-16T23:09:39.620Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -169,7 +179,7 @@
       "source": "工商時報",
       "keyword": "公司法",
       "first_seen_at": "2026-08-16T23:09:39.620Z",
-      "first_seen_this_run": true,
+      "first_seen_this_run": false,
       "is_new": true
     },
     {
@@ -218,16 +228,6 @@
       "pub_date": "Fri, 21 Mar 2025 07:00:00 GMT",
       "source": "航貿週刊",
       "keyword": "海關進口稅則",
-      "first_seen_at": "2026-08-15T23:10:13.404Z",
-      "first_seen_this_run": false,
-      "is_new": true
-    },
-    {
-      "title": "淺談《勞動基準法》65歲後勞資協商延後退休",
-      "link": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNLUs0VUR2Qi12N0tvbnJqQlJJel9ZQ3hCa0pPc1VZNlBWLWk4VUhMYmE0ZmhXMWs5dUtrYzdCMjRuakxTdnQ4MDJtVFU2T2dOYzAyaldKYXA5Mm1KbXhsQ2tBQ3pObjdBMkFEQk13bl9pd1FaVklGcktSLW15TU1LMmV1ak1LYmZMRFJxT3FwVWgtcnlBMUs3bWpjZkdVUFZxRlhOUktmODV1N1NnMTdDOFRibU8welQzaU5GcDBWSHF2QlFHR1p4RTQycUlCRVZkNjFTU3N3ZFRVdEh4VW9SMDRYd2t5aExBOTN2cFc2QTJtN1BVWktJbnR6T3dueTZVRWdKdTNDNXJ1b2ZJOHVxZDRoQ19PRW1PbW1RTU5PN0VhQ19uQnc?oc=5",
-      "pub_date": "Thu, 19 Sep 2024 07:00:00 GMT",
-      "source": "傑報人力資源服務集團",
-      "keyword": "勞動基準法",
       "first_seen_at": "2026-08-15T23:10:13.404Z",
       "first_seen_this_run": false,
       "is_new": true

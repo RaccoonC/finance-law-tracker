@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T23:08:59.363Z",
+  "generated_at": "2026-08-17T01:25:04.346Z",
   "source": [
     "https://law.moj.gov.tw/api/Ch/Law/JSON",
     "https://law.moj.gov.tw/api/Ch/Order/JSON"
@@ -12,7 +12,7 @@
       "name": "商業會計法",
       "category": "一、基本法規",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -21,14 +21,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 2,
       "name": "商業會計處理準則",
       "category": "一、基本法規",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -37,14 +37,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 3,
       "name": "商業使用電子方式處理會計資料辦法",
       "category": "一、基本法規",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -53,7 +53,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 4,
@@ -62,7 +62,7 @@
       "trackable": false,
       "note": "EAS，由財團法人會計研究發展基金會發布，非政府法規，全國法規資料庫不收錄",
       "source_url": "https://www.ardf.org.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -80,7 +80,7 @@
       "trackable": false,
       "note": "IFRS，上市櫃適用；非國內單一法規，無法自動追蹤，請參考金管會/會計研究發展基金會公告",
       "source_url": "https://ifrs.sfb.gov.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -97,7 +97,7 @@
       "category": "二、會計憑證",
       "trackable": true,
       "note": "即通稱之帳簿憑證保存辦法",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -106,7 +106,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 8,
@@ -115,7 +115,7 @@
       "trackable": false,
       "note": "屬財政部行政規則，非全國法規資料庫收錄範圍，請查 law-out.mof.gov.tw",
       "source_url": "https://www.einvoice.nat.gov.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -133,7 +133,7 @@
       "trackable": false,
       "note": "屬多項函釋彙整，非單一法規名稱，無法自動追蹤",
       "source_url": "https://www.einvoice.nat.gov.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -149,7 +149,7 @@
       "name": "所得稅法",
       "category": "三、所得稅法",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -158,14 +158,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 11,
       "name": "所得稅法施行細則",
       "category": "三、所得稅法",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -174,14 +174,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 12,
       "name": "營利事業所得稅查核準則",
       "category": "三、所得稅法",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -190,14 +190,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 13,
       "name": "所得基本稅額條例",
       "category": "三、所得稅法",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -206,14 +206,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 64,
       "name": "所得基本稅額條例施行細則",
       "category": "三、所得稅法",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -222,14 +222,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 14,
       "name": "加值型及非加值型營業稅法",
       "category": "四、營業稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -238,14 +238,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 15,
       "name": "加值型及非加值型營業稅法施行細則",
       "category": "四、營業稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -254,14 +254,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 16,
       "name": "統一發票使用辦法",
       "category": "四、營業稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -270,7 +270,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 17,
@@ -279,7 +279,7 @@
       "trackable": false,
       "note": "與第 8 項相同法規，屬財政部行政規則，請查 law-out.mof.gov.tw",
       "source_url": "https://www.einvoice.nat.gov.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -297,7 +297,7 @@
       "trackable": false,
       "note": "實為加值型及非加值型營業稅法第32條之附表，非獨立法規名稱",
       "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340080",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -315,7 +315,7 @@
       "trackable": false,
       "note": "函釋彙整，非單一法規名稱",
       "source_url": "https://law-out.mof.gov.tw/LawQuery.aspx",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -332,7 +332,7 @@
       "category": "五、扣繳及所得申報",
       "trackable": true,
       "note": "即通稱之各類所得扣繳申報辦法／扣繳率標準",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -341,7 +341,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 21,
@@ -350,7 +350,7 @@
       "trackable": false,
       "note": "查無獨立法規名稱，相關規定已含於第 20 項「各類所得扣繳率標準」",
       "source_url": "https://www.etax.nat.gov.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -368,7 +368,7 @@
       "trackable": false,
       "note": "與第 21 項重疊，屬填發規定彙整",
       "source_url": "https://www.etax.nat.gov.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -386,7 +386,7 @@
       "trackable": false,
       "note": "外國人扣繳規定範圍較廣，涉多項法規，建議另行確認具體法規名稱",
       "source_url": "https://www.etax.nat.gov.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -402,7 +402,7 @@
       "name": "公司法",
       "category": "六、公司治理",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -411,14 +411,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 26,
       "name": "公司登記辦法",
       "category": "六、公司治理",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -427,14 +427,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 27,
       "name": "商業登記法",
       "category": "六、公司治理",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -443,14 +443,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 28,
       "name": "商業登記申請辦法",
       "category": "六、公司治理",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -459,14 +459,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 29,
       "name": "勞動基準法",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -475,14 +475,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 65,
       "name": "勞動基準法施行細則",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -491,14 +491,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 30,
       "name": "勞工退休金條例",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -507,14 +507,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 66,
       "name": "勞工退休金條例施行細則",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -523,14 +523,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 31,
       "name": "勞工保險條例",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -539,14 +539,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 67,
       "name": "勞工保險條例施行細則",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -555,14 +555,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 32,
       "name": "就業保險法",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -571,14 +571,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 68,
       "name": "就業保險法施行細則",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -587,14 +587,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 33,
       "name": "勞工職業災害保險及保護法",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -603,14 +603,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 69,
       "name": "勞工職業災害保險及保護法施行細則",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -619,14 +619,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 34,
       "name": "全民健康保險法",
       "category": "七、薪資",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -635,14 +635,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 35,
       "name": "民法",
       "category": "八、付款及契約",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -651,14 +651,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 36,
       "name": "票據法",
       "category": "八、付款及契約",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -667,14 +667,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 70,
       "name": "票據法施行細則",
       "category": "八、付款及契約",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -683,7 +683,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 37,
@@ -691,7 +691,7 @@
       "category": "八、付款及契約",
       "trackable": true,
       "note": "扣薪、扣押相關",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -700,7 +700,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 38,
@@ -708,7 +708,7 @@
       "category": "八、付款及契約",
       "trackable": true,
       "note": "付款資料、員工資料相關",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -717,14 +717,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 71,
       "name": "個人資料保護法施行細則",
       "category": "八、付款及契約",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -733,14 +733,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 43,
       "name": "印花稅法",
       "category": "九、地方稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -749,14 +749,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 72,
       "name": "印花稅法施行細則",
       "category": "九、地方稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -765,14 +765,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 44,
       "name": "房屋稅條例",
       "category": "九、地方稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -781,14 +781,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 45,
       "name": "土地稅法",
       "category": "九、地方稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -797,14 +797,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 73,
       "name": "土地稅法施行細則",
       "category": "九、地方稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -813,14 +813,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 46,
       "name": "契稅條例",
       "category": "九、地方稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -829,14 +829,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 47,
       "name": "娛樂稅法",
       "category": "九、地方稅",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -845,14 +845,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 48,
       "name": "關稅法",
       "category": "十、進出口",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -861,14 +861,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 74,
       "name": "關稅法施行細則",
       "category": "十、進出口",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -877,14 +877,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 49,
       "name": "海關緝私條例",
       "category": "十、進出口",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -893,7 +893,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 50,
@@ -901,7 +901,7 @@
       "category": "十、進出口",
       "trackable": true,
       "note": "即通稱之關稅稅則",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -910,14 +910,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 51,
       "name": "貨物稅條例",
       "category": "十、進出口",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -926,14 +926,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 52,
       "name": "證券交易法",
       "category": "十一、上市櫃公司",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -942,14 +942,14 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 75,
       "name": "證券交易法施行細則",
       "category": "十一、上市櫃公司",
       "trackable": true,
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -958,7 +958,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 53,
@@ -966,7 +966,7 @@
       "category": "十一、上市櫃公司",
       "trackable": true,
       "note": "原清單寫「公開發行公司財務報告編製準則」，官方正式名稱為此",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -975,7 +975,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     },
     {
       "id": 54,
@@ -984,7 +984,7 @@
       "trackable": false,
       "note": "查無獨立法規名稱，公開資訊觀測站申報規定建議直接查 mops.twse.com.tw",
       "source_url": "https://www.twse.com.tw/",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -1001,7 +1001,7 @@
       "category": "十一、上市櫃公司",
       "trackable": true,
       "note": "內部控制制度相關法規",
-      "checked_at": "2026-08-16T23:08:59.363Z",
+      "checked_at": "2026-08-17T01:25:04.346Z",
       "last_amend_date": null,
       "publish_date": null,
       "pcode": null,
@@ -1010,7 +1010,7 @@
       "matchType": "not_found",
       "fulltext_synced_at": null,
       "newly_detected": false,
-      "newly_error": true
+      "newly_error": false
     }
   ]
 }
