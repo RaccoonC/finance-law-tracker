@@ -478,6 +478,16 @@
           <label for="upload-category">分類</label>
           <select id="upload-category" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:13px;color:var(--text);background:var(--white)"></select>
         </div>
+        <div class="form-row" style="display:flex;gap:12px">
+          <div style="flex:1">
+            <label for="upload-amend-date">最新修正日期（選填）</label>
+            <input type="date" id="upload-amend-date" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:13px;color:var(--text);box-sizing:border-box">
+          </div>
+          <div style="flex:1">
+            <label for="upload-publish-date">公布日期（選填）</label>
+            <input type="date" id="upload-publish-date" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:13px;color:var(--text);box-sizing:border-box">
+          </div>
+        </div>
         <div class="form-row">
           <label for="upload-content">內容</label>
           <textarea id="upload-content" rows="8" placeholder="貼上或輸入完整內容，全文檢索會搜尋這裡的文字"></textarea>
@@ -558,6 +568,16 @@ function parseROCDate(str) {
   return isNaN(d) ? null : d;
 }
 
+// <input type="date"> 給的是西元 yyyy-mm-dd，轉成系統統一使用的民國格式字串
+function gregorianInputToROC(value) {
+  if (!value) return null;
+  const m = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return null;
+  const rocYear = Number(m[1]) - 1911;
+  if (rocYear <= 0) return null;
+  return `民國${rocYear}年${m[2]}月${m[3]}日`;
+}
+
 function mostRecentLawDate(law) {
   const amend = parseROCDate(law.last_amend_date);
   const publish = parseROCDate(law.publish_date);
@@ -622,8 +642,8 @@ async function loadData() {
       id: 'manual-' + idx,
       name: entry.name,
       cat: entry.category || '補充資料',
-      last_amend_date: null,
-      publish_date: null,
+      last_amend_date: entry.last_amend_date || null,
+      publish_date: entry.publish_date || null,
       upload_date: entry.added_at,
       isManualUpload: true,
       note: '',
@@ -839,14 +859,14 @@ function updateCounters() {
 }
 
 function formatAmendCell(l) {
-  if (l.isManualUpload) return '無（為自行上傳之資料）';
   if (l.last_amend_date) return l.last_amend_date;
+  if (l.isManualUpload) return '無（為自行上傳之資料）';
   if (l.publish_date) return '公布後尚未修訂過';
   return '—';
 }
 function formatPublishCell(l) {
-  if (l.isManualUpload) return '無（為自行上傳之資料）';
   if (l.publish_date) return l.publish_date;
+  if (l.isManualUpload) return '無（為自行上傳之資料）';
   if (l.last_amend_date) return '請依最新修正日期為準';
   return '—';
 }
@@ -1031,11 +1051,15 @@ async function addManualEntry() {
   const nameEl = document.getElementById('upload-name');
   const contentEl = document.getElementById('upload-content');
   const categoryEl = document.getElementById('upload-category');
+  const amendDateEl = document.getElementById('upload-amend-date');
+  const publishDateEl = document.getElementById('upload-publish-date');
   const statusEl = document.getElementById('upload-status');
   const btnEl = document.getElementById('upload-submit-btn');
   const name = nameEl.value.trim();
   const content = contentEl.value.trim();
   const category = categoryEl ? categoryEl.value : '';
+  const last_amend_date = gregorianInputToROC(amendDateEl ? amendDateEl.value : '');
+  const publish_date = gregorianInputToROC(publishDateEl ? publishDateEl.value : '');
   if (!name || !content) {
     showToast('請填寫資料名稱和內容');
     return;
@@ -1046,13 +1070,15 @@ async function addManualEntry() {
     const res = await fetch('/api/manual-entries', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, content, category }),
+      body: JSON.stringify({ name, content, category, last_amend_date, publish_date }),
     });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const raw = await res.json();
     MANUAL_ENTRIES_SERVER = raw.entries || [];
     nameEl.value = '';
     contentEl.value = '';
+    if (amendDateEl) amendDateEl.value = '';
+    if (publishDateEl) publishDateEl.value = '';
     renderUploadList();
     showToast('已新增，所有人立即可見，頁面即將重新整理…');
     if (statusEl) statusEl.textContent = '';
