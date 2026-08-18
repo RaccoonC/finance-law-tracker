@@ -521,7 +521,6 @@
     <div class="modal-header">
       <div>
         <div class="modal-title" id="modal-title"></div>
-        <div class="modal-subtitle" id="modal-subtitle"></div>
       </div>
       <button class="modal-close" onclick="closeModalDirect()">✕</button>
     </div>
@@ -1144,7 +1143,6 @@ function openModal(id) {
   currentLawId = id;
 
   document.getElementById('modal-title').textContent = law.name;
-  document.getElementById('modal-subtitle').textContent = law.cat;
 
   const linkEl = document.getElementById('modal-link');
   if (law.url) {
