@@ -480,12 +480,12 @@
         </div>
         <div class="form-row" style="display:flex;gap:12px">
           <div style="flex:1">
-            <label for="upload-amend-date">最新修正日期（選填）</label>
-            <input type="date" id="upload-amend-date" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:13px;color:var(--text);box-sizing:border-box">
+            <label for="upload-amend-date">最新修正日期（選填，格式 yyyy/mm/dd）</label>
+            <input type="text" id="upload-amend-date" placeholder="例如：2026/07/21" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:13px;color:var(--text);box-sizing:border-box">
           </div>
           <div style="flex:1">
-            <label for="upload-publish-date">公布日期（選填）</label>
-            <input type="date" id="upload-publish-date" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:13px;color:var(--text);box-sizing:border-box">
+            <label for="upload-publish-date">公布日期（選填，格式 yyyy/mm/dd）</label>
+            <input type="text" id="upload-publish-date" placeholder="例如：2026/07/21" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:13px;color:var(--text);box-sizing:border-box">
           </div>
         </div>
         <div class="form-row">
@@ -568,13 +568,20 @@ function parseROCDate(str) {
   return isNaN(d) ? null : d;
 }
 
-// <input type="date"> 給的是西元 yyyy-mm-dd，轉成系統統一使用的民國格式字串
+// 使用者手動輸入的 yyyy/mm/dd 格式（西元），轉成系統統一使用的民國格式字串。
+// 格式或日期本身不合法時回傳 'invalid'，方便呼叫端分辨「沒填」跟「填錯格式」。
 function gregorianInputToROC(value) {
-  if (!value) return null;
-  const m = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (!m) return null;
-  const rocYear = Number(m[1]) - 1911;
-  if (rocYear <= 0) return null;
+  const trimmed = (value || '').trim();
+  if (!trimmed) return null;
+  const m = trimmed.match(/^(\d{4})\/(\d{2})\/(\d{2})$/);
+  if (!m) return 'invalid';
+  const year = Number(m[1]);
+  const month = Number(m[2]);
+  const day = Number(m[3]);
+  const d = new Date(year, month - 1, day);
+  if (d.getFullYear() !== year || d.getMonth() !== month - 1 || d.getDate() !== day) return 'invalid';
+  const rocYear = year - 1911;
+  if (rocYear <= 0) return 'invalid';
   return `民國${rocYear}年${m[2]}月${m[3]}日`;
 }
 
@@ -1062,6 +1069,10 @@ async function addManualEntry() {
   const publish_date = gregorianInputToROC(publishDateEl ? publishDateEl.value : '');
   if (!name || !content) {
     showToast('請填寫資料名稱和內容');
+    return;
+  }
+  if (last_amend_date === 'invalid' || publish_date === 'invalid') {
+    showToast('日期格式錯誤，請用 yyyy/mm/dd（例如 2026/07/21）');
     return;
   }
   btnEl.disabled = true;
