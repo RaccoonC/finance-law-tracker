@@ -911,7 +911,7 @@ function renderLaws() {
       ? `<div class="law-snippet">條文命中：${highlightKeyword(snippet, currentSearch)}</div>`
       : '';
     return `
-      <div class="law-row ${rowClass}" onclick="openModal(${l.id})">
+      <div class="law-row ${rowClass}" onclick="openModal('${l.id}')">
         <div style="display:flex;align-items:center"><span class="status-dot ${s.dot}"></span></div>
         <div class="law-name-cell">
           <span class="law-name">${nameHtml}</span>
@@ -922,7 +922,7 @@ function renderLaws() {
         <div class="date-cell ${l.status==='modified'?'date-new':''}">${formatAmendCell(l)}</div>
         <div class="date-cell">${formatPublishCell(l)}</div>
         <div class="date-cell">${l.isManualUpload ? formatDateTime(l.upload_date) : '—'}</div>
-        <div><button class="row-action" onclick="event.stopPropagation();openModal(${l.id})">查看詳情</button></div>
+        <div><button class="row-action" onclick="event.stopPropagation();openModal('${l.id}')">查看詳情</button></div>
       </div>`;
   }).join('');
 }
@@ -1109,7 +1109,7 @@ function renderUploadList() {
 }
 
 function openModal(id) {
-  const law = LAWS.find(l => l.id === id);
+  const law = LAWS.find(l => l.id == id); // 用寬鬆比對：一般法規 id 是數字，補充資料 id 是字串（如 'manual-0'）
   if (!law) return;
   currentLawId = id;
 
