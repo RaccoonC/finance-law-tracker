@@ -475,6 +475,10 @@
           <input type="text" id="upload-name" placeholder="例如：114年度差旅費核銷補充說明">
         </div>
         <div class="form-row">
+          <label for="upload-category">分類</label>
+          <select id="upload-category" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:13px;color:var(--text);background:var(--white)"></select>
+        </div>
+        <div class="form-row">
           <label for="upload-content">內容</label>
           <textarea id="upload-content" rows="8" placeholder="貼上或輸入完整內容，全文檢索會搜尋這裡的文字"></textarea>
         </div>
@@ -755,8 +759,15 @@ function applyActiveSidebarCat() {
     document.getElementById('cat-everything').classList.add('active');
   } else if (currentCat === 'all') {
     document.getElementById('cat-all').classList.add('active');
+  } else if (currentCat === 'manual:all') {
+    document.getElementById('cat-manual-all').classList.add('active');
+  } else if (currentCat.startsWith('manual:')) {
+    const cat = currentCat.slice('manual:'.length);
+    document.querySelectorAll('#manual-category-list [data-manual-cat]').forEach(el => {
+      if (el.dataset.manualCat === cat) el.closest('.sidebar-item').classList.add('active');
+    });
   } else {
-    document.querySelectorAll('#category-list [data-cat], #manual-category-list [data-cat]').forEach(el => {
+    document.querySelectorAll('#category-list [data-cat]').forEach(el => {
       if (el.dataset.cat === currentCat) el.closest('.sidebar-item').classList.add('active');
     });
   }
@@ -765,16 +776,29 @@ function applyActiveSidebarCat() {
 function buildManualCategorySidebar() {
   const container = document.getElementById('manual-category-list');
   if (!container) return;
-  const manualCats = [...new Set(LAWS.filter(l => l.isManualUpload).map(l => l.cat))];
-  if (!manualCats.length) {
-    container.innerHTML = '<div class="sidebar-item submenu-item" style="color:var(--gray);cursor:default">尚無補充資料</div>';
-    return;
-  }
-  container.innerHTML = manualCats.map(cat => `
-    <div class="sidebar-item submenu-item" onclick="filterCat('${cat.replace(/'/g, "\\'")}', this)">${cat}
-      <span class="sidebar-count" data-cat="${cat}">0</span>
+  // 補充資料類別直接沿用法規類別的分類名稱與順序，方便使用者用同一套分類上傳補充資料，
+  // 不管有沒有已上傳的資料都會列出來（先建好分類，之後上傳才有地方放）。
+  const cats = [...new Set(LAWS.filter(l => !l.isManualUpload).map(l => l.cat))].sort((a, b) => categoryOrder(a) - categoryOrder(b));
+  container.innerHTML = `
+    <div class="sidebar-item submenu-item" id="cat-manual-all" onclick="filterCat('manual:all', this)">全部補充資料
+      <span class="sidebar-count" id="cnt-manual-all">0</span>
+    </div>
+  ` + cats.map(cat => `
+    <div class="sidebar-item submenu-item" onclick="filterCat('manual:${cat.replace(/'/g, "\\'")}', this)">${cat}
+      <span class="sidebar-count" data-manual-cat="${cat}">0</span>
     </div>
   `).join('');
+
+  populateUploadCategorySelect(cats);
+}
+
+// 「新增補充資料」表單的分類選單，跟補充資料類別側邊欄用同一份分類清單
+function populateUploadCategorySelect(cats) {
+  const select = document.getElementById('upload-category');
+  if (!select) return;
+  const prevValue = select.value;
+  select.innerHTML = cats.map(cat => `<option value="${cat.replace(/"/g, '&quot;')}">${cat}</option>`).join('');
+  if (cats.includes(prevValue)) select.value = prevValue;
 }
 
 function init() {
@@ -809,11 +833,12 @@ function updateCounters() {
 
   document.querySelectorAll('#category-list [data-cat]').forEach(el => {
     const cat = el.dataset.cat;
-    el.textContent = LAWS.filter(l => l.cat === cat).length;
+    el.textContent = LAWS.filter(l => !l.isManualUpload && l.cat === cat).length;
   });
-  document.querySelectorAll('#manual-category-list [data-cat]').forEach(el => {
-    const cat = el.dataset.cat;
-    el.textContent = LAWS.filter(l => l.cat === cat).length;
+  document.getElementById('cnt-manual-all').textContent = LAWS.filter(l => l.isManualUpload).length;
+  document.querySelectorAll('#manual-category-list [data-manual-cat]').forEach(el => {
+    const cat = el.dataset.manualCat;
+    el.textContent = LAWS.filter(l => l.isManualUpload && l.cat === cat).length;
   });
 
   const modBadge = document.getElementById('cnt-modified');
@@ -845,11 +870,20 @@ function renderLaws() {
     })
     .filter(({ law, matched }) => {
       const matchStatus = currentFilter === 'all' || law.status === currentFilter;
-      // 「全部法規」不包含使用者自行上傳的補充資料；「全部法規&補充資料」則兩者都顯示；
-      // 其他情況照分類名稱比對（含補充資料類別的分類）
-      const matchCat = currentCat === 'everything' ? true
-        : currentCat === 'all' ? !law.isManualUpload
-        : law.cat === currentCat;
+      // 「全部法規」不含補充資料；「全部法規&補充資料」兩者都顯示；
+      // 「manual:」開頭代表補充資料類別（可能跟法規類別同名，用 isManualUpload 區分）
+      let matchCat;
+      if (currentCat === 'everything') {
+        matchCat = true;
+      } else if (currentCat === 'all') {
+        matchCat = !law.isManualUpload;
+      } else if (currentCat === 'manual:all') {
+        matchCat = law.isManualUpload;
+      } else if (currentCat.startsWith('manual:')) {
+        matchCat = law.isManualUpload && law.cat === currentCat.slice('manual:'.length);
+      } else {
+        matchCat = !law.isManualUpload && law.cat === currentCat;
+      }
       return matchStatus && matchCat && matched;
     });
 
@@ -1003,10 +1037,12 @@ async function fetchManualEntries() {
 async function addManualEntry() {
   const nameEl = document.getElementById('upload-name');
   const contentEl = document.getElementById('upload-content');
+  const categoryEl = document.getElementById('upload-category');
   const statusEl = document.getElementById('upload-status');
   const btnEl = document.getElementById('upload-submit-btn');
   const name = nameEl.value.trim();
   const content = contentEl.value.trim();
+  const category = categoryEl ? categoryEl.value : '';
   if (!name || !content) {
     showToast('請填寫資料名稱和內容');
     return;
@@ -1017,7 +1053,7 @@ async function addManualEntry() {
     const res = await fetch('/api/manual-entries', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, content }),
+      body: JSON.stringify({ name, content, category }),
     });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const raw = await res.json();
