@@ -1155,17 +1155,11 @@ function openModal(id) {
   }
 
   const statusLabel = { modified:'近期有異動 🔴', pending:'尚未比對到／抓取失敗 ⚪', active:'正常施行 🟢' };
-  const uploadDateRow = law.isManualUpload
-    ? `<div class="info-item"><label>上傳日期</label><div class="val">${formatDateTime(law.upload_date)}</div></div>`
-    : '';
   document.getElementById('modal-info').innerHTML = `
     <div class="info-item"><label>目前狀態</label><div class="val">${statusLabel[law.status]||law.status}</div></div>
     <div class="info-item"><label>類別</label><div class="val">${law.cat}</div></div>
     <div class="info-item"><label>最新修正日期</label><div class="val">${formatAmendCell(law)}</div></div>
     <div class="info-item"><label>公布日期</label><div class="val">${formatPublishCell(law)}</div></div>
-    ${uploadDateRow}
-    <div class="info-item"><label>上次檢查時間</label><div class="val">${formatDateTime(law.checked_at)}</div></div>
-    <div class="info-item"><label>條文最後更新時間</label><div class="val">${formatDateTime(law.fulltext_synced_at)}</div></div>
     ${law.note ? `<div class="info-item" style="grid-column:1 / -1"><label>備註</label><div class="val">${law.note}</div></div>` : ''}
   `;
 
