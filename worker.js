@@ -60,12 +60,21 @@ async function handleManualEntries(request, env) {
     const name = (body.name || "").trim();
     const content = (body.content || "").trim();
     const category = (body.category || "").trim();
+    const last_amend_date = (body.last_amend_date || "").trim();
+    const publish_date = (body.publish_date || "").trim();
     if (!name || !content) {
       return jsonResponse({ error: "資料名稱和內容不能空白" }, 400);
     }
     const entries = await loadEntries(env);
     const idx = entries.findIndex((e) => e.name === name);
-    const entry = { name, content, category: category || undefined, added_at: new Date().toISOString() };
+    const entry = {
+      name,
+      content,
+      category: category || undefined,
+      last_amend_date: last_amend_date || undefined,
+      publish_date: publish_date || undefined,
+      added_at: new Date().toISOString(),
+    };
     if (idx >= 0) {
       entries[idx] = entry;
     } else {
